@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
+
+body {
+    background: #E5E5E5;
+}
+
+@function toRem($value) {
+    $remValue: calc($value / 10) + rem; 
+    @return $remValue;
+}
+
+@mixin size($width, $height) {
+    width: toRem($width);
+    height: toRem($height);
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    @if $top { top: toRem($top); }
+    @if $right { right: toRem($right); }
+    @if $bottom { bottom: toRem($bottom); }
+    @if $left { left: toRem($left); }
+}
+
+@mixin absolute($args...) {
+    @include position(absolute, $args...);
+}
+
+@mixin fixed($args...) {
+    @include position(absolute, $args...);
+}
+
+
+.huww-widget-three {
+    @include size(96, 96);
+    @include fixed($bottom: 48, $right: 48);
+
+    background-color: white;
+    border-radius: toRem(8);
+
+    .huww-title {
+        @include absolute($top: 16);
+
+        width: 100%;
+        text-align: center;
+
+        font-size: toRem(14);
+        line-height: toRem(18);
+
+        color: #0B3C94;
+    }
+
+    .huww-subtitle {
+        @include absolute($top: 36);
+
+        width: 100%;
+        text-align: center;
+
+        color: #F7D648;
+    }
+
+    .huww-button {
+        @include absolute($bottom: 8, $left: 8);
+    }
+
+    .huww-logo {
+        @include absolute($top: -8, $right: -8);
+    }
+
+}
+
+.huww-widget-two {
+    @include size(176, 81);
+
+    background-color: white;
+    border-radius: toRem(8);
+
+    position: fixed;
+    bottom: toRem(48);
+    right: toRem(48);
+
+    .huww-divider {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: #E5E5E5;
+        position: absolute;
+        top: toRem(50);
+    }
+
+    .huww-flag {
+        position: absolute;
+        top: toRem(-16);
+        left: toRem(74);
+    }
+
+    .huww-title {
+        position: absolute;
+        top: toRem(22);
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .huww-link {
+        position: absolute;
+        top: toRem(59);
+        width: 100%;
+        text-align: center;
+    }
+
+    .huww-logo {
+        position: absolute;
+        top: toRem(-8);
+        right: toRem(-8);
+    }
+}
+
+.huww-widget-one {
+    @include size(215, 48);
+
+    background-color: white;
+    border-radius: toRem(8);
+
+    position: fixed;
+    bottom: toRem(48);
+    right: toRem(48);
+
+
+    .huww-flag {
+        position: absolute;
+        top: toRem(8);
+        left: toRem(8);
+    }
+
+    .huww-title {
+        position: absolute;
+        top: toRem(8);
+        left: toRem(48);
+    }
+
+    .huww-link {
+        position: absolute;
+        left: toRem(48);
+        top: toRem(26);
+    }
+
+    .huww-logo {
+        position: absolute;
+        top: toRem(-8);
+        right: toRem(-8);
+    }
+}
+
+
+.huww-flag {
+    width: toRem(32);
+
+    .huww-flag-top {
+        width: toRem(32);
+        height: toRem(16);
+        background: #2559B5;
+        border-radius: toRem(8) toRem(8) 0 0;
+    }
+
+    .huww-flag-bottom {
+        width: toRem(32);
+        height: toRem(16);
+        background: #F7D648;
+        border-radius: 0 0 toRem(8) toRem(8);
+    }
+}
+
+
+.huww-title {
+    font-size: toRem(13);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    line-height: toRem(15);
+    margin: 0;
+    opacity: 0.8;
+}
+
+.huww-subtitle {
+    font-size: toRem(14);
+    line-height: toRem(18);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+
+    margin: 0;
+    opacity: 0.8;
+}
+
+.huww-link {
+    font-family: 'Roboto', sans-serif;
+    font-size: toRem(12);
+    font-weight: 500;
+    line-height: toRem(14);
+    color: #3798CE;
+    text-decoration: none;
+
+    &:hover::after {
+        content: '▸';
+    }
+}
+
+
+.huww-logo {
+    display: block;
+    width: toRem(16);
+    height: toRem(16);
+    background-image: url('data-url:./logo-2.png');
+    background-size: toRem(16) toRem(16);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-color: #015BBB;
+    border-radius: toRem(16);
+    text-decoration: none;
+
+    transition: width 0.3s;
+    overflow: hidden;
+
+    span {
+        position: absolute;
+        top: 0;
+        left: toRem(16);
+        transition: left 0.3s;
+        font-family: 'Roboto', sans-serif;
+        font-size: toRem(9);
+        line-height: toRem(16);
+        font-weight: 600;
+
+        color: white;
+    }
+
+    &:hover {
+        width: toRem(68);
+
+        span {
+            left: toRem(5);
+        }
+    }
+}
+
+.huww-button {
+    @include size(80, 26);
+
+    display: block;
+    background: rgba(55, 152, 206, 0.12);
+    border-radius: toRem(3);
+
+    color: #3798CE;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: toRem(12);
+    font-weight: 500;
+
+    line-height: toRem(26);
+
+    text-align: center;
+
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
