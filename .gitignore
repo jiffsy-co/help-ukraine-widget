@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/widget-script/node_modules
 /.pnp
 .pnp.js
 
@@ -14,6 +15,8 @@
 
 # production
 /build
+/widget-script/dist
+/widget-script/.parcel-cache
 
 # misc
 .DS_Store
@@ -36,3 +39,4 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+

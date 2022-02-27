@@ -1,3 +1,3 @@
 
-export const landingUrl = "https://google.com/";
-export const helpUrl = "https://google.com/";
+export const landingUrl = "https://helpukrainewinwidget.org";
+export const helpUrl = "https://helpukrainewin.org";
