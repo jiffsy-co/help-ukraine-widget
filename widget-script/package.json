@@ -1,0 +1,28 @@
+{
+  "name": "help-ukraine-widget-script",
+  "version": "1.0.0",
+  "description": "",
+  "targets": {
+    "default": {
+      "distDir": "./dist"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build src/index.ts",
+    "dev": "parcel src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crel": "^4.2.1",
+    "crelt": "^1.0.5",
+    "parcel": "^2.3.2"
+  },
+  "devDependencies": {
+    "@parcel/optimizer-data-url": "^2.3.2",
+    "@parcel/transformer-inline-string": "^2.3.2",
+    "@parcel/transformer-sass": "^2.3.2"
+  }
+}
