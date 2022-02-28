@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "yarn build-widget && yarn copy-widget && next build",
+    "build-widget": "cd widget-script && yarn build && cd ../",
+    "copy-widget": "node scripts/copy-widget.js",
     "start": "next start",
     "lint": "next lint"
   },
