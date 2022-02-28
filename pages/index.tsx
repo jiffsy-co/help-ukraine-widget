@@ -66,7 +66,7 @@ const Home: NextPage = () => {
         <meta property="og:image:height" content={String(seo.image.height)} />
       </Head>
 
-      <main className="w-full mx-auto relative pt-8 px-6 md:pt-16 lg:px-16 xl:px-32">
+      <main className="w-full mx-auto relative pt-6 sm:pt-8 px-3 sm:px-6 md:pt-16 lg:px-16 xl:px-32">
         <section id="description" className="w-full relative">
           <div className="absolute top-0 right-0">
             <Image
@@ -78,7 +78,8 @@ const Home: NextPage = () => {
             ></Image>
           </div>
           <h1 className="text-black font-bold max-w-3xl leading-2 text-6xl lg:text-7xl">
-            Put the <span className="text-blue-700">Help</span>{" "}
+            <span className="block md:inline">Put the</span>{" "}
+            <span className="text-blue-700">Help</span>{" "}
             <span className="text-yellow-400">Ukraine</span>
             <br />
             widget on your website!
@@ -139,7 +140,7 @@ const Home: NextPage = () => {
         </section>
       </main>
 
-      <footer className="w-full mt-20 lg:mt-26 mx-auto relative py-8 px-6 md:py-12 lg:px-16 xl:px-32">
+      <footer className="w-full mt-20 lg:mt-26 mx-auto relative py-8 px-3 sm:px-6 md:py-12 lg:px-16 xl:px-32">
         <div className="flex w-full items-center">
           <Image
             alt="Logo"

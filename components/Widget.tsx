@@ -29,7 +29,7 @@ function Widget({ options: defaultOptions }: { options: IWidgetOptions }) {
       <div className="md:flex">
         <div className="md:shrink-0">
           <div
-            className={`h-80 w-full rounded-t-lg md:w-80 bg-gray-100 md:rounded-lg overflow-hidden`}
+            className={`h-80 w-full rounded-t-lg md:w-96 bg-gray-100 md:rounded-lg overflow-hidden`}
           >
             <Iframe type={options.type} position={options.position} />
           </div>
