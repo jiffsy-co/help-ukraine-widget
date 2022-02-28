@@ -13,7 +13,7 @@ export const useSeo = (page: string = "/"): ISeo => {
   return {
     url: process.env.URL + page,
     title: "Help Ukraine",
-    description: "Help Ukraine widget",
+    description: `Put the Help Ukraine widget on your website! Your customers and visitors of your website will be able to know how they can help Ukraine from every place in the world.`,
     image: {
       height: 1080,
       width: 1080,
