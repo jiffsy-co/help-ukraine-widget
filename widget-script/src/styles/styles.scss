@@ -47,19 +47,19 @@
   z-index: 99999;
 
   &.huww-widget-top-left {
-    @include fixed($top: 32, $left: 32);
+    @include fixed($top: 18, $left: 10);
   }
 
   &.huww-widget-top-right {
-    @include fixed($top: 32, $right: 32);
+    @include fixed($top: 18, $right: 10);
   }
 
   &.huww-widget-bottom-right {
-    @include fixed($bottom: 32, $right: 32);
+    @include fixed($bottom: 10, $right: 10);
   }
 
   &.huww-widget-bottom-left {
-    @include fixed($bottom: 32, $left: 32);
+    @include fixed($bottom: 10, $left: 10);
   }
 }
 
@@ -125,8 +125,6 @@
   @include size(176, 81);
 
   position: fixed;
-  bottom: toRem(48);
-  right: toRem(48);
 
   .huww-divider {
     display: block;
@@ -162,8 +160,6 @@
   @include size(215, 48);
 
   position: fixed;
-  bottom: toRem(48);
-  right: toRem(48);
 
   .huww-flag {
     @include absolute($top: 8, $left: 8);
