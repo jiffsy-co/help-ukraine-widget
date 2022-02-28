@@ -1,9 +1,8 @@
 {
     "compilerOptions": {
         "target": "ES5",
-        "outDir": "./public/",
-        "strict": true,
+        "strict": true
     },
     "exclude": ["node_modules"],
-    "include": ["./src/**/*.css", "./src/**/*.ts"]
+    "include": ["./src/**/*.css", "./src/**/*.ts", "./src/*.ts"]
 }
