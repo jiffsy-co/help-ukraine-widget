@@ -1,318 +1,324 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
-body {
-    background: #E5E5E5;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 @function toRem($value) {
-    $remValue: calc($value / 10) + rem; 
-    @return $remValue;
+  $remValue: calc($value / 10) + rem;
+  @return $remValue;
 }
 
 @mixin size($width, $height) {
-    width: toRem($width);
-    height: toRem($height);
+  width: toRem($width);
+  height: toRem($height);
 }
 
-@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
-    position: $position;
-    @if $top { top: toRem($top); }
-    @if $right { right: toRem($right); }
-    @if $bottom { bottom: toRem($bottom); }
-    @if $left { left: toRem($left); }
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  @if $top {
+    top: toRem($top);
+  }
+  @if $right {
+    right: toRem($right);
+  }
+  @if $bottom {
+    bottom: toRem($bottom);
+  }
+  @if $left {
+    left: toRem($left);
+  }
 }
 
 @mixin absolute($args...) {
-    @include position(absolute, $args...);
+  @include position(absolute, $args...);
 }
 
 @mixin fixed($args...) {
-    @include position(fixed, $args...);
+  @include position(fixed, $args...);
 }
 
 .huww-widget {
-    background-color: white;
-    border-radius: toRem(8);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-color: white;
+  border-radius: toRem(8);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  z-index: 99999;
 
-    &.huww-widget-top-left {
-        @include fixed($top: 48, $left: 48);
-    }
+  &.huww-widget-top-left {
+    @include fixed($top: 32, $left: 32);
+  }
 
-    &.huww-widget-top-right {
-        @include fixed($top: 48, $right: 48);
-    }
+  &.huww-widget-top-right {
+    @include fixed($top: 32, $right: 32);
+  }
 
-    &.huww-widget-bottom-right {
-        @include fixed($bottom: 48, $right: 48);
-    }
+  &.huww-widget-bottom-right {
+    @include fixed($bottom: 32, $right: 32);
+  }
 
-    &.huww-widget-bottom-left {
-        @include fixed($bottom: 48, $left: 48);
-    }
+  &.huww-widget-bottom-left {
+    @include fixed($bottom: 32, $left: 32);
+  }
 }
 
 .huww-widget-four {
-    @include size(176, 80);
+  @include size(176, 80);
 
-    .huww-half-flag {
-        @include size(8, 80);
-        @include absolute($left: 0, $top: 0);
-    }
+  .huww-half-flag {
+    @include size(8, 80);
+    @include absolute($left: 0, $top: 0);
+  }
 
-    .huww-title {
-        @include absolute($top: 12, $left: 16);
-    }
+  .huww-title {
+    @include absolute($top: 12, $left: 16);
+  }
 
-    .huww-hashtag {
-        @include absolute($top: 32, $left: 16);
-    }
+  .huww-hashtag {
+    @include absolute($top: 32, $left: 16);
+  }
 
-    .huww-link {
-        @include absolute($bottom: 8, $left: 16);
-    }
+  .huww-link {
+    @include absolute($bottom: 8, $left: 16);
+  }
 
-    .huww-logo {
-        @include absolute($top: -8, $right: -8);
-    }
+  .huww-logo {
+    @include absolute($top: -8, $right: -8);
+  }
 }
 
 .huww-widget-three {
-    @include size(96, 96);
+  @include size(96, 96);
 
-    .huww-title {
-        @include absolute($top: 16);
+  .huww-title {
+    @include absolute($top: 16);
 
-        width: 100%;
-        text-align: center;
+    width: 100%;
+    text-align: center;
 
-        font-size: toRem(14);
-        line-height: toRem(18);
+    font-size: toRem(14);
+    line-height: toRem(18);
 
-        color: #0B3C94;
-    }
+    color: #0b3c94;
+  }
 
-    .huww-subtitle {
-        @include absolute($top: 36);
+  .huww-subtitle {
+    @include absolute($top: 36);
 
-        width: 100%;
-        text-align: center;
+    width: 100%;
+    text-align: center;
 
-        color: #F7D648;
-    }
+    color: #f7d648;
+  }
 
-    .huww-button {
-        @include absolute($bottom: 8, $left: 8);
-    }
+  .huww-button {
+    @include absolute($bottom: 8, $left: 8);
+  }
 
-    .huww-logo {
-        @include absolute($top: -8, $right: -8);
-    }
+  .huww-logo {
+    @include absolute($top: -8, $right: -8);
+  }
 }
 
 .huww-widget-two {
-    @include size(176, 81);
+  @include size(176, 81);
 
-    position: fixed;
-    bottom: toRem(48);
-    right: toRem(48);
+  position: fixed;
+  bottom: toRem(48);
+  right: toRem(48);
 
-    .huww-divider {
-        display: block;
-        width: 100%;
-        height: 1px;
-        background: #E5E5E5;
-        position: absolute;
-        top: toRem(50);
-    }
+  .huww-divider {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #e5e5e5;
+    position: absolute;
+    top: toRem(50);
+  }
 
-    .huww-flag {
-        @include absolute($top: -16, $left: 74);
-    }
+  .huww-flag {
+    @include absolute($top: -16, $left: 74);
+  }
 
-    .huww-title {
-        @include absolute($top: 22);
-        width: 100%;
-        text-align: center;
-    }
+  .huww-title {
+    @include absolute($top: 22);
+    width: 100%;
+    text-align: center;
+  }
 
-    .huww-link {
-        @include absolute($top: 59);
-        width: 100%;
-        text-align: center;
-    }
+  .huww-link {
+    @include absolute($top: 59);
+    width: 100%;
+    text-align: center;
+  }
 
-    .huww-logo {
-        @include absolute($top: -8, $right: -8);
-    }
+  .huww-logo {
+    @include absolute($top: -8, $right: -8);
+  }
 }
 
 .huww-widget-one {
-    @include size(215, 48);
+  @include size(215, 48);
 
-    position: fixed;
-    bottom: toRem(48);
-    right: toRem(48);
+  position: fixed;
+  bottom: toRem(48);
+  right: toRem(48);
 
+  .huww-flag {
+    @include absolute($top: 8, $left: 8);
+  }
 
-    .huww-flag {
-        @include absolute($top: 8, $left: 8);
-    }
+  .huww-title {
+    @include absolute($top: 8, $left: 48);
+  }
 
-    .huww-title {
-        @include absolute($top: 8, $left: 48);
-    }
+  .huww-link {
+    @include absolute($top: 26, $left: 48);
+  }
 
-    .huww-link {
-        @include absolute($top: 26, $left: 48);
-    }
-
-    .huww-logo {
-        @include absolute($top: -8, $right: -8);
-    }
+  .huww-logo {
+    @include absolute($top: -8, $right: -8);
+  }
 }
 
-
 .huww-flag {
-    width: toRem(32);
+  width: toRem(32);
 
-    .huww-flag-top {
-        @include size(32, 16);
-        background: #2559B5;
-        border-radius: toRem(8) toRem(8) 0 0;
-    }
+  .huww-flag-top {
+    @include size(32, 16);
+    background: #2559b5;
+    border-radius: toRem(8) toRem(8) 0 0;
+  }
 
-    .huww-flag-bottom {
-        @include size(32, 16);
-        background: #F7D648;
-        border-radius: 0 0 toRem(8) toRem(8);
-    }
+  .huww-flag-bottom {
+    @include size(32, 16);
+    background: #f7d648;
+    border-radius: 0 0 toRem(8) toRem(8);
+  }
 }
 
 .huww-half-flag {
+  .huww-half-flag-top {
+    @include size(32, 16);
+    background: #2559b5;
+    border-radius: toRem(8) 0 0 0;
+    height: 50%;
+    width: 100%;
+  }
 
-    .huww-half-flag-top {
-        @include size(32, 16);
-        background: #2559B5;
-        border-radius: toRem(8) 0 0 0;
-        height: 50%;
-        width: 100%;
-    }
-
-    .huww-half-flag-bottom {
-        @include size(32, 16);
-        background: #F7D648;
-        border-radius: 0 0 0 toRem(8);
-        height: 50%;
-        width: 100%;
-    }
+  .huww-half-flag-bottom {
+    @include size(32, 16);
+    background: #f7d648;
+    border-radius: 0 0 0 toRem(8);
+    height: 50%;
+    width: 100%;
+  }
 }
 
-
 .huww-title {
-    font-size: toRem(13);
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    line-height: toRem(16);
-    margin: 0;
-    opacity: 0.8;
+  font-size: toRem(13);
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  line-height: toRem(16);
+  margin: 0;
+  opacity: 0.8;
 }
 
 .huww-subtitle {
-    font-size: toRem(14);
-    line-height: toRem(18);
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
+  font-size: toRem(14);
+  line-height: toRem(18);
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
 
-    margin: 0;
-    opacity: 0.8;
+  margin: 0;
+  opacity: 0.8;
 }
 
 .huww-link {
-    font-family: 'Roboto', sans-serif;
-    font-size: toRem(12);
-    font-weight: 500;
-    line-height: toRem(14);
-    color: #3798CE;
-    text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-size: toRem(12);
+  font-weight: 500;
+  line-height: toRem(14);
+  color: #3798ce;
+  text-decoration: none;
 
-    &:hover::after {
-        content: '▸';
-    }
+  &:hover::after {
+    content: "▸";
+  }
 }
 
-
 .huww-logo {
-    display: block;
-    width: toRem(16);
-    height: toRem(16);
+  display: block;
+  width: toRem(16);
+  height: toRem(16);
 
-    background-color: #015BBB;
+  background-color: #015bbb;
 
-    border-radius: toRem(16);
-    text-decoration: none;
+  border-radius: toRem(16);
+  text-decoration: none;
 
-    transition: width 0.3s;
+  transition: width 0.3s;
+  overflow: hidden;
+
+  .huww-logo-img {
+    @include size(16, 16);
+    @include absolute($right: 0, $top: 0);
+
+    background-image: url(data-url:./logo.png);
+    background-size: cover;
+  }
+
+  .huww-logo-text {
+    @include absolute($top: 0, $right: 16);
+    width: toRem(44);
     overflow: hidden;
 
-    .huww-logo-img {
-        @include size(16, 16);
-        @include absolute($right: 0, $top: 0);
+    font-family: "Roboto", sans-serif;
+    font-size: toRem(9);
+    line-height: toRem(16);
+    font-weight: 600;
+    white-space: nowrap;
 
-        background-image: url(data-url:./logo.png);
-        background-size: cover;
-    }
+    color: white;
+  }
 
-    .huww-logo-text {
-        @include absolute($top: 0, $right: 16);
-        width: toRem(44);
-        overflow: hidden;
-
-        font-family: 'Roboto', sans-serif;
-        font-size: toRem(9);
-        line-height: toRem(16);
-        font-weight: 600;
-        white-space: nowrap;
-
-        color: white;
-    }
-
-    &:hover {
-        width: toRem(68);
-    }
+  &:hover {
+    width: toRem(68);
+  }
 }
 
 .huww-button {
-    @include size(80, 26);
+  @include size(80, 26);
 
-    display: block;
-    background: rgba(55, 152, 206, 0.12);
-    border-radius: toRem(3);
+  display: block;
+  background: rgba(55, 152, 206, 0.12);
+  border-radius: toRem(3);
 
-    color: #3798CE;
+  color: #3798ce;
 
-    font-family: 'Roboto', sans-serif;
-    font-size: toRem(12);
-    font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  font-size: toRem(12);
+  font-weight: 500;
 
-    line-height: toRem(26);
+  line-height: toRem(26);
 
-    text-align: center;
+  text-align: center;
 
-    text-decoration: none;
+  text-decoration: none;
 
-    &:hover {
-        text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .huww-hashtag {
-    font-family: 'Roboto', sans-serif;
-    font-size: toRem(12);
-    font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  font-size: toRem(12);
+  font-weight: 400;
 
-    color: #000000;
-    opacity: 0.6;
+  color: #000000;
+  opacity: 0.6;
 
-    margin: 0;
+  margin: 0;
 }
