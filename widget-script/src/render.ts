@@ -1,9 +1,20 @@
 import crel from 'crelt';
-import { helpUrl, landingUrl } from './constants';
+import { helpUrl, landingUrl, WidgetPosition, WidgetType } from './constants';
+import logo from 'bundle-text:./styles/logo.svg';
 
+export function createWidget(type: WidgetType, position: WidgetPosition) {
+    const widgetRenderers = {
+        one: createWidget1,
+        two: createWidget2,
+        three: createWidget3,
+        four: createWidget4,
+    }
 
-export function createWidget1() {
-    return crel('div', { class: 'huww-widget-one' },
+    return widgetRenderers[type](position);
+}
+
+export function createWidget1(position: WidgetPosition) {
+    return crel('div', { class: `huww-widget huww-widget-one huww-widget-${position}` },
         crel('p', { class: 'huww-title' }, 'Stop Russian Aggression!'),
         crel('a', { class: 'huww-link', href: helpUrl, target: '_blank' }, 'See what you can do'),
         createLogo(),
@@ -11,8 +22,8 @@ export function createWidget1() {
     );
 }
 
-export function createWidget2() {
-    return crel('div', { class: 'huww-widget-two' },
+export function createWidget2(position: WidgetPosition) {
+    return crel('div', { class: `huww-widget huww-widget-two huww-widget-${position}` },
         crel('p', { class: 'huww-title' }, 'Stop War! You can help!'),
         crel('a', { class: 'huww-link', href: helpUrl, target: '_blank' }, 'See what you can do'),
         crel('div', { class: 'huww-divider' }),
@@ -21,8 +32,8 @@ export function createWidget2() {
     );
 }
 
-export function createWidget3() {
-    return crel('div', { class: 'huww-widget-three' },
+export function createWidget3(position: WidgetPosition) {
+    return crel('div', { class: `huww-widget huww-widget-three huww-widget-${position}` },
         crel('p', { class: 'huww-title' }, 'Stop War!'),
         crel('p', { class: 'huww-subtitle' }, 'Help Ukraine!'),
         crel('a', { class: 'huww-button', href: helpUrl, target: '_blank' }, 'See how'),
@@ -30,9 +41,23 @@ export function createWidget3() {
     );
 }
 
+export function createWidget4(position: WidgetPosition) {
+    return crel('div', { class: `huww-widget huww-widget-four huww-widget-${position}` },
+        crel('p', { class: 'huww-title' }, 'Help 🇺🇦 Ukraine win!'),
+        crel('p', { class: 'huww-hashtag' }, '#StandWithUkraine'),
+        crel('a', { class: 'huww-link', href: helpUrl, target: '_blank' }, 'See how to help'),
+        createLogo(),
+        createHalfFlag(),
+    );
+}
+
 function createLogo() {
+    const img = crel('span', {class: 'huww-logo-img'});
+    img.innerHTML = logo;
+
     return crel('a', { class: "huww-logo", href: landingUrl, target: '_blank' },
-        crel('span', {}, 'Get widget'),
+        img,
+        crel('span', { class: 'huww-logo-text'}, 'Get widget'),
     );
 }
 
@@ -40,5 +65,12 @@ function createFlag() {
     return crel('div', { class: 'huww-flag' },
         crel('div', { class: 'huww-flag-top' }),
         crel('div', { class: 'huww-flag-bottom' })
+    )
+}
+
+function createHalfFlag() {
+    return crel('div', { class: 'huww-half-flag' },
+        crel('div', { class: 'huww-half-flag-top' }),
+        crel('div', { class: 'huww-half-flag-bottom' })
     )
 }
