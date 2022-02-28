@@ -1,4 +1,4 @@
-import { defaultPosition, defaultType, scriptId, WidgetPosition, widgetPositions, WidgetType, widgetTypes } from "./constants";
+import { defaultPosition, defaultType, scriptId, scriptPositionAttribute, scriptTypeAttribute, WidgetPosition, widgetPositions, WidgetType, widgetTypes } from "./constants";
 
 export interface WidgetConfig {
     widgetType: WidgetType;
@@ -7,8 +7,8 @@ export interface WidgetConfig {
 
 export function getConfig(): WidgetConfig {
     const script = document.getElementById(scriptId);
-    const widgetType = parseEnum(script?.getAttribute('type'), widgetTypes, defaultType);
-    const widgetPosition = parseEnum(script?.getAttribute('position'), widgetPositions, defaultPosition);
+    const widgetType = parseEnum(script?.getAttribute(scriptTypeAttribute), widgetTypes, defaultType);
+    const widgetPosition = parseEnum(script?.getAttribute(scriptPositionAttribute), widgetPositions, defaultPosition);
 
     return {widgetPosition, widgetType};
 }

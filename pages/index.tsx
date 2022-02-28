@@ -2,26 +2,27 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { PropsWithChildren } from "react";
-import Widget, { IWidget } from "../components/Widget";
+import Widget from "../components/Widget";
 // import Image from "next/image";
 import { useSeo } from "../hooks/seo";
+import { IWidgetOptions } from "../types";
 
-const widgets: IWidget[] = [
+const widgets: IWidgetOptions[] = [
   {
-    name: "default",
-    script: `(function(){
-  // put script here
-})()`,
-    example: (
-      <div
-        style={{
-          border: "1px soldi black",
-          padding: "1rem",
-        }}
-      >
-        Default Example
-      </div>
-    ),
+    type: "one",
+    position: "bottom-right",
+  },
+  {
+    type: "two",
+    position: "bottom-right",
+  },
+  {
+    type: "three",
+    position: "bottom-right",
+  },
+  {
+    type: "four",
+    position: "bottom-right",
   },
 ];
 
@@ -89,13 +90,15 @@ const Home: NextPage = () => {
           <h2 className="text-black text-4xl font-bold">Widgets</h2>
           <p className="text-gray-400 text-xl mt-3">
             Every widget is linked with{" "}
-            <a className="underline" href="https://helpukrainewidget.org">
-              https://helpukrainewidget.org
+            <a className="underline" href="https://helpukrainewin.org">
+              https://helpukrainewin.org
             </a>
           </p>
           <div className="w-full mt-10">
             {widgets.map((options) => (
-              <Widget key={options.name} options={options}></Widget>
+              <div key={options.type} className="w-full mt-10 lg:mt-10">
+                <Widget options={options}></Widget>
+              </div>
             ))}
           </div>
         </section>
@@ -118,9 +121,9 @@ const Home: NextPage = () => {
         <section className="w-full mt-14 lg:mt-20 xl:mt-40 text-3xl md:text-5xl">
           <p className="text-black font-semibold leading-1">
             That’s it! Together we will Stop Russian Aggression!
-            <div className="text-blue-700 font-semibold mt-4">
+            <span className="text-blue-700 font-semibold mt-4 block">
               Слава <span className="text-yellow-400">Україні!</span>
-            </div>
+            </span>
           </p>
         </section>
       </main>

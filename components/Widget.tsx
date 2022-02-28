@@ -1,16 +1,18 @@
-import { ReactNode, useCallback, useRef, useState } from "react";
-import styles from "../styles/Widget.module.css";
+import { useCallback, useRef, useState } from "react";
+import { IWidgetOptions } from "../types";
+import Iframe from "./Iframe";
 
-export interface IWidget {
-  name: string;
-  script: string;
-  example: ReactNode;
-}
+const makeScript = (options: IWidgetOptions): string => {
+  return `<script id="help-ukraine-win" async="true" src="${
+    process.env.WIDGET_SCRIPT_URL ||
+    "https://helpukrainewinwidget.org/cdn/widget.js"
+  }" data-type="${options.type}" data-position="${options.position}" />`;
+};
 
-function Widget({ options }: { options: IWidget }) {
+function Widget({ options: defaultOptions }: { options: IWidgetOptions }) {
   const textAreaRef = useRef<HTMLTextAreaElement | null>(null);
   const [isCopied, setIsCopied] = useState(false);
-  const [placement, setPlacement] = useState<number>(1);
+  const [options, setOptions] = useState<IWidgetOptions>(defaultOptions);
   const onClickCopy = useCallback(() => {
     if (textAreaRef.current) {
       textAreaRef.current.select();
@@ -26,30 +28,41 @@ function Widget({ options }: { options: IWidget }) {
     <div className="w-full overflow-hidden md:max-w-6xl">
       <div className="md:flex">
         <div className="md:shrink-0">
-          <div className={`h-80 w-full md:w-80 bg-gray-100 rounded-lg`}>
-            {options.example}
+          <div
+            className={`h-80 w-full rounded-t-lg md:w-80 bg-gray-100 md:rounded-lg overflow-hidden`}
+          >
+            <Iframe type={options.type} position={options.position} />
           </div>
         </div>
 
-        <div className="pt-4 pl-0 md:pt-0 md:pl-4 w-full h-80">
-          <div className="rounded-lg border border-gray-200 w-full flex flex-col h-full overflow-hidden">
+        <div className="pl-0 md:pt-0 md:pl-4 w-full h-40 md:h-80">
+          <div className="rounded-b-lg md:rounded-lg border border-gray-200 w-full flex flex-col h-full overflow-hidden">
             <div className={`flex w-full`}>
               <div className={`flex border-r border-r-gray-200 lg:px-4`}>
                 <div className={`flex-none pl-3 py-2 font-medium`}>
                   Placement:
                 </div>
                 <select
-                  value={placement}
-                  onChange={(e) => setPlacement(+e.target.value)}
+                  value={options.position}
+                  onChange={(e) =>
+                    setOptions({
+                      ...options,
+                      position: e.target.value as IWidgetOptions["position"],
+                    })
+                  }
                   className={`form-select appearance-none font-medium block px-2 py-2 text-base text-blue-600 bg-white bg-clip-padding bg-no-repeat rounded transition ease-in-out m-0 focus:text-blue-700 focus:bg-white focus:border-blue-600 focus:outline-none`}
                 >
-                  <option value={1}>Top Left {placement === 1 && "▾"}</option>
-                  <option value={2}>Top Right {placement === 2 && "▾"}</option>
-                  <option value={3}>
-                    Bottom Left {placement === 3 && "▾"}
+                  <option value={"top-left"}>
+                    Top Left {options.position === "top-left" && "▾"}
                   </option>
-                  <option value={4}>
-                    Bottom Right {placement === 4 && "▾"}
+                  <option value={"top-right"}>
+                    Top Right {options.position === "top-right" && "▾"}
+                  </option>
+                  <option value={"bottom-left"}>
+                    Bottom Left {options.position === "bottom-left" && "▾"}
+                  </option>
+                  <option value={"bottom-right"}>
+                    Bottom Right {options.position === "bottom-right" && "▾"}
                   </option>
                 </select>
               </div>
@@ -67,10 +80,10 @@ function Widget({ options }: { options: IWidget }) {
 
             <div className={`border-t border-t-gray-200 flex flex-col flex-1`}>
               <textarea
-                className={`w-full h-full px-3 py-2 lg:px-7 lg:py-4 text-gray-600 font-mono text-sm rounded-b-lg flex-1 appearance-none block focus:outline-none font-mono`}
+                className={`w-full h-full px-3 py-2 lg:px-7 lg:py-4 text-gray-600 text-sm rounded-b-lg flex-1 appearance-none block focus:outline-none font-mono`}
                 ref={textAreaRef}
                 readOnly
-                value={options.script}
+                value={makeScript(options)}
               ></textarea>
             </div>
           </div>
