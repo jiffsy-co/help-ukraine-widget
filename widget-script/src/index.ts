@@ -3,12 +3,17 @@ import { getConfig, WidgetConfig } from './config';
 import { createWidget } from './render';
 
 
-document.addEventListener("DOMContentLoaded", () => {
+if (document.readyState !== "loading") {
+    setTimeout(initialize);
+} else {
+    document.addEventListener("DOMContentLoaded", initialize);
+}
+
+function initialize() {
     injectStyles();
     const config = getConfig();
     initWidget(config);
-});
-
+}
 
 function injectStyles() {
     const style = document.createElement('style');
