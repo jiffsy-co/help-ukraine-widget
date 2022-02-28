@@ -52,11 +52,8 @@ export function createWidget4(position: WidgetPosition) {
 }
 
 function createLogo() {
-    const img = crel('span', {class: 'huww-logo-img'});
-    img.innerHTML = logo;
-
     return crel('a', { class: "huww-logo", href: landingUrl, target: '_blank' },
-        img,
+        crel('span', {class: 'huww-logo-img'}),
         crel('span', { class: 'huww-logo-text'}, 'Get widget'),
     );
 }
