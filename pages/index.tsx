@@ -53,6 +53,17 @@ const Home: NextPage = () => {
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width"></meta>
+        <meta property="og:site_name" content={seo.title} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:type" content={"website"} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:url" content={seo.url} />
+        <meta property="og:image" content={seo.image.url} />
+        <meta property="og:image:url" content={seo.image.url} />
+        <meta property="og:image:secure_url" content={seo.image.url} />
+        <meta property="og:image:width" content={String(seo.image.width)} />
+        <meta property="og:image:height" content={String(seo.image.height)} />
       </Head>
 
       <main className="w-full mx-auto relative pt-8 px-6 md:pt-16 lg:px-16 xl:px-32">

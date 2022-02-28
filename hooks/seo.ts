@@ -15,9 +15,9 @@ export const useSeo = (page: string = "/"): ISeo => {
     title: "Help Ukraine",
     description: "Help Ukraine widget",
     image: {
-      height: 100,
-      width: 100,
-      url: process.env.URL + "/images/" + page,
+      height: 1080,
+      width: 1080,
+      url: process.env.URL + "/widget-post.jpeg",
     },
   };
 };
