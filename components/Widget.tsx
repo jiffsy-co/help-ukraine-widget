@@ -6,7 +6,7 @@ const makeScript = (options: IWidgetOptions): string => {
   return `<script id="help-ukraine-win" async="true" src="${
     process.env.WIDGET_SCRIPT_URL ||
     "https://helpukrainewinwidget.org/cdn/widget.js"
-  }" data-type="${options.type}" data-position="${options.position}" />`;
+  }" data-type="${options.type}" data-position="${options.position}"></script>`;
 };
 
 function Widget({ options: defaultOptions }: { options: IWidgetOptions }) {
