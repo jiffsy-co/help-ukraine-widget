@@ -25,10 +25,9 @@ export function createWidget1(position: WidgetPosition) {
 export function createWidget2(position: WidgetPosition) {
     return crel('div', { class: `huww-widget huww-widget-two huww-widget-${position}` },
         crel('p', { class: 'huww-title' }, 'Stop War! You can help!'),
-        crel('a', { class: 'huww-link', href: helpUrl, target: '_blank' }, 'See what you can do'),
         crel('div', { class: 'huww-divider' }),
+        crel('a', { class: 'huww-link', href: helpUrl, target: '_blank' }, 'See what you can do'),
         createLogo(),
-        createFlag(),
     );
 }
 
