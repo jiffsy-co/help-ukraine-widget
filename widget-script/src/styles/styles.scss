@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
-@function toRem($value) {
-  $remValue: calc($value / 10) + rem;
-  @return $remValue;
+
+@function units($value) {
+  @return $value * 12.8px;
 }
 
+
 @mixin size($width, $height) {
-  width: toRem($width);
-  height: toRem($height);
+  width: units($width);
+  height: units($height);
 }
 
 @mixin position(
@@ -19,16 +20,16 @@
 ) {
   position: $position;
   @if $top {
-    top: toRem($top);
+    top: units($top);
   }
   @if $right {
-    right: toRem($right);
+    right: units($right);
   }
   @if $bottom {
-    bottom: toRem($bottom);
+    bottom: units($bottom);
   }
   @if $left {
-    left: toRem($left);
+    left: units($left);
   }
 }
 
@@ -42,66 +43,65 @@
 
 .huww-widget {
   background-color: white;
-  border-radius: toRem(8);
+  border-radius: units(1);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   z-index: 99999;
 
   &.huww-widget-top-left {
-    @include fixed($top: 18, $left: 10);
+    @include fixed($top: 2, $left: 2);
   }
 
   &.huww-widget-top-right {
-    @include fixed($top: 18, $right: 10);
+    @include fixed($top: 2, $right: 2);
   }
 
   &.huww-widget-bottom-right {
-    @include fixed($bottom: 10, $right: 10);
+    @include fixed($bottom: 2, $right: 2);
   }
 
   &.huww-widget-bottom-left {
-    @include fixed($bottom: 10, $left: 10);
+    @include fixed($bottom: 2, $left: 2);
   }
 
   .huww-logo {
-    @include absolute($top: -8, $right: -8);
+    @include absolute($top: -1, $right: -1);
   }
 }
 
 .huww-widget-four {
-  padding: toRem(12) toRem(8) toRem(8) toRem(16);
+  padding: units(1.5) units(1) units(1) units(2);
 
   .huww-half-flag {
-    width: toRem(8);
+    width: units(1);
     @include absolute($left: 0, $top: 0, $bottom: 0);
   }
 
   .huww-hashtag {
-    margin-top: toRem(2);
-    margin-bottom: toRem(8);
+    margin-top: units(0.25);
+    margin-bottom: units(1);
   }
 }
 
 .huww-widget-three {
-  padding: toRem(8);
-  padding-top: toRem(16);
+  padding: units(1);
+  padding-top: units(2);
   text-align: center;
 
   .huww-title {
-    font-size: toRem(14);
-    line-height: toRem(18);
+    font-size: units(1.75);
+    line-height: units(2.25);
     color: #0b3c94;
   }
 
   .huww-subtitle {
     color: #f7d648;
-    padding-bottom: toRem(8);
+    padding-bottom: units(1);
   }
 }
 
 .huww-widget-two {
-  padding: toRem(8);
-  padding-top: toRem(16);
-  margin-top: toRem(16);
+  padding: units(2) units(1) units(1) units(1);
+  margin-top: units(2);
   text-align: center;
 
   .huww-divider {
@@ -109,71 +109,71 @@
     width: 100%;
     height: 1px;
     background: #e5e5e5;
-    margin: toRem(8) 0;
+    margin: units(1) 0;
   }
 
   .huww-flag {
-    margin: toRem(-32) auto toRem(8);
+    margin: units(-4) auto units(1);
   }
 }
 
 .huww-widget-one {
-  padding: toRem(8);
-  padding-left: toRem(48);
-  margin-right: toRem(12);
+  padding: units(1);
+  padding-left: units(6);
+  margin-right: units(1.5);
 
   .huww-flag {
-    @include absolute($top: 8, $left: 8, $bottom: 8);
-    height: toRem(36);
+    @include absolute($top: 1, $left: 1, $bottom: 1);
+    height: units(4.5);
   }
 }
 
 .huww-flag {
-  width: toRem(32);
+  width: units(4);
 
   .huww-flag-top {
-    @include size(32, 16);
+    @include size(4, 2);
     background: #2559b5;
-    border-radius: toRem(8) toRem(8) 0 0;
+    border-radius: units(1) units(1) 0 0;
   }
 
   .huww-flag-bottom {
-    @include size(32, 16);
+    @include size(4, 2);
     background: #f7d648;
-    border-radius: 0 0 toRem(8) toRem(8);
+    border-radius: 0 0 units(1) units(1);
   }
 }
 
 .huww-half-flag {
   .huww-half-flag-top {
-    @include size(32, 16);
+    @include size(4, 2);
     background: #2559b5;
-    border-radius: toRem(8) 0 0 0;
+    border-radius: units(1) 0 0 0;
     height: 50%;
     width: 100%;
   }
 
   .huww-half-flag-bottom {
-    @include size(32, 16);
+    @include size(4, 2);
     background: #f7d648;
-    border-radius: 0 0 0 toRem(8);
+    border-radius: 0 0 0 units(1);
     height: 50%;
     width: 100%;
   }
 }
 
 .huww-title {
-  font-size: toRem(13);
+  font-size: units(1.625);
   font-family: "Roboto", sans-serif;
   font-weight: 700;
-  line-height: toRem(16);
+  line-height: units(2);
   margin: 0;
   opacity: 0.8;
 }
 
 .huww-subtitle {
-  font-size: toRem(14);
-  line-height: toRem(18);
+  font-size: units(1.75);
+  line-height: units(2.25);
   font-family: "Roboto", sans-serif;
   font-weight: 700;
 
@@ -183,9 +183,9 @@
 
 .huww-link {
   font-family: "Roboto", sans-serif;
-  font-size: toRem(12);
+  font-size: units(1.5);
   font-weight: 500;
-  line-height: toRem(14);
+  line-height: units(1.75);
   color: #3798ce;
   text-decoration: none;
 
@@ -196,19 +196,18 @@
 
 .huww-logo {
   display: block;
-  width: toRem(16);
-  height: toRem(16);
+  @include size(2, 2);
 
   background-color: #015bbb;
 
-  border-radius: toRem(16);
+  border-radius: units(2);
   text-decoration: none;
 
   transition: width 0.3s;
   overflow: hidden;
 
   .huww-logo-img {
-    @include size(16, 16);
+    @include size(2, 2);
     @include absolute($right: 0, $top: 0);
 
     background-image: url(data-url:./logo.svg);
@@ -216,13 +215,13 @@
   }
 
   .huww-logo-text {
-    @include absolute($top: 0, $right: 16);
-    width: toRem(44);
+    @include absolute($top: 0, $right: 2);
+    width: units(5.5);
     overflow: hidden;
 
     font-family: "Roboto", sans-serif;
-    font-size: toRem(9);
-    line-height: toRem(16);
+    font-size: units(1);
+    line-height: units(2);
     font-weight: 600;
     white-space: nowrap;
 
@@ -230,24 +229,22 @@
   }
 
   &:hover {
-    width: toRem(68);
+    width: units(9);
   }
 }
 
 .huww-button {
-  @include size(80, 26);
-
   display: block;
   background: rgba(55, 152, 206, 0.12);
-  border-radius: toRem(3);
+  border-radius: units(0.5);
 
   color: #3798ce;
 
   font-family: "Roboto", sans-serif;
-  font-size: toRem(12);
+  font-size: units(1.5);
   font-weight: 500;
 
-  line-height: toRem(26);
+  line-height: units(3.25);
 
   text-align: center;
 
@@ -260,7 +257,7 @@
 
 .huww-hashtag {
   font-family: "Roboto", sans-serif;
-  font-size: toRem(12);
+  font-size: units(1.5);
   font-weight: 400;
 
   color: #000000;
