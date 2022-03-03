@@ -1,9 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import { PropsWithChildren } from "react";
+import Logo from "../components/Logo";
 import Widget from "../components/Widget";
-// import Image from "next/image";
 import { useSeo } from "../hooks/seo";
 import { IWidgetOptions } from "../types";
 
@@ -69,13 +68,7 @@ const Home: NextPage = () => {
       <main className="w-full mx-auto relative pt-6 sm:pt-8 px-3 sm:px-6 md:pt-16 lg:px-16 xl:px-32">
         <section id="description" className="w-full relative">
           <div className="absolute top-0 right-0">
-            <Image
-              alt="Logo"
-              src="/android-chrome-192x192.png"
-              width={88}
-              height={88}
-              layout="intrinsic"
-            ></Image>
+            <Logo className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24" />
           </div>
           <h1 className="text-black font-bold max-w-3xl leading-2 text-6xl lg:text-7xl">
             <span className="block md:inline">Put the</span>{" "}
@@ -142,13 +135,8 @@ const Home: NextPage = () => {
 
       <footer className="w-full mt-20 lg:mt-26 mx-auto relative py-8 px-3 sm:px-6 md:py-12 lg:px-16 xl:px-32">
         <div className="flex w-full items-center">
-          <Image
-            alt="Logo"
-            src="/android-chrome-192x192.png"
-            width={40}
-            height={40}
-            layout="intrinsic"
-          ></Image>
+          <Logo className="w-10 h-10" />
+
           <a
             className="ml-2 font-medium text-sky-500 underline text-xl"
             href="https://helpukrainewin.org/"
