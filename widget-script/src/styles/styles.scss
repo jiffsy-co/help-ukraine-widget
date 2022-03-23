@@ -5,6 +5,10 @@
   @return $value * 12.8px;
 }
 
+$color_blue: #2559B5;
+$color_yellow: #F7D648;
+$shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
 
 @mixin size($width, $height) {
   width: units($width);
@@ -41,45 +45,78 @@
   @include position(fixed, $args...);
 }
 
-@mixin expended-widget-wrapper{
-  background: #FFFFFF;
-  border-radius: units(0.625);
-  border: 0.5px solid #E5E5E5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-
-  .huww-divider {
-    display: block;
-    width: 100%;
-    height: 0.5px;
-    background: #E5E5E5;
-    margin: units(0.5) 0;
-  }
-}
-
-@mixin expended-widget-block{
-  color: #2559B5;
-  font-size: units(1.1);
-  font-weight: 500;
-  font-family: "Roboto", sans-serif;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-
-  &:hover{
-    background: #2559B514;
-    border-radius: 3px;
-  }
-}
-
 .huww-widget {
+  pointer-events: none;
+  &, & > div {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  & > div {
+    transition: .2s ease;
+    height: 0;
+    opacity: 0;
+  }
+  @each $slide in 1,2,3 {
+    &[data-slide='#{$slide}'] > div {
+      &:nth-child(#{$slide}) {
+        height: units(13);
+        opacity: 1;
+        & > div {
+          pointer-events: auto;
+        }
+      }
+    }
+  }
+
+  &.huww-widget-top-left {
+    @include fixed($top: 2, $left: 2);
+    &, & > div {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
+
+  &.huww-widget-top-right {
+    @include fixed($top: 2, $right: 2);
+    &, & > div {
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+  }
+
+  &.huww-widget-bottom-right {
+    @include fixed($bottom: 2, $right: 2);
+    &, & > div {
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+  }
+
+  &.huww-widget-bottom-left {
+    @include fixed($bottom: 2, $left: 2);
+    &, & > div {
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+  }
+
+  .huww-widget-main {
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+  }
+}
+
+.huww-widget-main {
   background-color: white;
   border-radius: units(1);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow: $shadow;
   z-index: 99999;
+  position: relative;
 
   &.huww-widget-top-left {
     @include fixed($top: 2, $left: 2);
@@ -96,9 +133,38 @@
   &.huww-widget-bottom-left {
     @include fixed($bottom: 2, $left: 2);
   }
+}
 
-  .huww-logo {
-    @include absolute($top: -1, $right: -1);
+.huww-trigger-collapse {
+  @include size(1.5, 1.5);
+  background: #505050;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(40%, -30%);
+  cursor: pointer;
+  transition: .2s ease;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: units(.8);
+    background: #fff;
+  }
+  &:before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  &:after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &:hover {
+    background: $color_blue;
   }
 }
 
@@ -124,11 +190,11 @@
   .huww-title {
     font-size: units(1.75);
     line-height: units(2.25);
-    color: #0b3c94;
+    color: $color_blue;
   }
 
   .huww-subtitle {
-    color: #f7d648;
+    color: $color_yellow;
     padding-bottom: units(1);
   }
 }
@@ -167,13 +233,13 @@
 
   .huww-flag-top {
     @include size(4, 2);
-    background: #2559b5;
+    background: $color_blue;
     border-radius: units(1) units(1) 0 0;
   }
 
   .huww-flag-bottom {
     @include size(4, 2);
-    background: #f7d648;
+    background: $color_yellow;
     border-radius: 0 0 units(1) units(1);
   }
 }
@@ -181,7 +247,7 @@
 .huww-half-flag {
   .huww-half-flag-top {
     @include size(4, 2);
-    background: #2559b5;
+    background: $color_blue;
     border-radius: units(1) 0 0 0;
     height: 50%;
     width: 100%;
@@ -189,7 +255,7 @@
 
   .huww-half-flag-bottom {
     @include size(4, 2);
-    background: #f7d648;
+    background: $color_yellow;
     border-radius: 0 0 0 units(1);
     height: 50%;
     width: 100%;
@@ -220,50 +286,26 @@
   font-size: units(1.5);
   font-weight: 500;
   line-height: units(1.75);
-  color: #3798ce;
+  color: $color_blue;
   text-decoration: none;
+  position: relative;
+  padding-right: 1em;
 
-  &:hover::after {
-    content: "▸";
-  }
-}
-
-.huww-logo {
-  display: block;
-  @include size(2, 2);
-
-  background-color: #015bbb;
-
-  border-radius: units(2);
-  text-decoration: none;
-
-  transition: width 0.3s;
-  overflow: hidden;
-
-  .huww-logo-img {
-    @include size(2, 2);
-    @include absolute($right: 0, $top: 0);
-
-    background-image: url(data-url:./logo.svg);
-    background-size: cover;
-  }
-
-  .huww-logo-text {
-    @include absolute($top: 0, $right: 2);
-    width: units(5.5);
-    overflow: hidden;
-
-    font-family: "Roboto", sans-serif;
-    font-size: units(1);
-    line-height: units(2);
-    font-weight: 600;
-    white-space: nowrap;
-
-    color: white;
-  }
-
-  &:hover {
-    width: units(9);
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    font-size: inherit;
+    width: .3em;
+    height: .3em;
+    right: .5em;
+    transform: translate(50%,-60%) rotate(-45deg);
+    border-left: solid;
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: currentColor;
+    color: inherit;
   }
 }
 
@@ -272,7 +314,7 @@
   background: rgba(55, 152, 206, 0.12);
   border-radius: units(0.5);
 
-  color: #3798ce;
+  color: $color_blue;
 
   font-family: "Roboto", sans-serif;
   font-size: units(1.5);
@@ -299,7 +341,12 @@
   margin: 0;
 }
 
+.huww-trigger-flag {
+  cursor: pointer;
+}
+
 .huww-flag-wrapper {
+  box-shadow: $shadow;
   height: units(3);
   width: units(3);
   background: #FFFFFF;
@@ -312,30 +359,60 @@
 
   .huww-separeted-flag-top {
     @include size(2.2, 1.1);
-    background: #2559b5;
+    background: $color_blue;
     border-radius: units(0.31) units(0.31) 0 0;
   }
 
   .huww-separeted-flag-bottom {
     @include size(2.2, 1.1);
-    background: #f7d648;
+    background: $color_yellow;
     border-radius: 0 0 units(0.31) units(0.31);
   }
 }
 
-.huww-expended-widget1-wrapper{
-  @include size(13.75, 10);
-  @include expended-widget-wrapper;
-  padding: units(0.5) units(0.5) 0 units(0.5);
+.huww-expended-widget-wrapper {
+  box-shadow: $shadow;
+  width: units(13.75);
+  height: auto;
+  background: #FFFFFF;
+  border-radius: units(0.625);
+  border: 0.5px solid #E5E5E5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: units(0.5);
+  position: relative;
+
+  .huww-divider {
+    display: block;
+    width: 100%;
+    height: 0.5px;
+    background: #E5E5E5;
+    margin: units(0.5) 0;
+  }
 }
 
-.huww-expended-widget1-block{
+.huww-action {
   @include size(13.1, 2.2);
-  @include expended-widget-block;
+  color: $color_blue;
+  font-size: units(1.1);
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  text-decoration: none;
+
+  &:hover{
+    background: #2559B514;
+    border-radius: 3px;
+  }
   padding: units(0.7);
 }
 
-.huww-expended-widget-hide{
+.huww-expended-widget-hide {
   color: #272727;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -343,56 +420,62 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
 
+  &:after {
+    content: '';
+    display: inline-block;
+    margin-left: .3em;
+    font-size: inherit;
+    width: .3em;
+    height: .3em;
+    right: .5em;
+    transform: translate(50%,30%) rotate(135deg);
+    border-left: solid;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: currentColor;
+    color: inherit;
+  }
 
-  .huww-hide-button-arrow{
-    @include size(0.9 , 0.5);
-    display: flex;
-    background-image: url(data-url:./horizontal-arrow.svg);
-    background-size: cover;
-    margin-left: units(0.25);
+  &:hover {
+    color: $color_blue;
   }
 }
 
-.huww-expended-widget3-wrapper{
-  @include size(13.75, 7.5);
-  @include expended-widget-wrapper;
-  padding: units(0.5);
+.huww-expended-widget-hide-button {
+  @include size(1.5, 1.5);
+  background: #505050;
+  border-radius: 50%;
+  display: flex;
+  align-self: end;
+  border:none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(40%, 30%);
+  cursor: pointer;
 
-  .huww-expended-widget-hide-button {
-    @include size(1.25 , 1.25);
-    background: #505050;
-    border-radius: 50%;
-    display: flex;
-    align-self: end;
-    border:none;
-    margin-top: -5px;
-    margin-right: -7px;
-
-    .huww-hide-button-arrow{
-      @include size(0.3 , 1);
-      background-image: url(data-url:./arrow.svg);
-      background-size: cover;
-    }
+  &:before {
+    content: '';
+    position: absolute;
+    width: units(.4);
+    height: units(.4);
+    top: 50%;
+    left: 50%;
+    border-top: solid;
+    border-left: solid;
+    border-width: 2px;
+    border-color: #fff;
+    transform: translate(-35%, -55%) rotate(-45deg);
+    transition: .2s ease;
   }
-}
 
-.huww-expended-widget3-block{
-  @include size(13.1, 2.2);
-  @include expended-widget-block;
-  padding: units(0.7);
-}
-
-.huww-expended-widget4-wrapper{
-  @include size(16.8, 10);
-  @include expended-widget-wrapper;
-  padding: units(0.5) units(0.5) 0 units(0.5);
-}
-
-.huww-expended-widget4-block{
-  @include size(15.5, 2.2);
-  @include expended-widget-block;
-  padding: units(0.5);
+  &:hover {
+    background: $color_blue;
+  }
 }
 
 .huww-heart{

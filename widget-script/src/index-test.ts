@@ -1,4 +1,4 @@
-import { createWidget } from "./render";
+import {createWidget, widgetBehavior} from "./render";
 import cssText from 'bundle-text:./styles/styles.scss';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.append(createWidget("two", "top-right"));
     document.body.append(createWidget("three", "bottom-right"));
     document.body.append(createWidget("four", "bottom-left"));
+
+		widgetBehavior();
 });
 
 
@@ -15,4 +17,3 @@ function injectStyles() {
     document.head.appendChild(style);
     style.appendChild(document.createTextNode(cssText));
 }
-
