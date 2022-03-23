@@ -71,3 +71,60 @@ function createHalfFlag() {
         crel('div', { class: 'huww-half-flag-bottom' })
     )
 }
+
+function createFlagBlock() {
+    return crel('div', {class: 'huww-flag-wrapper'},
+        crel('div', { class: 'huww-separeted-flag-top' }),
+        crel('div', { class: 'huww-separeted-flag-bottom' })
+        )
+}
+
+function createExpandedWidget1_2(){
+    return crel('div', {class: 'huww-expended-widget1-wrapper'},
+        crel('div', {class: 'huww-expended-widget1-block'},
+            crel('a', {}, 'Donate Army'),
+            crel('span',{},'💸')),
+        crel('div', {class: 'huww-expended-widget1-block'},
+            crel('a', {}, 'Other ways to help'),
+            crel('span',{class: 'huww-heart'},'❤')),
+        crel('div', {class: 'huww-expended-widget1-block'},
+            crel('a', {class: 'huww-heart'}, 'Get this widget'),
+            crel('span',{},'📌')),
+        crel('div', { class: 'huww-divider' }),
+        crel('div', {class: 'huww-expended-widget-hide'}, 'Hide',
+            crel('span',{class: 'huww-hide-button-arrow'})),
+    )
+}
+
+function createExpandedWidget3(){
+    return crel('div', {class: 'huww-expended-widget3-wrapper'},
+        crel('div', {class: 'huww-expended-widget3-block'},
+            crel('a', {}, 'Donate Army'),
+            crel('span',{},'💸')),
+        crel('div', {class: 'huww-expended-widget3-block'},
+            crel('a', {}, 'Other ways to help'),
+            crel('span',{class: 'huww-heart'},'❤')),
+        crel('div', {class: 'huww-expended-widget3-block'},
+            crel('a', {}, 'Get this widget'),
+            crel('span',{},'📌')),
+        crel('button', {class: 'huww-expended-widget-hide-button'},
+            crel('span', {class: 'huww-hide-button-arrow'})),
+    )
+}
+
+function createExpandedWidget4(){
+    return crel('div', {class: 'huww-expended-widget4-wrapper'},
+        crel('div', {class: 'huww-expended-widget4-block'},
+            crel('a', {}, 'Donate Army'),
+            crel('span',{},'💸')),
+        crel('div', {class: 'huww-expended-widget4-block'},
+            crel('a', {}, 'Other ways to help'),
+            crel('span',{class: 'huww-heart'},'❤')),
+        crel('div', {class: 'huww-expended-widget4-block'},
+            crel('a', {}, 'Get this widget'),
+            crel('span',{},'📌')),
+        crel('div', { class: 'huww-divider' }),
+        crel('div', {class: 'huww-expended-widget-hide'}, 'Hide',
+            crel('span',{class: 'huww-hide-button-arrow'})),
+    )
+}
