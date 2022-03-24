@@ -2,7 +2,6 @@
 $sliderSchema: ('collapsed', 'main', 'expanded');
 
 .huww-widget {
-  border: 1px solid green;
   position: fixed;
   overflow: hidden;
   pointer-events: none;
@@ -55,7 +54,6 @@ $sliderSchema: ('collapsed', 'main', 'expanded');
 }
 
 .huww-slide-container {
-  border: 1px solid orange;
   pointer-events: none;
 }
 

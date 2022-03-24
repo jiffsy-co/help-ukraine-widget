@@ -122,6 +122,7 @@ $shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .huww-widget-two {
+
   padding: units(2) units(1) units(1) units(1);
   margin-top: units(2);
   text-align: center;
@@ -247,6 +248,21 @@ $shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   text-align: center;
 
   text-decoration: none;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    font-size: inherit;
+    width: .3em;
+    height: .3em;
+    right: .5em;
+    transform: translate(30%,-25%) rotate(-135deg);
+    border-left: solid;
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: currentColor;
+    color: inherit;
+  }
 
   &:hover {
     text-decoration: underline;
