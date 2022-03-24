@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.append(createWidget("two", "top-right"));
     document.body.append(createWidget("three", "bottom-right"));
     document.body.append(createWidget("four", "bottom-left"));
+		document.body.append(createWidget("one", "middle-left"));
+		document.body.append(createWidget("two", "middle-right"));
 
 		sliderBehavior();
 });

@@ -5,7 +5,7 @@ export const landingUrl = "https://helpukrainewinwidget.org";
 export const widgetWidth = 400;
 export const widgetHeight = 250;
 
-export const widgetPositions = ['top-left', 'top-right', 'bottom-right', 'bottom-left'] as const;
+export const widgetPositions = ['top-left', 'top-right', 'bottom-right', 'bottom-left', 'middle-left', 'middle-right'] as const;
 export type WidgetPosition = typeof widgetPositions[number];
 
 export const slideLayout = ['collapsed', 'main', 'expanded'] as const;

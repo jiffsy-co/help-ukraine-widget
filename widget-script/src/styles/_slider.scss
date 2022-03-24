@@ -21,6 +21,16 @@ $sliderSchema: ('collapsed', 'main', 'expanded');
     right: 0;
     bottom: 0;
   }
+  &.huww-widget-middle-left {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  &.huww-widget-middle-right {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
 }
 
 .huww-slider {
@@ -85,6 +95,14 @@ $sliderSchema: ('collapsed', 'main', 'expanded');
   }
   .huww-widget-bottom-right & {
     align-items: flex-end;
+    justify-content: flex-end;
+  }
+  .huww-widget-middle-left & {
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .huww-widget-middle-right & {
+    align-items: center;
     justify-content: flex-end;
   }
 }
