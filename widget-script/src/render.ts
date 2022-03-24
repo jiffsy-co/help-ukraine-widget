@@ -1,6 +1,13 @@
 import crel from 'crelt';
-import { helpUrl, landingUrl, WidgetPosition, WidgetType } from './constants';
-import logo from 'bundle-text:./styles/logo.svg';
+import {
+	armyUrl,
+	helpUrl,
+	landingUrl,
+	WidgetPosition,
+	WidgetType,
+	AnimationDirection,
+	SlideLayout, slideLayout
+} from './constants';
 
 export function createWidget(type: WidgetType, position: WidgetPosition) {
     const widgetRenderers = {
@@ -42,21 +49,13 @@ export function widgetBehavior () {
 	} )
 }
 
-function widgetWrapper ( position: WidgetPosition, main: HTMLElement, flag: HTMLElement, expanded: HTMLElement ) {
-	return crel( 'div', { class: `huww-widget huww-widget-${position}` },
-		crel( 'div', {}, flag ),
-		crel( 'div', {}, main ),
-		crel( 'div', {}, expanded )
-	);
-}
-
 export function createWidget1(position: WidgetPosition) {
-		return widgetWrapper( position,
-			crel('div', { class: `huww-widget-main huww-widget-one` },
+		return createSlider( position, 'vertical',
+			crel('div', { class: 'huww-widget-one' },
 				createFlag(),
 				crel('p', { class: 'huww-title' }, 'Stop Russian Aggression!'),
-				crel('a', { class: 'huww-link huww-trigger-expand', href: helpUrl, target: '_blank' }, 'See what you can do'),
-				createCollapsed()
+				crel('a', { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2], href: helpUrl, target: '_blank' }, 'See what you can do'),
+				createCollapseButton()
 			),
 			createFlagBlock(),
 			createExpandedWidget1()
@@ -64,13 +63,13 @@ export function createWidget1(position: WidgetPosition) {
 }
 
 export function createWidget2(position: WidgetPosition) {
-		return widgetWrapper( position,
-			crel('div', { class: `huww-widget-main huww-widget-two` },
+		return createSlider( position, 'vertical',
+			crel('div', { class: 'huww-widget-two' },
 				createFlag(),
 				crel('p', { class: 'huww-title' }, 'Stop War! You can help!'),
 				crel('div', { class: 'huww-divider' }),
-				crel('a', { class: 'huww-link huww-trigger-expand', href: helpUrl, target: '_blank' }, 'See what you can do'),
-				createCollapsed(),
+				crel('a', { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2], href: helpUrl, target: '_blank' }, 'See what you can do'),
+				createCollapseButton(),
 			),
 			createFlagBlock(),
 			createExpandedWidget2()
@@ -78,12 +77,12 @@ export function createWidget2(position: WidgetPosition) {
 }
 
 export function createWidget3(position: WidgetPosition) {
-	return widgetWrapper( position,
-		crel('div', { class: `huww-widget-main huww-widget-three` },
+	return createSlider( position, 'vertical',
+		crel('div', { class: 'huww-widget-three' },
 			crel('p', { class: 'huww-title' }, 'Stop War!'),
 			crel('p', { class: 'huww-subtitle' }, 'Help Ukraine!'),
-			crel('a', { class: 'huww-button huww-trigger-expand', href: helpUrl, target: '_blank' }, 'See how'),
-			createCollapsed(),
+			crel('a', { class: 'huww-button huww-trigger', 'data-trigger': slideLayout[2], href: helpUrl, target: '_blank' }, 'See how'),
+			createCollapseButton(),
 		),
 		createFlagBlock(),
 		createExpandedWidget3()
@@ -91,12 +90,12 @@ export function createWidget3(position: WidgetPosition) {
 }
 
 export function createWidget4(position: WidgetPosition) {
-	return widgetWrapper( position,
-		crel('div', { class: `huww-widget-main huww-widget-four huww-widget-${position}` },
+	return createSlider( position, 'horizontal',
+		crel('div', { class: 'huww-widget-four' },
 			crel('p', { class: 'huww-title' }, 'Help 🇺🇦 Ukraine win!'),
 			crel('p', { class: 'huww-hashtag' }, '#StandWithUkraine'),
-			crel('a', { class: 'huww-link huww-trigger-expand', href: helpUrl, target: '_blank' }, 'See how to help'),
-			createCollapsed(),
+			crel('a', { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2], href: helpUrl, target: '_blank' }, 'See how to help'),
+			createCollapseButton(),
 			createHalfFlag(),
 		),
 		createFlagBlock(),
@@ -104,8 +103,24 @@ export function createWidget4(position: WidgetPosition) {
 	);
 }
 
-function createCollapsed() {
-	return crel( 'div', { class: 'huww-trigger-collapse' } )
+function createSlider ( position: WidgetPosition, direction: AnimationDirection, main: HTMLElement, collapsed: HTMLElement, expanded: HTMLElement ) {
+	return crel( 'div', { class: `huww-widget huww-widget-${position}` },
+		crel( 'div', { class: `huww-slider huww-slider-direction-${direction}` },
+			createSlide( 'collapsed', collapsed ),
+			createSlide( 'main', main ),
+			createSlide( 'expanded', expanded ),
+		),
+	);
+}
+
+function createSlide ( slideLayout: SlideLayout, slideElem: HTMLElement ) {
+	return crel( 'div', { class: 'huww-slide', 'data-slide': slideLayout },
+		crel( 'div', { class: 'huww-slide-container' }, slideElem )
+	);
+}
+
+function createCollapseButton() {
+	return crel( 'div', { class: 'huww-button-collapse huww-trigger', 'data-trigger': slideLayout[0] } )
 }
 
 function createFlag() {
@@ -123,7 +138,7 @@ function createHalfFlag() {
 }
 
 function createFlagBlock() {
-    return crel('div', {class: 'huww-flag-wrapper huww-trigger-flag'},
+    return crel('div', {class: 'huww-flag-wrapper huww-trigger', 'data-trigger': slideLayout[1] },
         crel('div', { class: 'huww-separeted-flag-top' }),
         crel('div', { class: 'huww-separeted-flag-bottom' })
         )
@@ -133,7 +148,7 @@ function createExpandedWidget1(){
     return crel('div', {class: 'huww-expended-widget-wrapper'},
 	    createActionList(),
 	    crel('div', { class: 'huww-divider' }),
-	    crel('div', {class: 'huww-expended-widget-hide huww-trigger-main'}, 'Hide' ),
+	    crel('div', {class: 'huww-expended-widget-hide huww-trigger', 'data-trigger': slideLayout[1] }, 'Hide' ),
     )
 }
 
@@ -141,27 +156,40 @@ function createExpandedWidget2(){
 	return crel('div', {class: 'huww-expended-widget-wrapper huww-expended-widget-wrapper-small'},
 		createActionList(),
 		crel('div', { class: 'huww-divider' }),
-		crel('div', {class: 'huww-expended-widget-hide huww-trigger-main'}, 'Hide' ),
+		crel('div', {class: 'huww-expended-widget-hide huww-trigger', 'data-trigger': slideLayout[1] }, 'Hide' ),
 	)
 }
 
 function createExpandedWidget3(){
     return crel('div', {class: 'huww-expended-widget-wrapper huww-expended-widget-wrapper-small'},
 	    createActionList(),
-      crel('button', {class: 'huww-expended-widget-hide-button huww-trigger-main'} )
+      crel('button', {class: 'huww-expended-widget-hide-button huww-trigger', 'data-trigger': slideLayout[1] } )
     )
 }
 
 function createActionList() {
 	return crel( 'div', { class: 'huww-action-list' },
-		crel('a', {class: 'huww-action', target: '_blank', href: 'https://helpukrainewin.org/'},
-			crel('span', {}, 'Donate Army'),
-			crel('span',{},'💸')),
-		crel('a', {class: 'huww-action', target: '_blank', href: 'https://helpukrainewin.org/'},
-			crel('span', {}, 'Other ways to help'),
-			crel('span',{class: 'huww-heart'},'❤')),
-		crel('a', {class: 'huww-action', target: '_blank', href: 'https://helpukrainewinwidget.org/'},
-			crel('span', {}, 'Get this widget'),
-			crel('span',{},'📌')),
+		createActionItem(
+			armyUrl,
+			'Donate Army',
+			'💸'
+		),
+		createActionItem(
+			helpUrl,
+			'Other ways to help',
+			'❤' , 'huww-heart'
+		),
+		createActionItem(
+			landingUrl,
+			'Get this widget',
+			'📌'
+		)
+	);
+}
+
+function createActionItem ( href: string, text: string, emoji: string, emojiClass?: string ) {
+	return crel('a', {class: 'huww-action', target: '_blank', href },
+		crel('span', {}, text ),
+		crel('span',{ class: emojiClass }, emoji )
 	);
 }

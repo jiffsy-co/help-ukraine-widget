@@ -1,8 +1,15 @@
-export const landingUrl = "https://helpukrainewinwidget.org";
+export const armyUrl = "https://helpukrainewin.org";
 export const helpUrl = "https://helpukrainewin.org";
+export const landingUrl = "https://helpukrainewinwidget.org";
 
 export const widgetPositions = ['top-left', 'top-right', 'bottom-right', 'bottom-left'] as const;
 export type WidgetPosition = typeof widgetPositions[number];
+
+export const slideLayout = ['collapsed', 'main', 'expanded'] as const;
+export type SlideLayout = typeof slideLayout[number];
+
+export const animationDirection = ['vertical', 'horizontal'] as const;
+export type AnimationDirection = typeof animationDirection[number];
 
 export const widgetTypes = ["one", "two", "three", "four"] as const;
 export type WidgetType = typeof widgetTypes[number];

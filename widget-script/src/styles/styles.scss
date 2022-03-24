@@ -53,11 +53,11 @@ $shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     align-items: flex-start;
     justify-content: flex-start;
   }
-  & > div {
-    transition: .2s ease;
-    height: 0;
-    opacity: 0;
-  }
+  //& > div {
+  //  transition: .2s ease;
+  //  height: 0;
+  //  opacity: 0;
+  //}
   @each $slide in 1,2,3 {
     &[data-slide='#{$slide}'] > div {
       &:nth-child(#{$slide}) {
@@ -69,7 +69,6 @@ $shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
       }
     }
   }
-
   &.huww-widget-top-left {
     @include fixed($top: 2, $left: 2);
     &, & > div {
@@ -77,7 +76,6 @@ $shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
       justify-content: flex-start;
     }
   }
-
   &.huww-widget-top-right {
     @include fixed($top: 2, $right: 2);
     &, & > div {
@@ -85,7 +83,6 @@ $shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
       justify-content: flex-start;
     }
   }
-
   &.huww-widget-bottom-right {
     @include fixed($bottom: 2, $right: 2);
     &, & > div {
@@ -93,7 +90,6 @@ $shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
       justify-content: flex-end;
     }
   }
-
   &.huww-widget-bottom-left {
     @include fixed($bottom: 2, $left: 2);
     &, & > div {
@@ -101,7 +97,6 @@ $shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
       justify-content: flex-end;
     }
   }
-
   .huww-widget-main {
     position: relative;
     top: auto;
@@ -111,31 +106,19 @@ $shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   }
 }
 
-.huww-widget-main {
+.huww-slide-container {
   background-color: white;
   border-radius: units(1);
   box-shadow: $shadow;
-  z-index: 99999;
   position: relative;
-
-  &.huww-widget-top-left {
-    @include fixed($top: 2, $left: 2);
-  }
-
-  &.huww-widget-top-right {
-    @include fixed($top: 2, $right: 2);
-  }
-
-  &.huww-widget-bottom-right {
-    @include fixed($bottom: 2, $right: 2);
-  }
-
-  &.huww-widget-bottom-left {
-    @include fixed($bottom: 2, $left: 2);
-  }
+  z-index: 99999;
 }
 
-.huww-trigger-collapse {
+.huww-trigger {
+  cursor: pointer;
+}
+
+.huww-button-collapse {
   @include size(1.5, 1.5);
   background: #505050;
   border-radius: 100%;
@@ -341,17 +324,9 @@ $shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   margin: 0;
 }
 
-.huww-trigger-flag {
-  cursor: pointer;
-}
-
 .huww-flag-wrapper {
-  box-shadow: $shadow;
   height: units(5.5);
   width: units(5.5);
-  background: #FFFFFF;
-  border: 0.5px solid #E5E5E5;
-  border-radius: units(1);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -371,12 +346,8 @@ $shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .huww-expended-widget-wrapper {
-  box-shadow: $shadow;
   width: units(25.7);
   height: auto;
-  background: #FFFFFF;
-  border-radius: units(0.625);
-  border: 0.5px solid #E5E5E5;
   display: flex;
   flex-direction: column;
   align-items: center;
