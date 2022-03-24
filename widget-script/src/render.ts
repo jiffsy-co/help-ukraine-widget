@@ -16,8 +16,10 @@ export function createWidget(type: WidgetType, position: WidgetPosition) {
 export function createWidget1(position: WidgetPosition) {
     return crel('div', { class: `huww-widget huww-widget-one huww-widget-${position}` },
         crel('p', { class: 'huww-title' }, 'Stop Russian Aggression!'),
-        crel('a', { class: 'huww-link', href: helpUrl, target: '_blank' }, 'See what you can do'),
-        createLogo(),
+        crel('a', { class: 'huww-link', href: helpUrl, target: '_blank' }, 'See what you can do',
+            crel('span',{class: 'huww-open-arrow'}),
+    ),
+        createCloseButton(),
         createFlag(),
     );
 }
@@ -27,8 +29,10 @@ export function createWidget2(position: WidgetPosition) {
         createFlag(),
         crel('p', { class: 'huww-title' }, 'Stop War! You can help!'),
         crel('div', { class: 'huww-divider' }),
-        crel('a', { class: 'huww-link', href: helpUrl, target: '_blank' }, 'See what you can do'),
-        createLogo(),
+        crel('a', { class: 'huww-link', href: helpUrl, target: '_blank' }, 'See what you can do',
+            crel('span',{class: 'huww-open-arrow'}),
+        ),
+        createCloseButton(),
     );
 }
 
@@ -36,8 +40,10 @@ export function createWidget3(position: WidgetPosition) {
     return crel('div', { class: `huww-widget huww-widget-three huww-widget-${position}` },
         crel('p', { class: 'huww-title' }, 'Stop War!'),
         crel('p', { class: 'huww-subtitle' }, 'Help Ukraine!'),
-        crel('a', { class: 'huww-button', href: helpUrl, target: '_blank' }, 'See how'),
-        createLogo(),
+        crel('a', { class: 'huww-button', href: helpUrl, target: '_blank' }, 'See how',
+            crel('span',{class: 'huww-open-arrow'}),
+        ),
+        createCloseButton(),
     );
 }
 
@@ -45,8 +51,10 @@ export function createWidget4(position: WidgetPosition) {
     return crel('div', { class: `huww-widget huww-widget-four huww-widget-${position}` },
         crel('p', { class: 'huww-title' }, 'Help 🇺🇦 Ukraine win!'),
         crel('p', { class: 'huww-hashtag' }, '#StandWithUkraine'),
-        crel('a', { class: 'huww-link', href: helpUrl, target: '_blank' }, 'See how to help'),
-        createLogo(),
+        crel('a', { class: 'huww-link', href: helpUrl, target: '_blank' }, 'See how to help',
+            crel('span',{class: 'huww-open-arrow'}),
+            ),
+        createCloseButton(),
         createHalfFlag(),
     );
 }
@@ -56,6 +64,12 @@ function createLogo() {
         crel('span', {class: 'huww-logo-img'}),
         crel('span', { class: 'huww-logo-text'}, 'Get widget'),
     );
+}
+
+function createCloseButton() {
+    return crel('span', {class: 'huww-close-button'},
+        crel('span', {class: 'huww-close-span'}),
+        );
 }
 
 function createFlag() {
