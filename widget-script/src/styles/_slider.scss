@@ -6,6 +6,10 @@ $transition: 350;
   position: fixed;
   overflow: hidden;
   pointer-events: none;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
   &.huww-widget-top-left {
     top: 0;
     left: 0;
@@ -40,25 +44,25 @@ $transition: 350;
   transition: #{$transition}ms ease;
   &, &.huww-slider-direction-vertical {
     flex-direction: column !important;
-    &[data-slide='collapsed'] {
+    [data-slide='collapsed'] & {
       transform: translateY(0);
     }
-    &, &[data-slide='main'] {
+    &, [data-slide='main'] & {
       transform: translateY(-100%);
     }
-    &[data-slide='expanded'] {
+    [data-slide='expanded'] & {
       transform: translateY(-200%);
     }
   }
   &.huww-slider-direction-horizontal {
     flex-direction: row !important;
-    &[data-slide='collapsed'] {
+    [data-slide='collapsed'] & {
       transform: translateX(0);
     }
-    &, &[data-slide='main'] {
+    &, [data-slide='main'] & {
       transform: translateX(-100%);
     }
-    &[data-slide='expanded'] {
+    [data-slide='expanded'] & {
       transform: translateX(-200%);
     }
   }
@@ -74,7 +78,7 @@ $transition: 350;
   transition: #{$transition}ms ease;
   opacity: 0;
   @each $slide in $sliderSchema {
-    .huww-slider:not([data-slide]) &[data-slide='main'],
+    .huww-widget:not([data-slide]) &[data-slide='main'],
     [data-slide='#{$slide}'] &[data-slide='#{$slide}'] {
       opacity: 1;
       .huww-slide-container {
