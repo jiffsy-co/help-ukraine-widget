@@ -1,6 +1,6 @@
 import cssText from 'bundle-text:./styles/styles.scss';
 import { getConfig, WidgetConfig } from './config';
-import {createWidget, widgetBehavior} from './render';
+import {createWidget, sliderBehavior} from './render';
 
 
 if (document.readyState !== "loading") {
@@ -25,6 +25,6 @@ function injectStyles() {
 function initWidget(config: WidgetConfig) {
     document.body.append(createWidget(config.widgetType, config.widgetPosition));
 
-		widgetBehavior();
+		sliderBehavior();
 }
 

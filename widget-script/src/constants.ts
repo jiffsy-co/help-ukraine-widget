@@ -2,6 +2,9 @@ export const armyUrl = "https://helpukrainewin.org";
 export const helpUrl = "https://helpukrainewin.org";
 export const landingUrl = "https://helpukrainewinwidget.org";
 
+export const widgetWidth = 400;
+export const widgetHeight = 250;
+
 export const widgetPositions = ['top-left', 'top-right', 'bottom-right', 'bottom-left'] as const;
 export type WidgetPosition = typeof widgetPositions[number];
 

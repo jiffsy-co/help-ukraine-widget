@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-
+@import "slider";
 
 @function units($value) {
   @return $value * 12.8px;
@@ -46,64 +46,7 @@ $shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .huww-widget {
-  pointer-events: none;
-  &, & > div {
-    display: flex;
-    flex-flow: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-  //& > div {
-  //  transition: .2s ease;
-  //  height: 0;
-  //  opacity: 0;
-  //}
-  @each $slide in 1,2,3 {
-    &[data-slide='#{$slide}'] > div {
-      &:nth-child(#{$slide}) {
-        height: units(13);
-        opacity: 1;
-        & > div {
-          pointer-events: auto;
-        }
-      }
-    }
-  }
-  &.huww-widget-top-left {
-    @include fixed($top: 2, $left: 2);
-    &, & > div {
-      align-items: flex-start;
-      justify-content: flex-start;
-    }
-  }
-  &.huww-widget-top-right {
-    @include fixed($top: 2, $right: 2);
-    &, & > div {
-      align-items: flex-end;
-      justify-content: flex-start;
-    }
-  }
-  &.huww-widget-bottom-right {
-    @include fixed($bottom: 2, $right: 2);
-    &, & > div {
-      align-items: flex-end;
-      justify-content: flex-end;
-    }
-  }
-  &.huww-widget-bottom-left {
-    @include fixed($bottom: 2, $left: 2);
-    &, & > div {
-      align-items: flex-start;
-      justify-content: flex-end;
-    }
-  }
-  .huww-widget-main {
-    position: relative;
-    top: auto;
-    left: auto;
-    bottom: auto;
-    right: auto;
-  }
+  padding: units(2)
 }
 
 .huww-slide-container {
@@ -112,10 +55,6 @@ $shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   box-shadow: $shadow;
   position: relative;
   z-index: 99999;
-}
-
-.huww-trigger {
-  cursor: pointer;
 }
 
 .huww-button-collapse {

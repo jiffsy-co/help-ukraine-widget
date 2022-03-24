@@ -1,4 +1,4 @@
-import {createWidget, widgetBehavior} from "./render";
+import {createWidget, sliderBehavior} from "./render";
 import cssText from 'bundle-text:./styles/styles.scss';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.append(createWidget("three", "bottom-right"));
     document.body.append(createWidget("four", "bottom-left"));
 
-		widgetBehavior();
+		sliderBehavior();
 });
 
 

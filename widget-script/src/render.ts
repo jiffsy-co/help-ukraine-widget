@@ -6,7 +6,10 @@ import {
 	WidgetPosition,
 	WidgetType,
 	AnimationDirection,
-	SlideLayout, slideLayout
+	SlideLayout,
+	slideLayout,
+	widgetWidth,
+	widgetHeight
 } from './constants';
 
 export function createWidget(type: WidgetType, position: WidgetPosition) {
@@ -20,33 +23,21 @@ export function createWidget(type: WidgetType, position: WidgetPosition) {
     return widgetRenderers[type](position);
 }
 
-export function widgetBehavior () {
-	// @ts-ignore
-	const widgetList = [...document.querySelectorAll('.huww-widget')]
-
-	widgetList.forEach( (widget: HTMLElement) => {
-		const hide = widget.querySelector<HTMLElement>('.huww-trigger-main')!
-		const link = widget.querySelector<HTMLElement>('.huww-trigger-expand')!
-		const flag = widget.querySelector<HTMLElement>('.huww-trigger-flag')!
-		const logo = widget.querySelector<HTMLElement>('.huww-trigger-collapse')!
-
-		if ( [hide,link,flag,logo].some( elem =>!elem ) ) {
-			return
-		}
-
-		const setSlide = ( elem: HTMLElement, index: number ) => {
-			elem.addEventListener('click', (e) => {
+export function sliderBehavior() {
+	const widgets = document.querySelectorAll('.huww-widget')
+	const slide = (widget: HTMLElement) => {
+		const slider = widget.querySelector<HTMLElement>('.huww-slider')!
+		const triggerList = widget.querySelectorAll('.huww-trigger')!
+			// @ts-ignore
+		;[...triggerList].forEach((triggerElem: HTMLElement) => {
+			triggerElem.addEventListener('click', (e) => {
 				e.preventDefault()
-				widget.dataset.slide = index.toString()
-			} )
-		}
-
-		setSlide( logo, 1 )
-		setSlide( flag, 2 )
-		setSlide( hide, 2 )
-		setSlide( link, 3 )
-		widget.dataset.slide = '2'
-	} )
+				slider.dataset.slide = triggerElem.dataset.trigger
+			})
+		})
+	}
+		// @ts-ignore
+	;[...widgets].forEach((widget) => slide(widget))
 }
 
 export function createWidget1(position: WidgetPosition) {
@@ -77,7 +68,7 @@ export function createWidget2(position: WidgetPosition) {
 }
 
 export function createWidget3(position: WidgetPosition) {
-	return createSlider( position, 'vertical',
+	return createSlider( position, 'horizontal',
 		crel('div', { class: 'huww-widget-three' },
 			crel('p', { class: 'huww-title' }, 'Stop War!'),
 			crel('p', { class: 'huww-subtitle' }, 'Help Ukraine!'),
@@ -105,7 +96,7 @@ export function createWidget4(position: WidgetPosition) {
 
 function createSlider ( position: WidgetPosition, direction: AnimationDirection, main: HTMLElement, collapsed: HTMLElement, expanded: HTMLElement ) {
 	return crel( 'div', { class: `huww-widget huww-widget-${position}` },
-		crel( 'div', { class: `huww-slider huww-slider-direction-${direction}` },
+		crel( 'div', { class: `huww-slider huww-slider-direction-${direction}`, style: `width:${widgetWidth};height:${widgetHeight};` },
 			createSlide( 'collapsed', collapsed ),
 			createSlide( 'main', main ),
 			createSlide( 'expanded', expanded ),
