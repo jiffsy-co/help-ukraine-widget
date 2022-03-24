@@ -1,5 +1,5 @@
-export const armyUrl = "https://helpukrainewin.org";
-export const helpUrl = "https://helpukrainewin.org";
+export const donateUrl = "https://helpukrainewin.org";
+export const supportUrl = "https://war.ukraine.ua";
 export const landingUrl = "https://helpukrainewinwidget.org";
 
 export const sliderStorageKey = 'huww-slider-state';
