@@ -1,5 +1,6 @@
 
 $sliderSchema: ('collapsed', 'main', 'expanded');
+$transition: 350;
 
 .huww-widget {
   position: fixed;
@@ -36,7 +37,7 @@ $sliderSchema: ('collapsed', 'main', 'expanded');
 .huww-slider {
   display: flex;
   flex-wrap: nowrap;
-  transition: 150ms ease;
+  transition: #{$transition}ms ease;
   &, &.huww-slider-direction-vertical {
     flex-direction: column !important;
     &[data-slide='collapsed'] {
@@ -70,7 +71,7 @@ $sliderSchema: ('collapsed', 'main', 'expanded');
 .huww-slide {
   flex: 1 0 100% !important;
   display: flex;
-  transition: .1s ease;
+  transition: #{$transition}ms ease;
   opacity: 0;
   @each $slide in $sliderSchema {
     .huww-slider:not([data-slide]) &[data-slide='main'],

@@ -14,7 +14,7 @@ import {
 	widgetHeight
 } from './constants';
 
-export function createWidget(type: WidgetType, position: WidgetPosition) {
+export function createWidget(type: WidgetType, position: WidgetPosition, initialSlide: SlideLayout ) {
     const widgetRenderers = {
         one: createWidget1,
         two: createWidget2,
@@ -22,7 +22,7 @@ export function createWidget(type: WidgetType, position: WidgetPosition) {
         four: createWidget4,
     }
 
-    return widgetRenderers[type](position);
+    return widgetRenderers[type](position, initialSlide);
 }
 
 export function sliderBehavior() {
@@ -42,8 +42,8 @@ export function sliderBehavior() {
 	;[...widgets].forEach((widget) => slide(widget))
 }
 
-export function createWidget1(position: WidgetPosition) {
-		return createSlider( position, 'vertical', 'one', [
+export function createWidget1(position: WidgetPosition, initialSlide: SlideLayout ) {
+		return createSlider( position, initialSlide, 'vertical', 'one', [
 				createFlag(),
 				crel('p', { class: 'huww-title' }, 'Stop Russian Aggression!'),
 				crel('a', { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2], href: helpUrl, target: '_blank' }, 'See what you can do'),
@@ -54,8 +54,8 @@ export function createWidget1(position: WidgetPosition) {
 		);
 }
 
-export function createWidget2(position: WidgetPosition) {
-		return createSlider( position, 'vertical', 'two', [
+export function createWidget2(position: WidgetPosition, initialSlide: SlideLayout) {
+		return createSlider( position, initialSlide,'vertical', 'two', [
 				createFlag(),
 				crel('p', { class: 'huww-title' }, 'Stop War! You can help!'),
 				crel('div', { class: 'huww-divider' }),
@@ -67,8 +67,8 @@ export function createWidget2(position: WidgetPosition) {
 		);
 }
 
-export function createWidget3(position: WidgetPosition) {
-	return createSlider( position, 'horizontal', 'three', [
+export function createWidget3(position: WidgetPosition, initialSlide: SlideLayout) {
+	return createSlider( position, initialSlide,'horizontal', 'three', [
 			crel('p', { class: 'huww-title' }, 'Stop War!'),
 			crel('p', { class: 'huww-subtitle' }, 'Help Ukraine!'),
 			crel('a', { class: 'huww-button huww-trigger', 'data-trigger': slideLayout[2], href: helpUrl, target: '_blank' }, 'See how'),
@@ -79,8 +79,8 @@ export function createWidget3(position: WidgetPosition) {
 	);
 }
 
-export function createWidget4(position: WidgetPosition) {
-	return createSlider( position, 'vertical', 'four',[
+export function createWidget4(position: WidgetPosition, initialSlide: SlideLayout) {
+	return createSlider( position, initialSlide,'vertical', 'four',[
 			crel('p', { class: 'huww-title' }, 'Help 🇺🇦 Ukraine win!'),
 			crel('p', { class: 'huww-hashtag' }, '#StandWithUkraine'),
 			crel('a', { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2], href: helpUrl, target: '_blank' }, 'See how to help'),
@@ -92,11 +92,15 @@ export function createWidget4(position: WidgetPosition) {
 	);
 }
 
-function createSlider ( position: WidgetPosition, direction: AnimationDirection, widgetType: WidgetType, mainList: HTMLElement[], collapsed: HTMLElement, expanded: HTMLElement ) {
+function createSlider ( position: WidgetPosition, initialSlide: SlideLayout, direction: AnimationDirection, widgetType: WidgetType, mainList: HTMLElement[], collapsed: HTMLElement, expanded: HTMLElement ) {
 	const main = document.createDocumentFragment()
 	mainList.forEach( elem => main.appendChild(elem) )
 	return crel( 'div', { class: `huww-widget huww-widget-${position}` },
-		crel( 'div', { class: `huww-slider huww-slider-direction-${direction}`, style: `width:${widgetWidth};height:${widgetHeight};` },
+		crel( 'div', {
+				class: `huww-slider huww-slider-direction-${direction}`,
+				style: `width:${widgetWidth};height:${widgetHeight};`,
+				'data-slide': initialSlide
+			},
 			createSlide( 'collapsed', collapsed ),
 			createSlide( 'main', main, widgetType ),
 			createSlide( 'expanded', expanded ),
