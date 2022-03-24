@@ -56,7 +56,7 @@ export function createWidget1(position: WidgetPosition) {
 				createFlag(),
 				crel('p', { class: 'huww-title' }, 'Stop Russian Aggression!'),
 				crel('a', { class: 'huww-link huww-trigger-expand', href: helpUrl, target: '_blank' }, 'See what you can do'),
-				createLogo()
+				createCollapsed()
 			),
 			createFlagBlock(),
 			createExpandedWidget1()
@@ -70,10 +70,10 @@ export function createWidget2(position: WidgetPosition) {
 				crel('p', { class: 'huww-title' }, 'Stop War! You can help!'),
 				crel('div', { class: 'huww-divider' }),
 				crel('a', { class: 'huww-link huww-trigger-expand', href: helpUrl, target: '_blank' }, 'See what you can do'),
-				createLogo(),
+				createCollapsed(),
 			),
 			createFlagBlock(),
-			createExpandedWidget1()
+			createExpandedWidget2()
 		);
 }
 
@@ -83,10 +83,10 @@ export function createWidget3(position: WidgetPosition) {
 			crel('p', { class: 'huww-title' }, 'Stop War!'),
 			crel('p', { class: 'huww-subtitle' }, 'Help Ukraine!'),
 			crel('a', { class: 'huww-button huww-trigger-expand', href: helpUrl, target: '_blank' }, 'See how'),
-			createLogo(),
+			createCollapsed(),
 		),
 		createFlagBlock(),
-		createExpandedWidget2()
+		createExpandedWidget3()
 	);
 }
 
@@ -96,15 +96,15 @@ export function createWidget4(position: WidgetPosition) {
 			crel('p', { class: 'huww-title' }, 'Help 🇺🇦 Ukraine win!'),
 			crel('p', { class: 'huww-hashtag' }, '#StandWithUkraine'),
 			crel('a', { class: 'huww-link huww-trigger-expand', href: helpUrl, target: '_blank' }, 'See how to help'),
-			createLogo(),
+			createCollapsed(),
 			createHalfFlag(),
 		),
 		createFlagBlock(),
-		createExpandedWidget1()
+		createExpandedWidget2()
 	);
 }
 
-function createLogo() {
+function createCollapsed() {
 	return crel( 'div', { class: 'huww-trigger-collapse' } )
 }
 
@@ -138,7 +138,15 @@ function createExpandedWidget1(){
 }
 
 function createExpandedWidget2(){
-    return crel('div', {class: 'huww-expended-widget-wrapper'},
+	return crel('div', {class: 'huww-expended-widget-wrapper huww-expended-widget-wrapper-small'},
+		createActionList(),
+		crel('div', { class: 'huww-divider' }),
+		crel('div', {class: 'huww-expended-widget-hide huww-trigger-main'}, 'Hide' ),
+	)
+}
+
+function createExpandedWidget3(){
+    return crel('div', {class: 'huww-expended-widget-wrapper huww-expended-widget-wrapper-small'},
 	    createActionList(),
       crel('button', {class: 'huww-expended-widget-hide-button huww-trigger-main'} )
     )
