@@ -1,4 +1,6 @@
 import crel from 'crelt';
+import clsx from 'clsx';
+
 import {
 	armyUrl,
 	helpUrl,
@@ -104,7 +106,7 @@ function createSlider ( position: WidgetPosition, direction: AnimationDirection,
 
 function createSlide ( slideLayout: SlideLayout, slideElem: HTMLElement | DocumentFragment, widgetType?: WidgetType ) {
 	return crel( 'div', { class: 'huww-slide', 'data-slide': slideLayout },
-		crel( 'div', { class: `huww-slide-container huww-widget-${widgetType}` }, slideElem )
+		crel( 'div', { class: clsx( 'huww-slide-container', widgetType && `huww-widget-${widgetType}` ) }, slideElem )
 	);
 }
 
