@@ -1,5 +1,4 @@
 import crel from 'crelt';
-import clsx from 'clsx';
 
 import {
 	armyUrl,
@@ -26,71 +25,78 @@ export function createWidget(type: WidgetType, position: WidgetPosition, initial
 }
 
 export function createWidget1(position: WidgetPosition, initialSlide: SlideLayout ) {
-		return createSlider( position, initialSlide, 'vertical', 'one', [
+		return createSlider( position, initialSlide, 'vertical',
+			crel( 'div', { class: 'huww-widget-one' },
 				createFlag(),
 				crel('p', { class: 'huww-title' }, 'Stop Russian Aggression!'),
 				crel('a', { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2], href: helpUrl, target: '_blank' }, 'See what you can do'),
-				createCollapseButton(),
-			],
+				createCollapseButton()
+			),
 			createFlagBlock(),
 			createExpandedWidget1()
 		);
 }
 
 export function createWidget2(position: WidgetPosition, initialSlide: SlideLayout) {
-		return createSlider( position, initialSlide,'vertical', 'two', [
+		return createSlider( position, initialSlide,'vertical',
+			crel( 'div', { class: 'huww-widget-two' },
 				createFlag(),
 				crel('p', { class: 'huww-title' }, 'Stop War! You can help!'),
 				crel('div', { class: 'huww-divider' }),
 				crel('a', { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2], href: helpUrl, target: '_blank' }, 'See what you can do'),
-				createCollapseButton(),
-			],
+				createCollapseButton()
+			),
 			createFlagBlock(),
 			createExpandedWidget2()
 		);
 }
 
 export function createWidget3(position: WidgetPosition, initialSlide: SlideLayout) {
-	return createSlider( position, initialSlide,'horizontal', 'three', [
+	return createSlider( position, initialSlide,'horizontal',
+		crel( 'div', { class: 'huww-widget-three' },
 			crel('p', { class: 'huww-title' }, 'Stop War!'),
 			crel('p', { class: 'huww-subtitle' }, 'Help Ukraine!'),
 			crel('a', { class: 'huww-button huww-trigger', 'data-trigger': slideLayout[2], href: helpUrl, target: '_blank' }, 'See how'),
-			createCollapseButton(),
-		],
+			createCollapseButton()
+		),
 		createFlagBlock(),
 		createExpandedWidget3()
 	);
 }
 
 export function createWidget4(position: WidgetPosition, initialSlide: SlideLayout) {
-	return createSlider( position, initialSlide,'vertical', 'four',[
+	return createSlider( position, initialSlide,'vertical',
+		crel( 'div', { class: 'huww-widget-four' },
 			crel('p', { class: 'huww-title' }, 'Help 🇺🇦 Ukraine win!'),
 			crel('p', { class: 'huww-hashtag' }, '#StandWithUkraine'),
 			crel('a', { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2], href: helpUrl, target: '_blank' }, 'See how to help'),
 			createCollapseButton(),
-			createHalfFlag(),
-		],
+			createHalfFlag()
+		),
 		createFlagBlock(),
 		createExpandedWidget2()
 	);
 }
 
-function createSlider ( position: WidgetPosition, initialSlide: SlideLayout, direction: AnimationDirection, widgetType: WidgetType, mainList: HTMLElement[], collapsed: HTMLElement, expanded: HTMLElement ) {
-	const main = document.createDocumentFragment()
-	mainList.forEach( elem => main.appendChild(elem) )
+function createSlider (
+	position: WidgetPosition,
+	initialSlide: SlideLayout,
+	direction: AnimationDirection,
+	main: HTMLElement,
+	collapsed: HTMLElement,
+	expanded: HTMLElement
+) {
 	return crel( 'div', { class: `huww-widget huww-widget-${position}`, 'data-slide': initialSlide },
 		crel( 'div', { class: `huww-slider huww-slider-direction-${direction}`, style: `width:${widgetWidth};height:${widgetHeight};` },
 			createSlide( 'collapsed', collapsed ),
-			createSlide( 'main', main, widgetType ),
+			createSlide( 'main', main ),
 			createSlide( 'expanded', expanded ),
 		),
 	);
 }
 
-function createSlide ( slideLayout: SlideLayout, slideElem: HTMLElement | DocumentFragment, widgetType?: WidgetType ) {
-	return crel( 'div', { class: 'huww-slide', 'data-slide': slideLayout },
-		crel( 'div', { class: clsx( 'huww-slide-container', widgetType && `huww-widget-${widgetType}` ) }, slideElem )
-	);
+function createSlide ( slideLayout: SlideLayout, slideElem: HTMLElement ) {
+	return crel( 'div', { class: 'huww-slide', 'data-slide': slideLayout }, slideElem );
 }
 
 function createCollapseButton() {

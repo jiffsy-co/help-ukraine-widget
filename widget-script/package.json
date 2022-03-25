@@ -17,7 +17,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "clsx": "^1.1.1",
     "crel": "^4.2.1",
     "crelt": "^1.0.5",
     "parcel": "^2.3.2"
