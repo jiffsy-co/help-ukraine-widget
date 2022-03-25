@@ -87,7 +87,7 @@ function createSlider (
 	expanded: HTMLElement
 ) {
 	return crel( 'div', { class: `huww-widget huww-widget-${position}`, 'data-slide': initialSlide },
-		crel( 'div', { class: `huww-slider huww-slider-direction-${direction}`, style: `width:${widgetWidth};height:${widgetHeight};` },
+		crel( 'div', { class: `huww-slider huww-slider-direction-${direction}`, style: `width:${widgetWidth}px;height:${widgetHeight}px;` },
 			createSlide( 'collapsed', collapsed ),
 			createSlide( 'main', main ),
 			createSlide( 'expanded', expanded ),
