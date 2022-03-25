@@ -1,36 +1,38 @@
-import {SlideLayout} from "./constants";
+import {SlideLayout, sliderStorageKey} from "./constants";
 
-export function sliderBehavior() {
-	const widgets = document.querySelectorAll('.huww-widget')
-		// @ts-ignore
-	;[...widgets].forEach((widget) => sliderElement(widget))
+class SliderStorage {
+	key: string
+	constructor(key: string) {
+		this.key = key
+	}
+	get(): SlideLayout {
+		return localStorage.getItem(this.key) === 'true' ? 'collapsed' : 'main'
+	}
+	set(state: string): void {
+		localStorage.setItem(this.key, (state === 'collapsed').toString())
+	}
 }
 
+export function sliderBehavior() {
+	const widgets = document.querySelectorAll<HTMLElement>('.huww-widget')
+	widgets.forEach((widget) => sliderElement(widget))
+}
+
+const sliderStorage = new SliderStorage(sliderStorageKey)
+
 function sliderElement(widget: HTMLElement) {
-	const storage = sliderStorage('huww_slider_state')
-	const triggerList = widget.querySelectorAll('.huww-trigger')!
-	if ( storage.slide ) {
-		widget.dataset.slide = storage.slide
+	const triggerList = widget.querySelectorAll<HTMLElement>('.huww-trigger')
+	if ( sliderStorage.get() ) {
+		widget.dataset.slide = sliderStorage.get()
 	}
-	// @ts-ignore
-	;[...triggerList].forEach((triggerElem: HTMLElement) => {
+	triggerList.forEach((triggerElem: HTMLElement) => {
 		triggerElem.addEventListener('click', (e) => {
 			e.preventDefault()
 			const sliderState = triggerElem.dataset.trigger!
 			widget.dataset.slide = sliderState
-			storage.set(sliderState)
+			sliderStorage.set(sliderState)
 		})
 	})
 }
 
-function sliderStorage (key: string) {
-	const get = (): SlideLayout => localStorage.getItem(key) === 'true' ? 'collapsed' : 'main'
-	const set = (state: string) => {
-		localStorage.setItem(key, (state === 'collapsed').toString())
-	}
-	return {
-		get,
-		set,
-		slide: get(),
-	}
-}
+

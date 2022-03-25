@@ -2,6 +2,8 @@ export const armyUrl = "https://helpukrainewin.org";
 export const helpUrl = "https://helpukrainewin.org";
 export const landingUrl = "https://helpukrainewinwidget.org";
 
+export const sliderStorageKey = 'huww-slider-state';
+
 export const widgetWidth = 400;
 export const widgetHeight = 250;
 
