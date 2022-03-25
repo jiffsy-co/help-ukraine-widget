@@ -68,7 +68,7 @@ $transition: 350;
   }
 }
 
-.huww-slide > div {
+.huww-slide-container {
   pointer-events: none;
 }
 
@@ -81,7 +81,7 @@ $transition: 350;
     .huww-widget:not([data-slide]) &[data-slide='main'],
     [data-slide='#{$slide}'] &[data-slide='#{$slide}'] {
       opacity: 1;
-      & > div {
+      .huww-slide-container {
         pointer-events: all;
       }
     }

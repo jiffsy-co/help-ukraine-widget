@@ -1,10 +1,7 @@
 import {SlideLayout, sliderStorageKey} from "./constants";
 
 class SliderStorage {
-	key: string
-	constructor(key: string) {
-		this.key = key
-	}
+	constructor(private key: string) {}
 	get(): SlideLayout {
 		return localStorage.getItem(this.key) === 'true' ? 'collapsed' : 'main'
 	}
