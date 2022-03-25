@@ -4,8 +4,8 @@ export const landingUrl = "https://helpukrainewinwidget.org";
 
 export const sliderStorageKey = 'huww-slider-state';
 
-export const widgetWidth = 400;
-export const widgetHeight = 250;
+export const widgetWidth: number = 400;
+export const widgetHeight: number = 250;
 
 export const widgetPositions = ['top-left', 'top-right', 'bottom-right', 'bottom-left', 'middle-left', 'middle-right'] as const;
 export type WidgetPosition = typeof widgetPositions[number];
@@ -19,9 +19,9 @@ export type AnimationDirection = typeof animationDirection[number];
 export const widgetTypes = ["one", "two", "three", "four"] as const;
 export type WidgetType = typeof widgetTypes[number];
 
-export const defaultType: WidgetType = "four";
+export const defaultType: WidgetType = "three";
 export const defaultPosition: WidgetPosition = "bottom-right";
 
-export const scriptId = 'help-ukraine-win';
-export const scriptTypeAttribute = "data-type";
-export const scriptPositionAttribute = "data-position";
+// export const scriptId = 'help-ukraine-win';
+// export const scriptTypeAttribute = "data-type";
+// export const scriptPositionAttribute = "data-position";

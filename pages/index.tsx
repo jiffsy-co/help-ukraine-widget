@@ -102,7 +102,7 @@ const Home: NextPage = () => {
           <div className="w-full mt-10">
             {widgets.map((options) => (
               <div key={options.type} className="w-full mt-10 lg:mt-10">
-                <Widget options={options}></Widget>
+                <Widget options={options} />
               </div>
             ))}
           </div>

@@ -1,8 +1,7 @@
 import cssText from 'bundle-text:./styles/styles.scss';
-import { getConfig, WidgetConfig } from './config';
+import {scriptSrcParams} from './config';
 import {createWidget} from './render';
 import {sliderBehavior} from "./slider";
-
 
 if (document.readyState !== "loading") {
     setTimeout(initialize);
@@ -10,10 +9,11 @@ if (document.readyState !== "loading") {
     document.addEventListener("DOMContentLoaded", initialize);
 }
 
+const params = scriptSrcParams()
+
 function initialize() {
     injectStyles();
-    const config = getConfig();
-    initWidget(config);
+		initWidget();
 }
 
 function injectStyles() {
@@ -23,8 +23,8 @@ function injectStyles() {
 }
 
 
-function initWidget(config: WidgetConfig) {
-    document.body.append(createWidget(config.widgetType, config.widgetPosition, 'main'));
+function initWidget() {
+    document.body.append(createWidget(params.widgetType, params.widgetPosition, 'main'));
 
 		sliderBehavior();
 }

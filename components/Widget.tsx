@@ -3,10 +3,10 @@ import { IWidgetOptions } from "../types";
 import Iframe from "./Iframe";
 
 const makeScript = (options: IWidgetOptions): string => {
-  return `<script id="help-ukraine-win" async="true" src="${
-    process.env.WIDGET_SCRIPT_URL ||
-    "https://helpukrainewinwidget.org/cdn/widget.js"
-  }" data-type="${options.type}" data-position="${options.position}"></script>`;
+	const src = new URL(process.env.WIDGET_SCRIPT_URL || "https://helpukrainewinwidget.org/cdn/widget.js")
+	src.searchParams.set('type', options.type)
+	src.searchParams.set('position', options.position)
+  return `<script id="help-ukraine-win" async="true" src="${src.href}"></script>`;
 };
 
 function Widget({ options: defaultOptions }: { options: IWidgetOptions }) {
@@ -64,6 +64,12 @@ function Widget({ options: defaultOptions }: { options: IWidgetOptions }) {
                   <option value={"bottom-right"}>
                     Bottom Right {options.position === "bottom-right" && "▾"}
                   </option>
+	                <option value={"middle-left"}>
+		                Middle Left {options.position === "middle-left" && "▾"}
+	                </option>
+	                <option value={"middle-right"}>
+		                Middle Right {options.position === "middle-right" && "▾"}
+	                </option>
                 </select>
               </div>
               <button

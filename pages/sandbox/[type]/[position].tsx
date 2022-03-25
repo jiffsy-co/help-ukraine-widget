@@ -11,6 +11,8 @@ const positions: IWidgetOptions["position"][] = [
   "bottom-right",
   "top-left",
   "top-right",
+	"middle-left",
+	"middle-right",
 ];
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -70,9 +72,7 @@ const Sandbox: NextPage = () => {
       <Script
         id="help-ukraine-win"
         async
-        src="/cdn/widget.js"
-        data-type={params.type}
-        data-position={params.position}
+        src={`/cdn/widget.js?type=${params.type}&position=${params.position}`}
       />
     </>
   );
