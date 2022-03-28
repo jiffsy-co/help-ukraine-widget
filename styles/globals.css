@@ -7,6 +7,22 @@ html {
   scroll-behavior: smooth;
 }
 
+.text-yellow-ua {
+  color: #F7D648;
+}
+
+.bg-yellow-ua {
+  background-color: #F7D648;
+}
+
+.text-blue-ua {
+  color: #2559B5;
+}
+
+.bg-blue-ua {
+  background-color: #2559B5;
+}
+
 h1, h2, h3,
 .h1, .h2, .h3 {
   @apply font-bold;

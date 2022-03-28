@@ -15,14 +15,12 @@ const ListItem = ({ order, children }: { order: number; children: ReactNode }) =
 
 function WidgetList() {
   return (
-    <section className="widget-list mt-20 mb-20">
-      <div className="flex flex-col md:flex-row flex-wrap mb-8">
-        <div className="basis-1/2">
-          <h2 className="h1 text-center md:text-left md:mr-10 xl:mr-20 mb-5 md:mb-0">
-            Install widget <br className="hidden md:block" /> on any website
-          </h2>
-        </div>
-        <div className="basis-1/2">
+    <section className="widget-list my-32 mx-auto max-w-screen-xl">
+      <div className="grid md:grid-cols-2 gap-4 mb-8">
+        <h2 className="h1 text-center md:text-left md:mr-10 xl:mr-20 mb-5 md:mb-0">
+          Install widget <br className="hidden md:block" /> on any website
+        </h2>
+        <div>
           <ListItem order={1}>Choose a widget from the list.</ListItem>
           <ListItem order={2}>Select a place to put it on your website.</ListItem>
           <ListItem order={3}>
@@ -30,11 +28,9 @@ function WidgetList() {
           </ListItem>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row flex-wrap">
+      <div className="grid md:grid-cols-2 gap-4 flex-wrap">
         {widgetTypes.map((type) => (
-          <div key={type} className="basis-1/2 p-2">
-            <Widget type={type} />
-          </div>
+          <Widget key={type} type={type} />
         ))}
       </div>
     </section>

@@ -30,17 +30,18 @@ function Widget({ type }: { type: IWidgetType }) {
     <div className="w-full overflow-hidden md:max-w-6xl">
       <div className="flex flex-row flex-wrap">
         <div className="w-full">
-          <div className={`h-60 w-full rounded-t-lg bg-gray-200 overflow-hidden`}>
+          <div className="h-60 w-full rounded-t-xl bg-gray-200 overflow-hidden">
             <Iframe type={options.type} position={options.position} />
           </div>
         </div>
 
         <div className="w-full h-48">
-          <div className="rounded-b-lg border border-gray-200 w-full flex flex-col h-full overflow-hidden">
-            <div className={`flex w-full`}>
-              <div className={`flex border-r border-r-gray-200 lg:px-4`}>
-                <div className={`flex-none pl-3 py-2 font-medium`}>Placement:</div>
+          <div className="rounded-b-xl border border-gray-200 w-full flex flex-col h-full overflow-hidden">
+            <div className="flex w-full">
+              <div className="flex border-r border-r-gray-200 lg:px-4">
+                <div className="flex-none pl-3 py-2 font-medium">Placement:</div>
                 <select
+                  className="form-select appearance-none font-medium block px-2 py-2 text-base text-blue-600 hover:text-blue-800 bg-white bg-clip-padding bg-no-repeat rounded transition ease-in-out m-0 focus:text-blue-700 focus:bg-white focus:border-blue-600 focus:outline-none cursor-pointer"
                   value={options.position}
                   onChange={(e) =>
                     setOptions({
@@ -48,7 +49,6 @@ function Widget({ type }: { type: IWidgetType }) {
                       position: e.target.value as IWidgetOptions['position'],
                     })
                   }
-                  className={`form-select appearance-none font-medium block px-2 py-2 text-base text-blue-600 hover:text-blue-800 bg-white bg-clip-padding bg-no-repeat rounded transition ease-in-out m-0 focus:text-blue-700 focus:bg-white focus:border-blue-600 focus:outline-none cursor-pointer`}
                 >
                   {Object.entries(widgetPositionsList).map(([position, label]) => {
                     return (
@@ -71,9 +71,10 @@ function Widget({ type }: { type: IWidgetType }) {
               </button>
             </div>
 
-            <div className={`border-t border-t-gray-200 flex flex-col flex-1`}>
+            <div className="border-t border-t-gray-200 flex flex-col flex-1">
               <textarea
-                className={`w-full h-full px-3 py-2 lg:px-7 lg:py-4 text-gray-600 text-sm rounded-b-lg flex-1 appearance-none block focus:outline-none font-mono`}
+                className="w-full h-full px-3 py-2 lg:px-7 lg:py-4 text-gray-600 text-sm rounded-b-xl flex-1 appearance-none block focus:outline-none font-mono"
+                style={{ resize: 'none' }}
                 ref={textAreaRef}
                 readOnly
                 value={makeScript(options)}
