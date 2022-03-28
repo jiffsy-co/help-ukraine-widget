@@ -51,7 +51,6 @@ function Widget({ type }: { type: IWidgetType }) {
                   className={`form-select appearance-none font-medium block px-2 py-2 text-base text-blue-600 hover:text-blue-800 bg-white bg-clip-padding bg-no-repeat rounded transition ease-in-out m-0 focus:text-blue-700 focus:bg-white focus:border-blue-600 focus:outline-none cursor-pointer`}
                 >
                   {Object.entries(widgetPositionsList).map(([position, label]) => {
-                    console.log(position, options.position)
                     return (
                       <option key={position} value={position}>
                         {label} {position === options.position && '▾'}
