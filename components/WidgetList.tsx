@@ -18,7 +18,7 @@ function WidgetList() {
     <section className="widget-list mt-20 mb-20">
       <div className="flex flex-col md:flex-row flex-wrap mb-8">
         <div className="basis-1/2">
-          <h2 className="text-center md:text-left text-3xl md:text-5xl xl:text-6xl md:mr-10 xl:mr-20 mb-5 md:mb-0">
+          <h2 className="h1 text-center md:text-left md:mr-10 xl:mr-20 mb-5 md:mb-0">
             Install widget <br className="hidden md:block" /> on any website
           </h2>
         </div>
