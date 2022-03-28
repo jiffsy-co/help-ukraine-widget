@@ -1,11 +1,11 @@
 import React from "react";
-import ShopifyLogo from './ShopifyLogo';
-import ColorLogo from "./ColorLogo";
+import ShopifyLogo from './logo/ShopifyLogo';
+import ColorLogo from "./logo/ColorLogo";
 
 const Header = (props: any) => {
 
     return (
-        <div className="flex bg-inherit flex items-center justify-around h-96px border-b border-solid border-borderGray">
+        <div className="flex bg-inherit items-center justify-around h-96px border-b border-solid border-borderGray">
             <div>
                 <span className="mr-10px text-black font-bold text-14px leading-4 opacity-70 hover:opacity-100">Install manually</span>
                 <span className="text-black font-bold text-14px leading-4 opacity-70 hover:opacity-100">Privacy Policy</span>
