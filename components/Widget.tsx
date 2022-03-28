@@ -1,29 +1,31 @@
-import { useCallback, useRef, useState } from "react";
-import { IWidgetOptions } from "../types";
-import Iframe from "./Iframe";
+import { useCallback, useRef, useState } from 'react'
+import { IWidgetOptions, IWidgetType, defaultPosition, widgetPositionsList } from '../types'
+import Iframe from './Iframe'
 
 const makeScript = (options: IWidgetOptions): string => {
-	const src = new URL(process.env.WIDGET_SCRIPT_URL || "https://helpukrainewinwidget.org/cdn/widget.js")
-	src.searchParams.set('type', options.type)
-	src.searchParams.set('position', options.position)
-  return `<script id="help-ukraine-win" async="true" src="${src.href}"></script>`;
-};
+  const src = new URL(
+    process.env.WIDGET_SCRIPT_URL || 'https://helpukrainewinwidget.org/cdn/widget.js'
+  )
+  src.searchParams.set('type', options.type)
+  src.searchParams.set('position', options.position)
+  return `<script id="help-ukraine-win" async="true" src="${src.href}"></script>`
+}
 
-function Widget({ options: defaultOptions }: { options: IWidgetOptions }) {
-  const textAreaRef = useRef<HTMLTextAreaElement | null>(null);
-  const [isCopied, setIsCopied] = useState(false);
-  const [options, setOptions] = useState<IWidgetOptions>(defaultOptions);
+function Widget({ type }: { type: IWidgetType }) {
+  const textAreaRef = useRef<HTMLTextAreaElement | null>(null)
+  const [isCopied, setIsCopied] = useState(false)
+  const [options, setOptions] = useState<IWidgetOptions>({ type, position: defaultPosition })
   const onClickCopy = useCallback(() => {
     if (textAreaRef.current) {
-      textAreaRef.current.select();
-      document.execCommand("copy");
-      setIsCopied(true);
-      const t = setTimeout(() => setIsCopied(false), 1500);
+      textAreaRef.current.select()
+      document.execCommand('copy')
+      setIsCopied(true)
+      const t = setTimeout(() => setIsCopied(false), 1500)
       return () => {
-        clearTimeout(t);
-      };
+        clearTimeout(t)
+      }
     }
-  }, []);
+  }, [])
   return (
     <div className="w-full overflow-hidden md:max-w-6xl">
       <div className="md:flex">
@@ -39,37 +41,25 @@ function Widget({ options: defaultOptions }: { options: IWidgetOptions }) {
           <div className="rounded-b-lg md:rounded-lg border border-gray-200 w-full flex flex-col h-full overflow-hidden">
             <div className={`flex w-full`}>
               <div className={`flex border-r border-r-gray-200 lg:px-4`}>
-                <div className={`flex-none pl-3 py-2 font-medium`}>
-                  Placement:
-                </div>
+                <div className={`flex-none pl-3 py-2 font-medium`}>Placement:</div>
                 <select
                   value={options.position}
                   onChange={(e) =>
                     setOptions({
                       ...options,
-                      position: e.target.value as IWidgetOptions["position"],
+                      position: e.target.value as IWidgetOptions['position'],
                     })
                   }
                   className={`form-select appearance-none font-medium block px-2 py-2 text-base text-blue-600 bg-white bg-clip-padding bg-no-repeat rounded transition ease-in-out m-0 focus:text-blue-700 focus:bg-white focus:border-blue-600 focus:outline-none`}
                 >
-                  <option value={"top-left"}>
-                    Top Left {options.position === "top-left" && "▾"}
-                  </option>
-                  <option value={"top-right"}>
-                    Top Right {options.position === "top-right" && "▾"}
-                  </option>
-                  <option value={"bottom-left"}>
-                    Bottom Left {options.position === "bottom-left" && "▾"}
-                  </option>
-                  <option value={"bottom-right"}>
-                    Bottom Right {options.position === "bottom-right" && "▾"}
-                  </option>
-	                <option value={"middle-left"}>
-		                Middle Left {options.position === "middle-left" && "▾"}
-	                </option>
-	                <option value={"middle-right"}>
-		                Middle Right {options.position === "middle-right" && "▾"}
-	                </option>
+                  {Object.entries(widgetPositionsList).map(([position, label]) => {
+                    console.log(position, options.position)
+                    return (
+                      <option key={position} value={position}>
+                        {label} {position === options.position && '▾'}
+                      </option>
+                    )
+                  })}
                 </select>
               </div>
               <button
@@ -77,10 +67,10 @@ function Widget({ options: defaultOptions }: { options: IWidgetOptions }) {
                 className={`flex-1 text-md font-medium ${
                   isCopied
                     ? `bg-gradient-to-r via-blue-500 from-yellow-300 to-yellow-300 text-white`
-                    : "text-blue-600"
+                    : 'text-blue-600'
                 }`}
               >
-                {isCopied ? "Copied!" : "Copy to Clipboard"}
+                {isCopied ? 'Copied!' : 'Copy to Clipboard'}
               </button>
             </div>
 
@@ -90,13 +80,13 @@ function Widget({ options: defaultOptions }: { options: IWidgetOptions }) {
                 ref={textAreaRef}
                 readOnly
                 value={makeScript(options)}
-              ></textarea>
+              />
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Widget;
+export default Widget
