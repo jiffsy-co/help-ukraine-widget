@@ -15,12 +15,30 @@ html {
   background-color: #F7D648;
 }
 
+.border-yellow-ua {
+  @apply border-2;
+  border-color: #F7D648;
+}
+
 .text-blue-ua {
   color: #2559B5;
 }
 
 .bg-blue-ua {
   background-color: #2559B5;
+}
+
+.border-blue-ua {
+  @apply border-2;
+  border-color: #2559B5;
+}
+
+.px-global {
+  @apply px-4;
+}
+
+.max-w-global {
+  @apply max-w-screen-xl mx-auto px-global;
 }
 
 h1, h2, h3,

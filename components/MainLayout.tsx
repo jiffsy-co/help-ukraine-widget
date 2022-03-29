@@ -27,9 +27,7 @@ const MainLayout: NextPage = ({ children }) => {
 
       <Header />
 
-      <main className="w-full mx-auto relative pt-6 sm:pt-8 md:pt-16 px-3 sm:px-6 lg:px-12 xl:px-20">
-        {children}
-      </main>
+      <main className="w-full mx-auto relative">{children}</main>
 
       <Footer />
     </>

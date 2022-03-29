@@ -15,7 +15,7 @@ const ListItem = ({ order, children }: { order: number; children: ReactNode }) =
 
 function WidgetList() {
   return (
-    <section className="widget-list my-32 mx-auto max-w-screen-xl">
+    <section className="widget-list my-32 max-w-global">
       <div className="grid md:grid-cols-2 gap-4 mb-8">
         <h2 className="h1 text-center md:text-left md:mr-10 xl:mr-20 mb-5 md:mb-0">
           Install widget <br className="hidden md:block" /> on any website
