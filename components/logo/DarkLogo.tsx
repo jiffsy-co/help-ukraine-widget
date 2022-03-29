@@ -8,3 +8,4 @@ const DarkLogo = (props: any) => (
 );
 
 export default DarkLogo;
+
