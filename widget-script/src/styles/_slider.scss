@@ -1,0 +1,117 @@
+
+$sliderSchema: ('collapsed', 'main', 'expanded');
+$transition: 350;
+
+.huww-widget {
+  position: fixed;
+  overflow: hidden;
+  pointer-events: none;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  &.huww-widget-top-left {
+    top: 0;
+    left: 0;
+  }
+  &.huww-widget-top-right {
+    top: 0;
+    right: 0;
+  }
+  &.huww-widget-bottom-left {
+    left: 0;
+    bottom: 0;
+  }
+  &.huww-widget-bottom-right {
+    right: 0;
+    bottom: 0;
+  }
+  &.huww-widget-middle-left {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  &.huww-widget-middle-right {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+}
+
+.huww-slider {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: #{$transition}ms ease;
+  &, &.huww-slider-direction-vertical {
+    flex-direction: column !important;
+    [data-slide='collapsed'] & {
+      transform: translateY(0);
+    }
+    &, [data-slide='main'] & {
+      transform: translateY(-100%);
+    }
+    [data-slide='expanded'] & {
+      transform: translateY(-200%);
+    }
+  }
+  &.huww-slider-direction-horizontal {
+    flex-direction: row !important;
+    [data-slide='collapsed'] & {
+      transform: translateX(0);
+    }
+    &, [data-slide='main'] & {
+      transform: translateX(-100%);
+    }
+    [data-slide='expanded'] & {
+      transform: translateX(-200%);
+    }
+  }
+}
+
+.huww-slide-container {
+  pointer-events: none;
+}
+
+.huww-slide {
+  flex: 1 0 100% !important;
+  display: flex;
+  transition: #{$transition}ms ease;
+  opacity: 0;
+  @each $slide in $sliderSchema {
+    .huww-widget:not([data-slide]) &[data-slide='main'],
+    [data-slide='#{$slide}'] &[data-slide='#{$slide}'] {
+      opacity: 1;
+      .huww-slide-container {
+        pointer-events: all;
+      }
+    }
+  }
+  .huww-widget-top-left & {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .huww-widget-top-right & {
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  .huww-widget-bottom-left & {
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+  .huww-widget-bottom-right & {
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  .huww-widget-middle-left & {
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .huww-widget-middle-right & {
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.huww-trigger {
+  cursor: pointer;
+}
