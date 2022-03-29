@@ -9,3 +9,4 @@ const ColorLogo = (props:any) => (
 );
 
 export default ColorLogo;
+
