@@ -30,8 +30,8 @@ const Home: NextPage = () => {
           <Logo className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24" />
         </div>
         <h1 className="text-black font-bold max-w-3xl leading-2 text-6xl lg:text-7xl">
-          <span className="block md:inline">Put the</span>{' '}
-          <span className="text-blue-700">Help</span>{' '}
+          <span className="block md:inline">Put the</span>
+          <span className="text-blue-700">Help</span>
           <span className="text-yellow-400">Ukraine</span>
           <br />
           widget on your website!
@@ -53,7 +53,7 @@ const Home: NextPage = () => {
       <section id="widgets" className="w-full mt-12 lg:mt-20 xl:mt-40">
         <h2 className="text-black text-4xl font-bold">Widgets</h2>
         <p className="text-gray-400 text-xl mt-3">
-          Every widget is linked with{' '}
+          Every widget is linked with
           <a className="underline" href="https://helpukrainewin.org">
             https://helpukrainewin.org
           </a>
