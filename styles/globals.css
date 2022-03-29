@@ -7,60 +7,23 @@ html {
   scroll-behavior: smooth;
 }
 
-.text-yellow-ua {
-  color: #f7d648;
-}
-
-.bg-yellow-ua {
-  background-color: #f7d648;
-}
-
-.border-yellow-ua {
-  @apply border-2;
-  border-color: #f7d648;
-}
-
-.text-blue-ua {
-  color: #2559b5;
-}
-
-.bg-blue-ua {
-  background-color: #2559b5;
-}
-
-.border-blue-ua {
-  @apply border-2;
-  border-color: #2559b5;
-}
-
-.px-global {
-  @apply px-4;
-}
-
 .max-w-global {
-  @apply max-w-screen-xl mx-auto px-global;
+  @apply max-w-screen-xl mx-auto px-4;
 }
 
-h1,
-h2,
-h3,
-.h1,
-.h2,
-.h3 {
+h1, h2, h3,
+.h1, .h2, .h3 {
   @apply font-bold;
 }
 
-h1,
-.h1 {
+h1, .h1 {
   @apply text-3xl md:text-5xl xl:text-6xl;
 }
 
-h2,
-.h2 {
+h2, .h2 {
   @apply text-2xl md:text-3xl;
 }
 
-h3,
-.h3 {
+h3, .h3 {
   @apply text-lg lg:text-2xl;
 }

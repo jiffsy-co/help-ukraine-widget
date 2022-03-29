@@ -9,6 +9,11 @@ module.exports = {
         black: '#1F1F1F',
         logoBlue: '#2559B5',
         borderGray: '#E5E5E5',
+        'blue-ua': '#2559B5',
+        'yellow-ua': '#F7D648',
+      },
+      minHeight: {
+        '800px': '800px',
       },
       height: {
         '48px': '48px',
