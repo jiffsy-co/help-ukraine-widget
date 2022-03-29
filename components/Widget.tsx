@@ -6,6 +6,7 @@ const makeScript = (options: IWidgetOptions): string => {
 	const src = new URL(process.env.WIDGET_SCRIPT_URL || "https://helpukrainewinwidget.org/cdn/widget.js")
 	src.searchParams.set('type', options.type)
 	src.searchParams.set('position', options.position)
+	src.searchParams.set('layout', options.layout)
   return `<script id="help-ukraine-win" async="true" src="${src.href}"></script>`;
 };
 
@@ -31,7 +32,7 @@ function Widget({ options: defaultOptions }: { options: IWidgetOptions }) {
           <div
             className={`h-80 w-full rounded-t-lg md:w-96 bg-gray-100 md:rounded-lg overflow-hidden`}
           >
-            <Iframe type={options.type} position={options.position} />
+            <Iframe type={options.type} position={options.position} layout={options.layout} />
           </div>
         </div>
 

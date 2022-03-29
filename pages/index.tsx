@@ -10,18 +10,22 @@ const widgets: IWidgetOptions[] = [
   {
     type: "one",
     position: "bottom-right",
+    layout: 'main',
   },
   {
     type: "two",
     position: "bottom-right",
+    layout: 'main',
   },
   {
     type: "three",
     position: "bottom-right",
+    layout: 'main',
   },
   {
     type: "four",
     position: "bottom-right",
+    layout: 'main',
   },
 ];
 

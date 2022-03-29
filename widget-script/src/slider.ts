@@ -1,9 +1,17 @@
-import {SlideLayout, sliderStorageKey} from "./constants";
+import {SlideLayout, sliderDisabledPersistenceStorageKey, sliderStorageKey} from "./constants";
 
 class SliderStorage {
-	constructor(private key: string) {}
-	get(): SlideLayout {
-		return localStorage.getItem(this.key) === 'true' ? 'collapsed' : 'main'
+	constructor(private key: string, private disabledKey: string) {}
+	get(): SlideLayout | null {
+		return localStorage.getItem(this.key) === 'true'
+			? "collapsed"
+			: localStorage.getItem(this.key) === "false"
+			? "main"
+			: null;
+	}
+	// disabled persistence for preview on landing
+	disabled(): boolean {
+		return localStorage.getItem(this.disabledKey) === 'true'
 	}
 	set(state: string): void {
 		localStorage.setItem(this.key, (state === 'collapsed').toString())
@@ -15,12 +23,13 @@ export function sliderBehavior() {
 	widgets.forEach((widget) => sliderElement(widget))
 }
 
-const sliderStorage = new SliderStorage(sliderStorageKey)
+const sliderStorage = new SliderStorage(sliderStorageKey, sliderDisabledPersistenceStorageKey)
 
 function sliderElement(widget: HTMLElement) {
 	const triggerList = widget.querySelectorAll<HTMLElement>('.huww-trigger')
-	if ( sliderStorage.get() ) {
-		widget.dataset.slide = sliderStorage.get()
+	const persistedState = sliderStorage.get()
+	if ( !sliderStorage.disabled() && persistedState ) {
+		widget.dataset.slide = persistedState
 	}
 	triggerList.forEach((triggerElem: HTMLElement) => {
 		triggerElem.addEventListener('click', (e) => {

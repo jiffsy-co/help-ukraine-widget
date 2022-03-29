@@ -39,7 +39,7 @@ export function createWidget1(position: WidgetPosition, initialSlide: SlideLayou
 }
 
 export function createWidget2(position: WidgetPosition, initialSlide: SlideLayout) {
-		return createSlider( position, initialSlide,'vertical',
+		return createSlider( position, initialSlide, 'vertical',
 			crel( 'div', { class: 'huww-slide-container huww-widget-two' },
 				createFlag(),
 				crel('p', { class: 'huww-title' }, 'Stop War! You can help!'),
@@ -53,7 +53,7 @@ export function createWidget2(position: WidgetPosition, initialSlide: SlideLayou
 }
 
 export function createWidget3(position: WidgetPosition, initialSlide: SlideLayout) {
-	return createSlider( position, initialSlide,'horizontal',
+	return createSlider( position, initialSlide, 'horizontal',
 		crel( 'div', { class: 'huww-slide-container huww-widget-three' },
 			crel('p', { class: 'huww-title' }, 'Stop War!'),
 			crel('p', { class: 'huww-subtitle' }, 'Help Ukraine!'),
@@ -66,7 +66,7 @@ export function createWidget3(position: WidgetPosition, initialSlide: SlideLayou
 }
 
 export function createWidget4(position: WidgetPosition, initialSlide: SlideLayout) {
-	return createSlider( position, initialSlide,'vertical',
+	return createSlider( position, initialSlide, 'vertical',
 		crel( 'div', { class: 'huww-slide-container huww-widget-four' },
 			crel('p', { class: 'huww-title' }, 'Help 🇺🇦 Ukraine win!'),
 			crel('p', { class: 'huww-hashtag' }, '#StandWithUkraine'),

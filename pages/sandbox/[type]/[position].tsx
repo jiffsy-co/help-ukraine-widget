@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect } from "react";
 import { IWidgetOptions } from "../../../types";
-// import styles from "../../../styles/Sandbox.module.css";
 
 const types: IWidgetOptions["type"][] = ["one", "two", "three", "four"];
 const positions: IWidgetOptions["position"][] = [
@@ -14,6 +13,7 @@ const positions: IWidgetOptions["position"][] = [
 	"middle-left",
 	"middle-right",
 ];
+const sliderDisabledPersistenceStorageKey = 'huww-slider-disabled-persistence';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -38,7 +38,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 const Sandbox: NextPage = () => {
   const router = useRouter();
   const params = router.query as any as IWidgetOptions;
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if(router.isReady) {
+      localStorage.setItem(sliderDisabledPersistenceStorageKey, 'true')
+    }
+  }, [router.isReady])
   return (
     <>
       <style jsx global>
@@ -72,7 +76,7 @@ const Sandbox: NextPage = () => {
       <Script
         id="help-ukraine-win"
         async
-        src={`/cdn/widget.js?type=${params.type}&position=${params.position}`}
+        src={`/cdn/widget.js?type=${params.type}&position=${params.position}&layout=${params.layout}`}
       />
     </>
   );
