@@ -4,12 +4,7 @@ const Logo = (props: any) => (
       <g id="logo-vec">
         <g id="logo-copy">
           <circle id="Oval" fill="#015BBB" cx="16" cy="16" r="16"></circle>
-          <g
-            id="{-}"
-            transform="translate(5.000000, 9.902000)"
-            fill="#FFFFFF"
-            fillRule="nonzero"
-          >
+          <g id="{-}" transform="translate(5.000000, 9.902000)" fill="#FFFFFF" fillRule="nonzero">
             <path
               d="M3.794,12.194 L5.096,12.194 L5.096,10.934 L3.934,10.934 C3.15,10.934 2.66,10.43 2.66,9.646 L2.66,8.204 C2.66,7.294 2.45,6.44 1.61,6.076 C2.45,5.768 2.674,4.956 2.674,4.032 L2.674,2.548 C2.674,1.764 3.15,1.246 3.934,1.246 L5.096,1.246 L5.096,0 L3.78,0 C2.142,0 1.134,0.896 1.134,2.17 L1.134,4.074 C1.134,4.914 1.05,5.418 0,5.418 L0,6.776 C1.036,6.776 1.134,7.364 1.134,8.162 L1.134,10.01 C1.134,11.284 2.156,12.194 3.794,12.194 Z"
               id="{"
@@ -28,6 +23,6 @@ const Logo = (props: any) => (
       </g>
     </g>
   </svg>
-);
+)
 
-export default Logo;
+export default Logo

@@ -1,11 +1,11 @@
-import { NextPage } from "next";
-import { useSeo } from "../hooks/seo";
-import Head from "next/head";
-import Header from "./Header";
-import Footer from "./Footer";
+import { NextPage } from 'next'
+import { useSeo } from '../hooks/seo'
+import Head from 'next/head'
+import Header from './Header'
+import Footer from './Footer'
 
 const MainLayout: NextPage = ({ children }) => {
-  const seo = useSeo();
+  const seo = useSeo()
   return (
     <>
       <Head>
@@ -15,7 +15,7 @@ const MainLayout: NextPage = ({ children }) => {
         <meta name="viewport" content="width=device-width" />
         <meta property="og:site_name" content={seo.title} />
         <meta property="og:title" content={seo.title} />
-        <meta property="og:type" content={"website"} />
+        <meta property="og:type" content={'website'} />
         <meta property="og:description" content={seo.description} />
         <meta property="og:url" content={seo.url} />
         <meta property="og:image" content={seo.image.url} />
@@ -34,7 +34,7 @@ const MainLayout: NextPage = ({ children }) => {
 
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default MainLayout;
+export default MainLayout
