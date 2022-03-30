@@ -1,10 +1,10 @@
 import { useCallback, useRef, useState } from 'react'
 import {
-	IWidgetOptions,
-	IWidgetType,
-	defaultPosition,
-	defaultLayout,
-	widgetPositionsList,
+  IWidgetOptions,
+  IWidgetType,
+  defaultPosition,
+  defaultLayout,
+  widgetPositionsList,
 } from '../types'
 import Iframe from './Iframe'
 
@@ -18,7 +18,7 @@ const makeScript = (options: IWidgetOptions): string => {
   return `<script id="help-ukraine-win" async="true" src="${src.href}"></script>`
 }
 
-function Widget({type }:{type: IWidgetType}) {
+function Widget({ type }: { type: IWidgetType }) {
   const textAreaRef = useRef<HTMLTextAreaElement | null>(null)
   const [isCopied, setIsCopied] = useState(false)
   const [options, setOptions] = useState<IWidgetOptions>({

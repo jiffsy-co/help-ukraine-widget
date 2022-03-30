@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import { PropsWithChildren } from 'react'
 import Logo from '../components/logo/Logo'
 import Widget from '../components/Widget'
-import {widgetTypes} from '../types'
+import { widgetTypes } from '../types'
 import MainLayout from '../components/MainLayout'
 
 const Circle = ({ children }: PropsWithChildren<{}>) => {
@@ -59,11 +59,11 @@ const Home: NextPage = () => {
           </a>
         </p>
         <div className="w-full mt-10">
-	        {widgetTypes.map((type) => (
-		        <div key={type} className="w-full mt-10 lg:mt-10">
-			        <Widget type={type} />
-		        </div>
-	        ))}
+          {widgetTypes.map((type) => (
+            <div key={type} className="w-full mt-10 lg:mt-10">
+              <Widget type={type} />
+            </div>
+          ))}
         </div>
       </section>
 
