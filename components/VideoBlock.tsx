@@ -1,13 +1,10 @@
 import React from "react";
-// import {Video} from '../public/videos/MyMovie.mp4';
 
 const VideoBlock = () => (
-    <div className='w-full  rounded-3xl
+    <div className='w-full md:w-11/12  rounded-3xl px-2.5 pb-2.5 pt-10 md:px-0
     '>
-        <video controls width="250">
-                <source src="../public/MyMovie.mp4"
-                        type="video/mp4"/>
-
+        <video autoPlay controls style={{ width: '100%', borderRadius: '24px' }}>
+            <source src="/movie.mp4" type="video/mp4" />
         </video>
     </div>
 );

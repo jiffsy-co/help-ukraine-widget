@@ -7,7 +7,7 @@ const TrustedWebsites = () => {
     return(
         <div className='flex w-screen justify-center flex-col'>
             <div className='flex justify-center
-            text-32px xl:text-40px 2xl:text-62px font-bold
+            text-32px xl:text-40px 2xl:text-60px font-bold
              text-white leading-9 xl:leading-10 2xl:leading-66px
              mb-10px md:mb-20px 2xl:mb-30px
              '>

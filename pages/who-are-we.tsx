@@ -7,15 +7,21 @@ import VideoBlock from "../components/VideoBlock";
 
 const WhoAreWePage: NextPage = () => {
     return (
-        <div className='bg-black'>
-            {/*<TextBlock title='Who are we?'>*/}
-            {/*    <WhoAreWeBlock/>*/}
-            {/*</TextBlock>*/}
-            {/*<TextBlock title='Why are we doing this?'>*/}
-            {/*    <WhyBlock/>*/}
-            {/*</TextBlock>*/}
-            {/*<TrustedWebsites/>*/}
-            <VideoBlock/>
+        <div className='bg-black flex flex-col items-center'>
+            <div className='flex flex-col md:flex-row w-full'>
+                <div className='md:w-2/4 md:flex md:justify-end'>
+                    <VideoBlock/>
+                </div>
+                <div className='flex flex-col w-full items-center md:w-2/4'>
+                    <TextBlock title='Who are we?'>
+                    <WhoAreWeBlock/>
+                </TextBlock>
+                    <TextBlock title='Why are we doing this?'>
+                        <WhyBlock/>
+                    </TextBlock>
+                </div>
+            </div>
+            <TrustedWebsites/>
         </div>
     )
 };

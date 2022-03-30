@@ -51,7 +51,8 @@ module.exports = {
         '426px': '426px',
         '256px': '256px',
         '220px': '220px',
-        '343px': '343px'
+        '343px': '343px',
+        '125px': '125px'
       },
       fontFamily: {
         sans: ["Roboto", ...defaultTheme.fontFamily.sans],
@@ -59,10 +60,12 @@ module.exports = {
       },
       fontSize: {
         '14px': '14px',
+        '16px': '16px',
         '20px': '20px',
+        '24px': '24px',
         '32px': '32px',
         '18px': '18px',
-        '62px': '62px',
+        '60px': '60px',
         '40px': '40px',
       },
       lineHeight: {
