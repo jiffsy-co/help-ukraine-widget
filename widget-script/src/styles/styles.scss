@@ -1,27 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-@import "slider";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import 'slider';
 
 @function units($value) {
   @return $value * 12.8px;
 }
 
-$color_blue: #2559B5;
-$color_yellow: #F7D648;
+$color_blue: #2559b5;
+$color_yellow: #f7d648;
 $shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-
 
 @mixin size($width, $height) {
   width: units($width);
   height: units($height);
 }
 
-@mixin position(
-  $position,
-  $top: null,
-  $right: null,
-  $bottom: null,
-  $left: null
-) {
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
   position: $position;
   @if $top {
     top: units($top);
@@ -64,22 +57,22 @@ $f_radius: units(1);
 
   @media screen and (max-width: 1023px) {
     transition: #{$transition}ms ease;
-    .huww-slider[data-slide="collapsed"] & {
+    .huww-slider[data-slide='collapsed'] & {
       .huww-widget-top-left & {
         border-radius: 0 0 $f_radius 0;
-        transform: translate(-$f_offset,-$f_offset);
+        transform: translate(-$f_offset, -$f_offset);
       }
       .huww-widget-top-right & {
         border-radius: 0 0 0 $f_radius;
-        transform: translate($f_offset,-$f_offset);
+        transform: translate($f_offset, -$f_offset);
       }
       .huww-widget-bottom-left & {
         border-radius: 0 $f_radius 0 0;
-        transform: translate(-$f_offset,$f_offset);
+        transform: translate(-$f_offset, $f_offset);
       }
       .huww-widget-bottom-right & {
         border-radius: $f_radius 0 0 0;
-        transform: translate($f_offset,$f_offset);
+        transform: translate($f_offset, $f_offset);
       }
       .huww-widget-middle-left & {
         border-radius: 0 $f_radius $f_radius 0;
@@ -91,7 +84,6 @@ $f_radius: units(1);
       }
     }
   }
-
 }
 
 .huww-button-collapse {
@@ -103,7 +95,7 @@ $f_radius: units(1);
   right: 0;
   transform: translate(40%, -30%);
   cursor: pointer;
-  transition: .2s ease;
+  transition: 0.2s ease;
 
   &:before,
   &:after {
@@ -112,7 +104,7 @@ $f_radius: units(1);
     top: 50%;
     left: 50%;
     width: 2px;
-    height: units(.8);
+    height: units(0.8);
     background: #fff;
   }
   &:before {
@@ -159,7 +151,6 @@ $f_radius: units(1);
 }
 
 .huww-widget-two {
-
   padding: units(2) units(1) units(1) units(1);
   margin-top: units(2);
   text-align: center;
@@ -224,7 +215,7 @@ $f_radius: units(1);
 
 .huww-title {
   font-size: units(1.625);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   line-height: units(2);
   margin: 0;
@@ -234,7 +225,7 @@ $f_radius: units(1);
 .huww-subtitle {
   font-size: units(1.75);
   line-height: units(2.25);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
 
   margin: 0;
@@ -242,7 +233,7 @@ $f_radius: units(1);
 }
 
 .huww-link {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: units(1.5);
   font-weight: 500;
   line-height: units(1.75);
@@ -257,10 +248,10 @@ $f_radius: units(1);
     position: absolute;
     top: 50%;
     font-size: inherit;
-    width: .3em;
-    height: .3em;
-    right: .5em;
-    transform: translate(50%,-60%) rotate(-45deg);
+    width: 0.3em;
+    height: 0.3em;
+    right: 0.5em;
+    transform: translate(50%, -60%) rotate(-45deg);
     border: none;
     border-left: solid;
     border-bottom: solid;
@@ -277,7 +268,7 @@ $f_radius: units(1);
 
   color: $color_blue;
 
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: units(1.5);
   font-weight: 500;
 
@@ -291,10 +282,10 @@ $f_radius: units(1);
     content: '';
     display: inline-block;
     font-size: inherit;
-    width: .3em;
-    height: .3em;
-    right: .5em;
-    transform: translate(30%,-25%) rotate(-135deg);
+    width: 0.3em;
+    height: 0.3em;
+    right: 0.5em;
+    transform: translate(30%, -25%) rotate(-135deg);
     border: none;
     border-left: solid;
     border-bottom: solid;
@@ -309,7 +300,7 @@ $f_radius: units(1);
 }
 
 .huww-hashtag {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: units(1.5);
   font-weight: 400;
 
@@ -353,14 +344,14 @@ $f_radius: units(1);
     display: block;
     width: 100%;
     height: 0.5px;
-    background: #E5E5E5;
+    background: #e5e5e5;
     margin: units(0.5) 0;
   }
 }
 
-.huww-expended-widget-wrapper-small{
+.huww-expended-widget-wrapper-small {
   width: units(19.25);
-  padding:units(1);
+  padding: units(1);
 
   .huww-action {
     width: units(19.25);
@@ -368,7 +359,7 @@ $f_radius: units(1);
     padding: units(1.6);
   }
 
-  .huww-expended-widget-hide{
+  .huww-expended-widget-hide {
     font-size: units(1.3);
   }
 }
@@ -378,15 +369,15 @@ $f_radius: units(1);
   color: $color_blue;
   font-size: units(1.625);
   font-weight: 500;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
   text-decoration: none;
 
-  &:hover{
-    background: #2559B514;
+  &:hover {
+    background: #2559b514;
     border-radius: 3px;
   }
   padding: units(2);
@@ -394,7 +385,7 @@ $f_radius: units(1);
 
 .huww-expended-widget-hide {
   color: #272727;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: units(1.5);
   display: flex;
@@ -407,12 +398,12 @@ $f_radius: units(1);
   &:after {
     content: '';
     display: inline-block;
-    margin-left: .3em;
+    margin-left: 0.3em;
     font-size: inherit;
-    width: .3em;
-    height: .3em;
-    right: .5em;
-    transform: translate(50%,30%) rotate(135deg);
+    width: 0.3em;
+    height: 0.3em;
+    right: 0.5em;
+    transform: translate(50%, 30%) rotate(135deg);
     border: none;
     border-left: solid;
     border-bottom: solid;
@@ -432,7 +423,7 @@ $f_radius: units(1);
   border-radius: 50%;
   display: flex;
   align-self: end;
-  border:none;
+  border: none;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -442,8 +433,8 @@ $f_radius: units(1);
   &:before {
     content: '';
     position: absolute;
-    width: units(.4);
-    height: units(.4);
+    width: units(0.4);
+    height: units(0.4);
     top: 50%;
     left: 50%;
     border: none;
@@ -452,7 +443,7 @@ $f_radius: units(1);
     border-width: 2px;
     border-color: #fff;
     transform: translate(-35%, -55%) rotate(-45deg);
-    transition: .2s ease;
+    transition: 0.2s ease;
   }
 
   &:hover {
@@ -460,6 +451,6 @@ $f_radius: units(1);
   }
 }
 
-.huww-heart{
+.huww-heart {
   color: #ff3f30;
 }
