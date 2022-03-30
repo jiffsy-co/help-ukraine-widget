@@ -17,12 +17,15 @@ module.exports = {
         '48px': '48px',
         '32px': '32px',
         '96px': '96px',
-        '48px': '48px'
+        '40px': '40px'
       },
       width:{
         '190px': '190px',
         '32px':  '32px',
-        '48px': '48px'
+        '48px': '48px',
+        '4': '4.5rem',
+        '128px': '128px',
+        '170px': '170px'
       },
       fontFamily: {
         sans: ["Roboto", ...defaultTheme.fontFamily.sans],
