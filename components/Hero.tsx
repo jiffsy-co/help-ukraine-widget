@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Parallax from './Parallax'
 import ShopifyLogo from './logo/ShopifyLogo'
 
 import WidgetOne from '../public/widget/one.png'
@@ -8,9 +9,22 @@ import WidgetFour from '../public/widget/four.png'
 import WidgetExpanded from '../public/widget/expanded.png'
 import WidgetCollapsed from '../public/widget/collapsed.png'
 
-const WidgetImage = ({ src, name, className }: { src: any; name: string; className?: string }) => {
+const WidgetImage = ({
+  src,
+  name,
+  className,
+  parallax,
+}: {
+  src: any
+  name: string
+  className?: string
+  parallax?: 1 | 2 | 3
+}) => {
   return (
-    <div className={`widget-image ${name} inline-block ${className}`}>
+    <div
+      className={`parallax-item widget-${name} inline-block ${className}`}
+      data-parallax={parallax}
+    >
       <Image src={src} alt={name} />
     </div>
   )
@@ -18,45 +32,52 @@ const WidgetImage = ({ src, name, className }: { src: any; name: string; classNa
 
 const Hero = () => {
   return (
-    <section className="hero bg-yellow-ua relative overflow-hidden">
-      <div>
+    <section className="hero bg-yellow-ua relative">
+      <Parallax>
         <WidgetImage
           src={WidgetCollapsed}
-          name={'widget-collapsed'}
-          className="hero-left-1 absolute xl:-translate-y-1/2 top-5 left-5 lg:top-20% lg:left-20% -rotate-13 opacity-70"
+          name="collapsed"
+          parallax={1}
+          className="absolute top-5 left-5 lg:top-20% lg:left-20% -rotate-13 opacity-70"
         />
         <WidgetImage
           src={WidgetOne}
-          name={'widget-one'}
-          className="hero-left-2 hidden lg:block absolute -translate-y-1/2 top-50% left-5% -rotate-15 opacity-80"
+          name="one"
+          parallax={2}
+          className="hidden lg:block absolute top-50% left-5% -rotate-15 opacity-80"
         />
         <WidgetImage
           src={WidgetExpanded}
-          name={'widget-expanded'}
-          className="hero-left-3 absolute lg:-translate-y-1/2 -bottom-5 -left-5 lg:bottom-0 lg:left-20% rotate-18 opacity-95"
+          name="expanded"
+          parallax={3}
+          className="absolute -bottom-5 -left-5 lg:bottom-5 lg:left-20% rotate-18 opacity-95"
         />
         <WidgetImage
           src={WidgetThree}
-          name={'widget-three'}
-          className="hero-right-1 absolute lg:-translate-y-1/2 top-5 right-0 lg:top-20% lg:right-12% rotate-9 opacity-80"
+          name="three"
+          parallax={2}
+          className="absolute top-5 right-0 lg:top-20% lg:right-12% rotate-9 opacity-80"
         />
         <WidgetImage
           src={WidgetCollapsed}
-          name={'widget-collapsed'}
-          className="hero-right-2 hidden lg:block absolute -translate-y-1/2 top-45% right-25% rotate-15 opacity-30"
+          name="collapsed"
+          parallax={1}
+          className="hidden lg:block absolute top-45% right-25% rotate-15 opacity-30"
         />
         <WidgetImage
           src={WidgetFour}
-          name={'widget-four'}
-          className="hero-right-3 hidden lg:block absolute -translate-y-1/2 bottom-20% right-10% -rotate-7 opacity-90"
+          name="four"
+          parallax={3}
+          className="hidden lg:block absolute bottom-20% right-10% -rotate-7 opacity-90"
         />
         <WidgetImage
           src={WidgetTwo}
-          name={'widget-two'}
-          className="hero-right-4 absolute bottom-4% -right-10 lg:right-30% -rotate-16 opacity-70"
+          name="two"
+          className="hero-right-4 absolute bottom-10% -right-10 lg:right-30% -rotate-16 opacity-70"
         />
-      </div>
-      <div className="flex flex-col items-center justify-center max-w-global text-center p-4 min-h-660px xl:min-h-800px z-10">
+      </Parallax>
+
+      <div className="flex flex-col items-center justify-center max-w-global text-center p-4 min-h-660px xl:min-h-800px relative z-10">
         <h1>
           Put the <span className="text-blue-ua">Help Ukraine</span>
           <br className="hidden md:block" /> widget on your website!
@@ -80,7 +101,7 @@ const Hero = () => {
           <a
             href="#"
             target="_blank"
-            className="button-outline border-2 border-blue-ua text-blue-ua px-10 py-3 font-bold text-lg rounded-full flex items-center justify-center transition hover:scale-95"
+            className="button-outline bg-yellow-ua border-2 border-blue-ua text-blue-ua px-10 py-3 font-bold text-lg rounded-full flex items-center justify-center transition hover:scale-95"
           >
             Install manually
           </a>
