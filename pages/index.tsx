@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { PropsWithChildren } from "react";
-import Logo from "../components/Logo";
+import Logo from "../components/logo/Logo";
 import Widget from "../components/Widget";
 import { useSeo } from "../hooks/seo";
 import { IWidgetOptions } from "../types";
