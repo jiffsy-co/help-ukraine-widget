@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import ShopifyLogo from './ShopifyLogo'
+import ShopifyLogo from './logo/ShopifyLogo'
 
 import WidgetOne from '../public/widget/one.png'
 import WidgetTwo from '../public/widget/two.png'

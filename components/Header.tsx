@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import ShopifyLogo from './ShopifyLogo'
-import ColorLogo from './ColorLogo'
+import ShopifyLogo from './logo/ShopifyLogo'
+import ColorLogo from './logo/ColorLogo'
 
 const Header = () => {
   return (
