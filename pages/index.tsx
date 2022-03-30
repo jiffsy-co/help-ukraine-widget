@@ -1,65 +1,63 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import { PropsWithChildren } from "react";
-import Logo from "../components/logo/Logo";
-import Widget from "../components/Widget";
-import { useSeo } from "../hooks/seo";
-import { IWidgetOptions } from "../types";
+import type { NextPage } from 'next'
+import Head from 'next/head'
+import { PropsWithChildren } from 'react'
+import Logo from '../components/logo/Logo'
+import Widget from '../components/Widget'
+import { useSeo } from '../hooks/seo'
+import { IWidgetOptions } from '../types'
 
 const widgets: IWidgetOptions[] = [
   {
-    type: "one",
-    position: "bottom-right",
+    type: 'one',
+    position: 'bottom-right',
     layout: 'main',
   },
   {
-    type: "two",
-    position: "bottom-right",
+    type: 'two',
+    position: 'bottom-right',
     layout: 'main',
   },
   {
-    type: "three",
-    position: "bottom-right",
+    type: 'three',
+    position: 'bottom-right',
     layout: 'main',
   },
   {
-    type: "four",
-    position: "bottom-right",
+    type: 'four',
+    position: 'bottom-right',
     layout: 'main',
   },
-];
+]
 
 const Circle = ({ children }: PropsWithChildren<{}>) => {
   return (
     <div className="rounded-full w-10 h-10 flex items-center justify-center bg-black text-white text-xl font-semibold shrink-0">
       {children}
     </div>
-  );
-};
+  )
+}
 
 const ListItem = ({ index, text }: { index: number; text: string }) => (
   <li className="text-black text-xl flex items-center mt-5 peer-first:mt-0">
     <Circle>{index}</Circle>
     <span className="ml-7">{text}</span>
   </li>
-);
+)
 
-const List = ({ children }: PropsWithChildren<{}>) => (
-  <ul className="">{children}</ul>
-);
+const List = ({ children }: PropsWithChildren<{}>) => <ul className="">{children}</ul>
 
 const Home: NextPage = () => {
-  const seo = useSeo();
+  const seo = useSeo()
   return (
     <div className="">
       <Head>
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
         <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width"></meta>
+        <meta name="viewport" content="width=device-width" />
         <meta property="og:site_name" content={seo.title} />
         <meta property="og:title" content={seo.title} />
-        <meta property="og:type" content={"website"} />
+        <meta property="og:type" content={'website'} />
         <meta property="og:description" content={seo.description} />
         <meta property="og:url" content={seo.url} />
         <meta property="og:image" content={seo.image.url} />
@@ -75,16 +73,16 @@ const Home: NextPage = () => {
             <Logo className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24" />
           </div>
           <h1 className="text-black font-bold max-w-3xl leading-2 text-6xl lg:text-7xl">
-            <span className="block md:inline">Put the</span>{" "}
-            <span className="text-blue-700">Help</span>{" "}
+            <span className="block md:inline">Put the</span>{' '}
+            <span className="text-blue-700">Help</span>{' '}
             <span className="text-yellow-400">Ukraine</span>
             <br />
             widget on your website!
           </h1>
 
           <p className="text-gray-400 font-bold mt-5 max-w-6xl leading-2 text-4xl md:text-7xl">
-            Your customers and visitors of your website will be able to know how
-            they can help Ukraine from every place in the world.
+            Your customers and visitors of your website will be able to know how they can help
+            Ukraine from every place in the world.
           </p>
 
           <div className="font-semibold text-sky-500 text-xl md:text-3xl mt-10 md:mt-14">
@@ -98,7 +96,7 @@ const Home: NextPage = () => {
         <section id="widgets" className="w-full mt-12 lg:mt-20 xl:mt-40">
           <h2 className="text-black text-4xl font-bold">Widgets</h2>
           <p className="text-gray-400 text-xl mt-3">
-            Every widget is linked with{" "}
+            Every widget is linked with{' '}
             <a className="underline" href="https://helpukrainewin.org">
               https://helpukrainewin.org
             </a>
@@ -116,14 +114,8 @@ const Home: NextPage = () => {
           <h2 className="text-black text-4xl font-bold">How to install</h2>
           <List>
             <ListItem index={1} text="Choose a widget from the list." />
-            <ListItem
-              index={2}
-              text="Select a place to put it on your website."
-            />
-            <ListItem
-              index={3}
-              text="Copy the piece of code to the <head> tag of your website."
-            />
+            <ListItem index={2} text="Select a place to put it on your website." />
+            <ListItem index={3} text="Copy the piece of code to the <head> tag of your website." />
           </List>
         </section>
 
@@ -150,7 +142,7 @@ const Home: NextPage = () => {
         </div>
       </footer>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

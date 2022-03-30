@@ -1,23 +1,23 @@
-import { NextPage, GetStaticPaths, GetStaticProps } from "next";
-import { useRouter } from "next/router";
-import Script from "next/script";
-import { useEffect } from "react";
-import { IWidgetOptions } from "../../../types";
+import { NextPage, GetStaticPaths, GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
+import Script from 'next/script'
+import { useEffect } from 'react'
+import { IWidgetOptions } from '../../../types'
 
-const types: IWidgetOptions["type"][] = ["one", "two", "three", "four"];
-const positions: IWidgetOptions["position"][] = [
-  "bottom-left",
-  "bottom-right",
-  "top-left",
-  "top-right",
-	"middle-left",
-	"middle-right",
-];
-const sliderDisabledPersistenceStorageKey = 'huww-slider-disabled-persistence';
+const types: IWidgetOptions['type'][] = ['one', 'two', 'three', 'four']
+const positions: IWidgetOptions['position'][] = [
+  'bottom-left',
+  'bottom-right',
+  'top-left',
+  'top-right',
+  'middle-left',
+  'middle-right',
+]
+const sliderDisabledPersistenceStorageKey = 'huww-slider-disabled-persistence'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    fallback: "blocking",
+    fallback: 'blocking',
     paths: types.flatMap((type) =>
       positions.map((position) => ({
         params: {
@@ -26,20 +26,20 @@ export const getStaticPaths: GetStaticPaths = async () => {
         },
       }))
     ),
-  };
-};
+  }
+}
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {},
-  };
-};
+  }
+}
 
 const Sandbox: NextPage = () => {
-  const router = useRouter();
-  const params = router.query as any as IWidgetOptions;
+  const router = useRouter()
+  const params = router.query as any as IWidgetOptions
   useEffect(() => {
-    if(router.isReady) {
+    if (router.isReady) {
       localStorage.setItem(sliderDisabledPersistenceStorageKey, 'true')
     }
   }, [router.isReady])
@@ -79,7 +79,7 @@ const Sandbox: NextPage = () => {
         src={`/cdn/widget.js?type=${params.type}&position=${params.position}&layout=${params.layout}`}
       />
     </>
-  );
-};
+  )
+}
 
-export default Sandbox;
+export default Sandbox
