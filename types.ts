@@ -4,6 +4,6 @@ export interface IWidgetOptions {
 }
 
 export interface IButton {
-  title: 'string',
+  title: any,
   children?: any,
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import ShopifyLogo from "../ShopifyLogo";
 
-const ShopiffyButton = () => (
+const ShopifyButton = () => (
     <button className=" flex bg-logoBlue w-170px md:w-190px h-48px rounded-full items-center justify-evenly">
                 <span className="text-white text-14px font-bold leading-4">
                     Shopify App Store
@@ -12,4 +12,4 @@ const ShopiffyButton = () => (
     </button>
 );
 
-export default ShopiffyButton;
+export default ShopifyButton;

@@ -1,5 +1,5 @@
 import React from "react";
-import ShopiffyButton from "./ShopiffyButton";
+import ShopifyButton from "./ShopiffyButton";
 import Button from "../customComponents/Button";
 import ColorLogo from "../ColorLogo";
 const Header = (props: any) => {
@@ -19,7 +19,7 @@ const Header = (props: any) => {
                     Help Ukraine Widget
                 </span>
             </div>
-            <ShopiffyButton/>
+            <ShopifyButton/>
         </div>
             <div className='flex md:hidden'>
                 <div className='w-32'>
@@ -32,7 +32,7 @@ const Header = (props: any) => {
                 </span>
                     </div>
                 </div>
-                <ShopiffyButton/>
+                <ShopifyButton/>
                 <div className='w-128px h-48px'>
                     <Button title='Install manually'/>
                 </div>
