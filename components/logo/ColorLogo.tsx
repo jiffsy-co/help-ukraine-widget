@@ -8,5 +8,4 @@ const ColorLogo = (props:any) => (
     </svg>
 );
 
-export default ColorLogo;
-
+export default ColorLogo
