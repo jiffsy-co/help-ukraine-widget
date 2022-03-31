@@ -93,7 +93,7 @@ const Hero = () => {
             className="flex flex-col items-start bg-blue-ua text-white px-10 py-3 font-bold text-lg rounded-full relative pr-24 transition hover:scale-95"
           >
             <div className="w-12 h-12 rounded-full bg-white absolute top-1/2 right-9 -translate-y-1/2 translate-x-1/2 overflow-hidden flex items-center justify-center">
-              <ShopifyLogo className="w-8 h-8" />
+              <ShopifyLogo />
             </div>
             <span>Shopify App Store</span>
             <span className="text-sm font-normal opacity-70">One-click installation</span>

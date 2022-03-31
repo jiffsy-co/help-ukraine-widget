@@ -21,7 +21,7 @@ const Header = () => {
         <Link href="/">
           <a className="flex items-center">
             <div className="h-48px w-48px">
-              <ColorLogo className="h-48px w-48px" />
+              <ColorLogo />
             </div>
             <span className="leading-6 text-logoBlue font-bold text-2px">Help Ukraine Widget</span>
           </a>

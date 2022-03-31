@@ -25,7 +25,7 @@ const List = ({ children }: PropsWithChildren<{}>) => <ul className="">{children
 const Home: NextPage = () => {
   return (
     <MainLayout>
-      <section id="description" className="w-full relative">
+      <section id="description" className="w-full relative max-w-global my-32">
         <div className="absolute top-0 right-0">
           <Logo className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24" />
         </div>
@@ -38,8 +38,7 @@ const Home: NextPage = () => {
         </h1>
 
         <p className="text-gray-400 font-bold mt-5 max-w-6xl leading-2 text-4xl md:text-7xl">
-          Your customers and visitors of your website will be able to know how they can help
-            Ukraine
+          Your customers and visitors of your website will be able to know how they can help Ukraine
           from every place in the world.
         </p>
 
@@ -51,7 +50,7 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section id="widgets" className="w-full mt-12 lg:mt-20 xl:mt-40">
+      <section id="widgets" className="w-full mt-12 lg:mt-20 xl:mt-40 max-w-global my-32">
         <h2 className="text-black text-4xl font-bold">Widgets</h2>
         <p className="text-gray-400 text-xl mt-3">
           Every widget is linked with
@@ -68,7 +67,7 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section id="instructions" className="w-full mt-12 lg:mt-20 xl:mt-40">
+      <section id="instructions" className="w-full mt-12 lg:mt-20 xl:mt-40 max-w-global my-32">
         <h2 className="text-black text-4xl font-bold">How to install</h2>
         <List>
           <ListItem index={1} text="Choose a widget from the list." />
@@ -77,7 +76,7 @@ const Home: NextPage = () => {
         </List>
       </section>
 
-      <section className="w-full mt-14 lg:mt-20 xl:mt-40 text-3xl md:text-5xl">
+      <section className="w-full mt-14 lg:mt-20 xl:mt-40 text-3xl md:text-5xl max-w-global my-32">
         <p className="text-black font-semibold leading-1">
           That’s it! Together we will Stop Russian Aggression!
           <span className="text-blue-700 font-semibold mt-4 block">
