@@ -1,4 +1,4 @@
-const JiffsyLogo = (props: any) => (
+const JiffsyLogo = () => (
   <svg width="50" height="18" viewBox="0 0 50 18" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"

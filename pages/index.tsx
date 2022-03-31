@@ -38,7 +38,8 @@ const Home: NextPage = () => {
         </h1>
 
         <p className="text-gray-400 font-bold mt-5 max-w-6xl leading-2 text-4xl md:text-7xl">
-          Your customers and visitors of your website will be able to know how they can help Ukraine
+          Your customers and visitors of your website will be able to know how they can help
+            Ukraine
           from every place in the world.
         </p>
 
