@@ -27,7 +27,7 @@ module.exports = {
         '32px': '32px',
         '48px': '48px',
         '120px': '120px',
-	      '280px': '280px',
+	      '300px': '300px',
       },
       fontFamily: {
         sans: ['Roboto', ...defaultTheme.fontFamily.sans],
