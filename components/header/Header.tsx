@@ -1,7 +1,7 @@
 import React from "react";
 import ShopifyButton from "./ShopiffyButton";
 import Button from "../customComponents/Button";
-import ColorLogo from "../ColorLogo";
+import ColorLogo from "../logo/ColorLogo";
 const Header = (props: any) => {
 
     return (
