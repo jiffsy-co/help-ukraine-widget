@@ -10,18 +10,22 @@ const widgets: IWidgetOptions[] = [
   {
     type: "one",
     position: "bottom-right",
+    layout: 'main',
   },
   {
     type: "two",
     position: "bottom-right",
+    layout: 'main',
   },
   {
     type: "three",
     position: "bottom-right",
+    layout: 'main',
   },
   {
     type: "four",
     position: "bottom-right",
+    layout: 'main',
   },
 ];
 
@@ -102,7 +106,7 @@ const Home: NextPage = () => {
           <div className="w-full mt-10">
             {widgets.map((options) => (
               <div key={options.type} className="w-full mt-10 lg:mt-10">
-                <Widget options={options}></Widget>
+                <Widget options={options} />
               </div>
             ))}
           </div>
