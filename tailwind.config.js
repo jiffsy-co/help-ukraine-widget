@@ -23,7 +23,8 @@ module.exports = {
         '190px': '190px',
         '32px':  '32px',
         '48px': '48px',
-        '120px': '120px'
+        '120px': '120px',
+	      '280px': '280px',
       },
       fontFamily: {
         sans: ["Roboto", ...defaultTheme.fontFamily.sans],
@@ -36,7 +37,8 @@ module.exports = {
       },
       spacing: {
         '10px': '10px',
-        '5px': '5px'
+        '5px': '5px',
+	      '100%': '100%',
       }
     },
   },

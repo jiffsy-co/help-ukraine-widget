@@ -5,6 +5,7 @@ import Logo from "../components/logo/Logo";
 import Widget from "../components/Widget";
 import { useSeo } from "../hooks/seo";
 import { IWidgetOptions } from "../types";
+import OfficialResources from "../components/OfficialResources";
 
 const widgets: IWidgetOptions[] = [
   {
@@ -70,6 +71,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="w-full mx-auto relative pt-6 sm:pt-8 px-3 sm:px-6 md:pt-16 lg:px-16 xl:px-32">
+
+	      <OfficialResources />
+
         <section id="description" className="w-full relative">
           <div className="absolute top-0 right-0">
             <Logo className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24" />
