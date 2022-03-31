@@ -3,10 +3,11 @@ import { IWidgetOptions } from "../types";
 import Iframe from "./Iframe";
 
 const makeScript = (options: IWidgetOptions): string => {
-  return `<script id="help-ukraine-win" async="true" src="${
-    process.env.WIDGET_SCRIPT_URL ||
-    "https://helpukrainewinwidget.org/cdn/widget.js"
-  }" data-type="${options.type}" data-position="${options.position}"></script>`;
+	const src = new URL(process.env.WIDGET_SCRIPT_URL || "https://helpukrainewinwidget.org/cdn/widget.js")
+	src.searchParams.set('type', options.type)
+	src.searchParams.set('position', options.position)
+	src.searchParams.set('layout', options.layout)
+  return `<script id="help-ukraine-win" async="true" src="${src.href}"></script>`;
 };
 
 function Widget({ options: defaultOptions }: { options: IWidgetOptions }) {
@@ -31,7 +32,7 @@ function Widget({ options: defaultOptions }: { options: IWidgetOptions }) {
           <div
             className={`h-80 w-full rounded-t-lg md:w-96 bg-gray-100 md:rounded-lg overflow-hidden`}
           >
-            <Iframe type={options.type} position={options.position} />
+            <Iframe type={options.type} position={options.position} layout={options.layout} />
           </div>
         </div>
 
@@ -64,6 +65,12 @@ function Widget({ options: defaultOptions }: { options: IWidgetOptions }) {
                   <option value={"bottom-right"}>
                     Bottom Right {options.position === "bottom-right" && "▾"}
                   </option>
+	                <option value={"middle-left"}>
+		                Middle Left {options.position === "middle-left" && "▾"}
+	                </option>
+	                <option value={"middle-right"}>
+		                Middle Right {options.position === "middle-right" && "▾"}
+	                </option>
                 </select>
               </div>
               <button
