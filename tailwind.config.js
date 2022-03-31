@@ -27,6 +27,7 @@ module.exports = {
         '32px': '32px',
         '48px': '48px',
         '120px': '120px',
+	      '280px': '280px',
       },
       fontFamily: {
         sans: ['Roboto', ...defaultTheme.fontFamily.sans],
@@ -49,6 +50,7 @@ module.exports = {
         '25%': '25%',
         '45%': '45%',
         '50%': '50%',
+	      '100%': '100%',
       },
       rotate: {
         7: '7deg',
