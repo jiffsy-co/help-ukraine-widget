@@ -45,6 +45,7 @@ module.exports = {
         42: '10.5rem',
         58: '14.5rem',
         180: '45rem',
+        '300px': '300px'
       },
       fontFamily: {
         sans: ['Roboto', ...defaultTheme.fontFamily.sans],
@@ -72,6 +73,7 @@ module.exports = {
         '25%': '25%',
         '45%': '45%',
         '50%': '50%',
+        '100%': '100%',
       },
       lineHeight: {
         '22px': '22px',
@@ -86,6 +88,7 @@ module.exports = {
         15: '15deg',
         16: '16deg',
         18: '18deg',
+        '100%': '100%',
       },
     },
   },
