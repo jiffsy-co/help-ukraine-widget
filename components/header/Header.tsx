@@ -1,7 +1,6 @@
 import React from 'react'
 import ShopifyButton from './ShopiffyButton'
 import Button from '../customComponents/Button'
-import ColorLogo from '../logo/ColorLogo'
 const Header = (props: any) => {
   return (
     <>
@@ -15,18 +14,20 @@ const Header = (props: any) => {
           </span>
         </div>
         <div className="flex items-center">
-          <div className="h-12 w-12">
-            <ColorLogo className="h-12 w-12" />
+          <div className="h-12 w-12 rounded-3xl">
+            <img src="./logo.png" />
           </div>
-          <span className="leading-6 text-logoBlue font-bold text-24px">Help Ukraine Widget</span>
+          <span className="leading-6 text-logoBlue font-bold text-24px ml-2.5">
+            Help Ukraine Widget
+          </span>
         </div>
         <ShopifyButton />
       </div>
-      <div className="flex md:hidden w-fit">
+      <div className="flex md:hidden w-fit ">
         <div className="w-32">
           <div className="flex items-center w-32 h-10">
             <div className="h-10 w-4">
-              <ColorLogo className="h-10 w-10" />
+              <img src="./logo.png" className="h-10 w-10" />
             </div>
             <span className="leading-6 text-logoBlue font-bold text-14px">Help Ukraine Widget</span>
           </div>
