@@ -22,15 +22,16 @@ module.exports = {
         '96px': '96px',
         '40px': '40px',
         '114px': '114px',
+        42: '10.5rem',
       },
       width: {
         '190px': '190px',
         '32px': '32px',
         '48px': '48px',
-        '4': '4.5rem',
+        4: '4.5rem',
         '128px': '128px',
         '170px': '170px',
-        '120px': '120px'
+        '120px': '120px',
       },
       fontFamily: {
         sans: ['Roboto', ...defaultTheme.fontFamily.sans],
