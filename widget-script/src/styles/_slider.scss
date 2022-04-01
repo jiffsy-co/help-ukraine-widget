@@ -1,4 +1,3 @@
-
 $sliderSchema: ('collapsed', 'main', 'expanded');
 $transition: 350;
 
@@ -42,12 +41,14 @@ $transition: 350;
   display: flex;
   flex-wrap: nowrap;
   transition: #{$transition}ms ease;
-  &, &.huww-slider-direction-vertical {
+  &,
+  &.huww-slider-direction-vertical {
     flex-direction: column !important;
     [data-slide='collapsed'] & {
       transform: translateY(0);
     }
-    &, [data-slide='main'] & {
+    &,
+    [data-slide='main'] & {
       transform: translateY(-100%);
     }
     [data-slide='expanded'] & {
@@ -59,7 +60,8 @@ $transition: 350;
     [data-slide='collapsed'] & {
       transform: translateX(0);
     }
-    &, [data-slide='main'] & {
+    &,
+    [data-slide='main'] & {
       transform: translateX(-100%);
     }
     [data-slide='expanded'] & {
