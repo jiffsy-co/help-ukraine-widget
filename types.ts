@@ -23,3 +23,16 @@ export interface IWidgetOptions {
   position: IWidgetPosition
   layout: IWidgetLayout
 }
+
+export interface ITextBlock {
+  title: string
+  children: any
+}
+
+export interface IPrivacyText {
+  children: Element | (Element & Element)
+}
+
+export interface IRights {
+  items: string[][]
+}

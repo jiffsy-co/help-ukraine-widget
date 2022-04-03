@@ -11,15 +11,24 @@ module.exports = {
         borderGray: '#E5E5E5',
         'blue-ua': '#2559B5',
         'yellow-ua': '#F7D648',
+        titleBlack: '#272727',
+        beige: '#faf5de',
+        snow: '#fbfbfb',
       },
       minHeight: {
         '660px': '660px',
         '800px': '800px',
+        '112px': '112px',
+        '128px': '128px',
+      },
+      minWidth: {
+        180: '45rem',
       },
       height: {
         '48px': '48px',
         '32px': '32px',
         '96px': '96px',
+        22: '5.5rem',
         '114px': '114px',
       },
       width: {
@@ -27,6 +36,8 @@ module.exports = {
         '32px': '32px',
         '48px': '48px',
         '120px': '120px',
+        42: '10.5rem',
+        58: '14.5rem',
       },
       fontFamily: {
         sans: ['Roboto', ...defaultTheme.fontFamily.sans],
@@ -36,6 +47,11 @@ module.exports = {
         '12px': '12px',
         '14px': '14px',
         '20px': '20px',
+        '24px': '24px',
+        '16px': '16px',
+        '32px': '32px',
+        '62px': '62px',
+        '18px': '18px',
       },
       spacing: {
         '5px': '5px',
@@ -49,6 +65,12 @@ module.exports = {
         '25%': '25%',
         '45%': '45%',
         '50%': '50%',
+      },
+      lineHeight: {
+        '22px': '22px',
+        '26px': '26px',
+        '38px': '38px',
+        '66px': '66px',
       },
       rotate: {
         7: '7deg',
