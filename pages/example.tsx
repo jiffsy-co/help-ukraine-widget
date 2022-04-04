@@ -1,12 +1,9 @@
 import type { NextPage } from "next";
-import Header from '../components/header/Header';
+import Footer from "../components/footer/Footer";
 
-const Example = () => {
-    return(
-        <>
-            <Header/>
-        </>
-    )
-}
+
+const Example = () => (
+    <Footer/>
+);
 
 export default Example;
