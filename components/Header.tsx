@@ -23,11 +23,11 @@ const Header = () => {
             <div className="h-48px w-48px">
               <ColorLogo />
             </div>
-            <span className="leading-6 text-logoBlue font-bold text-2px">Help Ukraine Widget</span>
+            <span className="leading-6 text-blue-ua font-bold text-2px">Help Ukraine Widget</span>
           </a>
         </Link>
       </div>
-      <button className=" flex bg-logoBlue w-190px h-48px rounded-full items-center justify-evenly">
+      <button className=" flex bg-blue-ua w-190px h-48px rounded-full items-center justify-evenly">
         <span className="text-white text-14px font-bold leading-4">Shopify App Store</span>
         <div className="bg-white rounded-full w-32px h-32px flex items-center justify-center">
           <ShopifyLogo />

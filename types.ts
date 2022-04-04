@@ -1,3 +1,5 @@
+import { ReactElement } from 'react'
+
 export const widgetTypes = ['one', 'two', 'three', 'four'] as const
 export type IWidgetType = typeof widgetTypes[number]
 
@@ -25,22 +27,22 @@ export interface IWidgetOptions {
 }
 
 export interface ITextBlock {
-  title: 'string',
-  children: Element | string,
+  title: string
+  children: ReactElement<any, any>
 }
 
 export interface IButton {
-  title: 'string',
-  children?: any,
+  title: string
+  children?: any
 }
 
 export interface IDescription {
-  logo: Element,
-  description: string,
-  link: string,
+  logo: JSX.Element
+  description: string
+  link: string
 }
 
 export interface IEllipse {
-  children: any,
+  children: any
   large?: boolean
 }
