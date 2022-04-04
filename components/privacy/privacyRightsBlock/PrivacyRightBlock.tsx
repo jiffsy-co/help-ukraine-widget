@@ -14,7 +14,9 @@ const PrivacyRightBlock = () => (
       </div>
       <div className="mt-2.5">You, as subjects of personal data, have the following rights:</div>
     </PrivacyTextBlock>
-    <RightsTable items={rightsDataConst} />
+    <div className="w-full overflow-y-scroll">
+      <RightsTable items={rightsDataConst} />
+    </div>
     <div className="h-22 mb-2.5">
       <NoteBlock
         textBlock="Please note!"
