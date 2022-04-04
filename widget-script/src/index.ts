@@ -12,8 +12,9 @@ if (document.readyState !== 'loading') {
 const params = getConfig()
 
 function initialize() {
-  injectStyles()
-  initWidget()
+    injectAnalytics();
+    injectStyles();
+    initWidget();
 }
 
 function injectStyles() {
@@ -25,4 +26,15 @@ function injectStyles() {
 function initWidget() {
   document.body.append(createWidget(params.widgetType, params.widgetPosition, params.widgetLayout))
   sliderBehavior()
+}
+
+function injectAnalytics(){
+    if ((window as any).__HELPUKRAINEWIDGET_DISABLE_ANALYICS) {
+      return;
+    }
+    const script = document.createElement('script');
+    script.setAttribute('src', process.env.NEXT_PUBLIC_ANALYTICS_SCRIPT_PATH || 'https://analytics.helpukrainewinwidget.org/js/script.js');
+    script.setAttribute('defer', '');
+    script.setAttribute('data-domain', [...params.widgetDomain.split(','), process.env.NEXT_PUBLIC_ANALYTICS_ROLLUP_DOMAIN || 'rollup-analytics.helpukrainewinwidget.org'].join(','));
+    document.head.appendChild(script);
 }

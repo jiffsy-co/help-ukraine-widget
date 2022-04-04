@@ -19,6 +19,7 @@ export interface WidgetConfig {
   widgetType: WidgetType
   widgetPosition: WidgetPosition
   widgetLayout: SlideLayout
+  widgetDomain: string
 }
 
 export function scriptDatasetParams(): WidgetConfig {
@@ -36,7 +37,9 @@ export function scriptDatasetParams(): WidgetConfig {
     defaultLayout
   )
 
-  return { widgetPosition, widgetType, widgetLayout }
+  const widgetDomain=script?.getAttribute(scriptLayoutAttribute) || window.location.hostname
+
+  return { widgetPosition, widgetType, widgetLayout, widgetDomain }
 }
 
 export function getConfig(): WidgetConfig {
@@ -56,6 +59,7 @@ export function scriptSrcParams(
     widgetType: defaultType,
     widgetPosition: defaultPosition,
     widgetLayout: defaultLayout,
+    widgetDomain: window.location.hostname
   }
 ): WidgetConfig {
   const script = findScripElement()
@@ -78,6 +82,7 @@ export function scriptSrcParams(
       slideLayout,
       defaults.widgetLayout
     )
+    params.widgetDomain = url.searchParams.get('domain') || defaults.widgetDomain
   } catch (error) {
     console.error(error)
   }
