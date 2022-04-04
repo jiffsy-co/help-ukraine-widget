@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 export const widgetTypes = ['one', 'two', 'three', 'four'] as const
 export type IWidgetType = typeof widgetTypes[number]
 
@@ -30,7 +32,7 @@ export interface ITextBlock {
 }
 
 export interface IPrivacyText {
-  children: Element | (Element & Element)
+  children: ReactNode
 }
 
 export interface IRights {
