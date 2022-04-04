@@ -26,6 +26,10 @@ export interface IWidgetOptions {
   layout: IWidgetLayout
 }
 
+export interface IButton {
+  title: string
+  children?: any
+}
 export interface ITextBlock {
   title: string
   children: any
