@@ -50,7 +50,7 @@ const Sandbox: NextPage = () => {
             height: 100%;
           }
           body {
-            zoom: 0.7;
+            zoom: 1;
           }
           .huww-widget.huww-widget-top-right {
             top: 1.6rem !important;
