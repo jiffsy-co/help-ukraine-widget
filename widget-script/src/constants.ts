@@ -3,7 +3,6 @@ export const supportUrl = 'https://war.ukraine.ua'
 export const landingUrl = 'https://helpukrainewinwidget.org'
 
 export const sliderStorageKey = 'huww-slider-state'
-export const sliderDisabledPersistenceStorageKey = 'huww-slider-disabled-persistence'
 
 export const widgetWidth: number = 400
 export const widgetHeight: number = 250
@@ -35,3 +34,4 @@ export const scriptId = 'help-ukraine-win'
 export const scriptTypeAttribute = 'data-type'
 export const scriptPositionAttribute = 'data-position'
 export const scriptLayoutAttribute = 'data-layout'
+export const scriptDomainAttribute = 'data-domain'

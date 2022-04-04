@@ -13,7 +13,6 @@ const positions: IWidgetOptions['position'][] = [
   'middle-left',
   'middle-right',
 ]
-const sliderDisabledPersistenceStorageKey = 'huww-slider-disabled-persistence'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -39,9 +38,8 @@ const Sandbox: NextPage = () => {
   const router = useRouter()
   const params = router.query as any as IWidgetOptions
   useEffect(() => {
-    if (router.isReady) {
-      localStorage.setItem(sliderDisabledPersistenceStorageKey, 'true')
-    }
+    (window as any).__HELPUKRAINEWIDGET_DISABLE_ANALYICS = true;
+    (window as any).__HELPUKRAINEWIDGET_DISABLE_PERSISTENCE = true;
   }, [router.isReady])
   return (
     <>
@@ -52,7 +50,7 @@ const Sandbox: NextPage = () => {
             height: 100%;
           }
           body {
-            zoom: 0.7;
+            zoom: 1;
           }
           .huww-widget.huww-widget-top-right {
             top: 1.6rem !important;

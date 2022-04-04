@@ -221,20 +221,32 @@ function createExpandedWidget3() {
 }
 
 function createActionList() {
-  return crel(
-    'div',
-    { class: 'huww-action-list' },
-    createActionItem(donateUrl, 'Donate', '💸'),
-    createActionItem(supportUrl, 'Support Ukraine', '❤', 'huww-heart'),
-    createActionItem(landingUrl, 'Share this widget', '📌')
-  )
+	return crel('div', { class: 'huww-action-list' },
+		createActionItem(
+			donateUrl,
+			'Donate',
+			'💸',
+			'Donate'
+		),
+		createActionItem(
+			supportUrl,
+			'Support Ukraine',
+			'❤',
+			'Info',
+			'huww-heart'
+		),
+		createActionItem(
+			landingUrl,
+			'Share this widget',
+			'📌',
+			'GetWidget'
+		)
+	);
 }
 
-function createActionItem(href: string, text: string, emoji: string, emojiClass?: string) {
-  return crel(
-    'a',
-    { class: 'huww-action', target: '_blank', href },
-    crel('span', {}, text),
-    crel('span', { class: emojiClass }, emoji)
-  )
+function createActionItem(href: string, text: string, emoji: string, action: 'Donate'|'Info'|'GetWidget', emojiClass?: string) {
+	return crel('a', { class: 'huww-action', target: '_blank', 'data-action': action, href },
+		crel('span', {}, text),
+		crel('span', { class: emojiClass }, emoji)
+	);
 }
