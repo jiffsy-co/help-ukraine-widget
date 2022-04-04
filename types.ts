@@ -27,8 +27,8 @@ export interface IWidgetOptions {
 }
 
 export interface IButton {
-  title: any,
-  children?: any,
+  title: string
+  children?: any
 }
 export interface ITextBlock {
   title: string
