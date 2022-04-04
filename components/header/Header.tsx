@@ -1,6 +1,7 @@
 import React from 'react'
 import ShopifyButton from './ShopiffyButton'
 import Button from '../customComponents/Button'
+
 const Header = (props: any) => {
   return (
     <>
@@ -23,21 +24,25 @@ const Header = (props: any) => {
         </div>
         <ShopifyButton />
       </div>
-      <div className="flex md:hidden w-fit ">
-        <div className="w-32">
-          <div className="flex items-center w-32 h-10">
-            <div className="h-10 w-4">
-              <img src="./logo.png" className="h-10 w-10" />
+      <div className="md:hidden w-full overflow-y-scroll">
+        <div className="flex w-fit">
+          <div className="w-32">
+            <div className="flex items-center w-32 h-10">
+              <div className="h-10 w-4">
+                <img src="./logo.png" className="h-10 w-10" />
+              </div>
+              <span className="leading-6 text-logoBlue font-bold text-14px">
+                Help Ukraine Widget
+              </span>
             </div>
-            <span className="leading-6 text-logoBlue font-bold text-14px">Help Ukraine Widget</span>
           </div>
-        </div>
-        <ShopifyButton />
-        <div className="w-32 h-12 mr-2.5 md:mr-0">
-          <Button title="Install manually" />
-        </div>
-        <div className="w-32 h-12 mr-2.5 md:mr-0">
-          <Button title="Privacy Policy" />
+          <ShopifyButton />
+          <div className="w-32 h-12 mr-2.5 md:mr-0">
+            <Button title="Install manually" />
+          </div>
+          <div className="w-32 h-12 mr-2.5 md:mr-0">
+            <Button title="Privacy Policy" />
+          </div>
         </div>
       </div>
     </>
