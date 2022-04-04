@@ -1,17 +1,17 @@
 import type { NextPage } from 'next'
 import MainLayout from '../components/MainLayout'
 import Hero from '../components/Hero'
-import WidgetList from '../components/WidgetList'
 import WidgetHelp from '../components/WidgetHelp'
 
-const Install: NextPage = () => {
+const NewLanding: NextPage = () => {
   return (
-    <MainLayout>
+    <>
       <Hero />
-      <WidgetList />
-      <WidgetHelp />
-    </MainLayout>
+      <MainLayout>
+        <WidgetHelp />
+      </MainLayout>
+    </>
   )
 }
 
-export default Install
+export default NewLanding

@@ -19,7 +19,7 @@ const helpList: HelpListItem[] = [
 
 function WidgetHelp() {
   return (
-    <section className="widget-help my-32 max-w-global">
+    <section className="widget-help my-28 max-w-global">
       <h2 className="h1 text-center mb-3 md:mb-6">How widget can help?</h2>
       <p className="text-center md:text-lg max-w-2xl mx-auto">
         There are few ways of how you can help to end the war by setting up the widget.

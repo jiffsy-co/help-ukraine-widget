@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className="flex bg-inherit flex items-center justify-around h-96px border-b border-solid border-borderGray">
       <div>
-        <Link href="/install">
+        <Link href="/install-manually">
           <a className="mr-10px text-black font-bold text-14px leading-4 opacity-70 hover:opacity-100">
             Install manually
           </a>
