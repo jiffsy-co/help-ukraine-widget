@@ -1,10 +1,7 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     screens: {
       ...defaultTheme.screens,
@@ -13,13 +10,19 @@ module.exports = {
     extend: {
       colors: {
         white: '#FFFFFF',
-        black:'#1F1F1F',
+        black: '#1F1F1F',
         logoBlue: '#2559B5',
+        'blue-ua': '#2559B5',
+        'yellow-ua': '#F7D648',
         borderGray: '#E5E5E5',
         yellow: '#F7D648',
         darkslategray: '#414141',
       },
-      height:{
+      minHeight: {
+        '660px': '660px',
+        '800px': '800px',
+      },
+      height: {
         '48px': '48px',
         '32px': '32px',
         '96px': '96px',
@@ -33,10 +36,12 @@ module.exports = {
         '400px': '400px',
         '256px': '256px',
         '220px': '220px',
-        '192px': '192px'
+        '192px': '192px',
+        '114px': '114px',
       },
-      width:{
+      width: {
         '190px': '190px',
+        '120px': '120px',
         '32px':  '32px',
         '48px': '48px',
         '430px': '430px',
@@ -55,13 +60,14 @@ module.exports = {
         '125px': '125px'
       },
       fontFamily: {
-        sans: ["Roboto", ...defaultTheme.fontFamily.sans],
-        mono: ["Roboto Mono", ...defaultTheme.fontFamily.mono],
+        sans: ['Roboto', ...defaultTheme.fontFamily.sans],
+        mono: ['Roboto Mono', ...defaultTheme.fontFamily.mono],
       },
       fontSize: {
+        '12px': '12px',
         '14px': '14px',
-        '16px': '16px',
         '20px': '20px',
+        '16px': '16px',
         '24px': '24px',
         '32px': '32px',
         '18px': '18px',
@@ -72,11 +78,29 @@ module.exports = {
         '66px': '66px'
       },
       spacing: {
+        '5px': '5px',
         '10px': '10px',
+        '4%': '4%',
+        '5%': '5%',
+        '10%': '10%',
+        '12%': '12%',
+        '20%': '20%',
+        '30%': '30%',
+        '25%': '25%',
+        '45%': '45%',
+        '50%': '50%',
         '20px': '20px',
         '30px': '30px',
-      }
+      },
+      rotate: {
+        7: '7deg',
+        9: '9deg',
+        13: '13deg',
+        15: '15deg',
+        16: '16deg',
+        18: '18deg',
+      },
     },
   },
   plugins: [],
-};
+}
