@@ -2,7 +2,7 @@ import React from 'react'
 import { IRights } from '../../../types'
 
 const RightsTable = (option: IRights) => (
-  <div className="rounded-3xl mt-2.5 border border-solid border-borderGray min-w-180">
+  <div className="rounded-3xl mt-2.5 border border-solid border-borderGray w-180 md:w-full">
     <table className="bg-white text-left table-auto rounded-3xl text-sm w-full">
       <thead className=" border-b border-solid border-borderGray font-medium">
         <tr>
