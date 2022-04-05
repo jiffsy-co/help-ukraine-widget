@@ -1,8 +1,8 @@
 import { NextPage } from 'next'
 import { useSeo } from '../hooks/seo'
 import Head from 'next/head'
-import Header from './Header'
-import Footer from './Footer'
+import Header from './header/Header'
+import Footer from './footer/Footer'
 
 const MainLayout: NextPage = ({ children }) => {
   const seo = useSeo()

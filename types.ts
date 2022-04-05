@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { ReactElement } from 'react'
 
 export const widgetTypes = ['one', 'two', 'three', 'four'] as const
@@ -46,3 +47,12 @@ export interface IEllipse {
   children: any
   large?: boolean
 }
+
+export interface IPrivacyText {
+  children: ReactNode
+}
+
+export interface IRights {
+  items: string[][]
+}
+

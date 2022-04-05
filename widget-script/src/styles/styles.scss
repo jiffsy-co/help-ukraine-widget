@@ -42,6 +42,7 @@ $f_offset: units(1.4);
 $f_radius: units(1);
 
 .huww-widget {
+  z-index: 99999999;
   padding: $f_offset;
   @media screen and (min-width: 1024px) {
     padding: units(1.8);
@@ -96,6 +97,7 @@ $f_radius: units(1);
   transform: translate(40%, -30%);
   cursor: pointer;
   transition: 0.2s ease;
+  display: block !important;
 
   &:before,
   &:after {
@@ -186,12 +188,14 @@ $f_radius: units(1);
     @include size(4, 2);
     background: $color_blue;
     border-radius: units(1) units(1) 0 0;
+    display: block;
   }
 
   .huww-flag-bottom {
     @include size(4, 2);
     background: $color_yellow;
     border-radius: 0 0 units(1) units(1);
+    display: block;
   }
 }
 
@@ -202,6 +206,7 @@ $f_radius: units(1);
     border-radius: units(1) 0 0 0;
     height: 50%;
     width: 100%;
+    display: block;
   }
 
   .huww-half-flag-bottom {
@@ -210,6 +215,7 @@ $f_radius: units(1);
     border-radius: 0 0 0 units(1);
     height: 50%;
     width: 100%;
+    display: block;
   }
 }
 
@@ -321,12 +327,14 @@ $f_radius: units(1);
     @include size(4, 2);
     background: $color_blue;
     border-radius: units(1) units(1) 0 0;
+    display: block;
   }
 
   .huww-separeted-flag-bottom {
     @include size(4, 2);
     background: $color_yellow;
     border-radius: 0 0 units(1) units(1);
+    display: block;
   }
 }
 
