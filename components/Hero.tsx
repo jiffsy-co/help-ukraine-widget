@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Parallax from './Parallax'
 import ShopifyLogo from './logo/ShopifyLogo'
+import Logo from './logo/Logo'
 
 import WidgetOne from '../public/widget/one.png'
 import WidgetTwo from '../public/widget/two.png'
@@ -33,6 +34,9 @@ const WidgetImage = ({
 const Hero = () => {
   return (
     <section className="hero bg-yellow-ua relative">
+      <div className="w-48px h-48px absolute top-10 md:top-20 left-1/2 -translate-x-1/2">
+        <Logo />
+      </div>
       <Parallax>
         <WidgetImage
           src={WidgetCollapsed}
