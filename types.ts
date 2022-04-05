@@ -26,13 +26,25 @@ export interface IWidgetOptions {
   layout: IWidgetLayout
 }
 
+export interface ITextBlock {
+  title: string
+  children: any
+}
+
 export interface IButton {
   title: string
   children?: any
 }
-export interface ITextBlock {
-  title: string
+
+export interface IDescription {
+  logo: JSX.Element
+  description: string
+  link: string
+}
+
+export interface IEllipse {
   children: any
+  large?: boolean
 }
 
 export interface IPrivacyText {
