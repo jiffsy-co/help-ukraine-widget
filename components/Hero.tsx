@@ -26,7 +26,7 @@ const WidgetImage = ({
       className={`parallax-item widget-${name} inline-block ${className}`}
       data-parallax={parallax}
     >
-      <Image src={src} alt={name} />
+      <Image src={src} alt={name} placeholder="blur" />
     </div>
   )
 }
