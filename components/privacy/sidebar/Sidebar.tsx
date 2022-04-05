@@ -1,4 +1,6 @@
 import React from 'react'
+// @ts-ignore
+import Scrollspy from 'react-scrollspy'
 import NavBarTitle from './NavBarTitle'
 import { navBarLinks } from './constans'
 
@@ -10,18 +12,31 @@ const Sidebar = () => {
         className="hidden md:flex flex-col
         text-sm leading-4 font-bold text-black"
       >
-        {navBarLinks.map((item, index) => (
-          <div
-            key={index}
-            className="min-h-5 opacity-70
-                 hover:border-l-4
-                 border-solid border-logoBlue
-                 hover:opacity-100 pl-2.5
+        <Scrollspy
+          items={[
+            'purpose',
+            'who_we_are',
+            'personal_data_we_process',
+            'period_of_data_storage',
+            'information_of_data_transfer',
+            'your_privacy_rights',
+            'update',
+          ]}
+          currentClassName="is-current"
+          offset={500}
+        >
+          {navBarLinks.map((item, index) => (
+            <li
+              data-to-scrollspy-id={item.link}
+              key={index}
+              className="min-h-5 opacity-70
+                  pl-2.5
                  mb-2.5 "
-          >
-            <a href={item.link}>{item.name}</a>
-          </div>
-        ))}
+            >
+              <a href={item.link}>{item.name}</a>
+            </li>
+          ))}
+        </Scrollspy>
       </div>
     </div>
   )

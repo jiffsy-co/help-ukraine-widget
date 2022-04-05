@@ -25,16 +25,11 @@ const MainLayout: NextPage = ({ children }) => {
         <meta property="og:image:height" content={String(seo.image.height)} />
       </Head>
 
-      <Header />
-
-      <main
-        className="w-full mx-auto relative"
-        // className="w-full mx-auto relative pt-6 sm:pt-8 px-3 sm:px-6 md:pt-16 lg:px-16 xl:px-32"
-      >
-        {children}
-      </main>
-
-      <Footer />
+      <div>
+        <Header />
+        <main className="w-full mx-auto relative">{children}</main>
+        <Footer />
+      </div>
     </>
   )
 }

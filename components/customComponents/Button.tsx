@@ -2,8 +2,15 @@ import React from "react";
 import {IButton} from "../../types";
 
 const Button = (options: IButton) => {
+    const handleClickLink = () => {
+       if (options.link) {
+         window.location.href = options.link
+       }
+    }
     return (
-        <button className='flex items-center
+        <button
+            onClick={handleClickLink}
+            className='flex items-center
           bg-black
           w-full
           h-full

@@ -33,6 +33,7 @@ export interface ITextBlock {
 
 export interface IButton {
   title: string
+  link?: string
   children?: any
 }
 

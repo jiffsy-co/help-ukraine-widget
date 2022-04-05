@@ -36,4 +36,14 @@ html {
   display: none;
 }
 
+.is-current {
+  opacity: 1;
+  border-left: 3px solid #2559b5;
+}
 
+.is-current-header{
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
