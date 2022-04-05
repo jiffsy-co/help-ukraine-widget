@@ -30,7 +30,12 @@ function WidgetHelp() {
         <div className="flex flex-col items-center justify-end rounded-xl bg-blue-ua p-6 md:p-8 xl:p-10">
           <div className="mb-6 md:-mt-20 lg:translate-x-1/4 w-full">
             <div className="-mx-14 -mt-14">
-              <Image src={widgetHelpImage} alt="How widget can help?" layout="responsive" />
+              <Image
+                src={widgetHelpImage}
+                alt="How widget can help?"
+                layout="responsive"
+                placeholder="blur"
+              />
             </div>
           </div>
           <h2 className="text-yellow-ua">
