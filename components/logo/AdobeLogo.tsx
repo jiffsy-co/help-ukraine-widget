@@ -1,5 +1,5 @@
 const AdobeLogo = () => (
-  <svg width="225" height="60" viewBox="0 0 225 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width="100%" height="60" viewBox="0 0 225 60" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#clip0_1383_6405)">
       <path d="M24.7889 0H0V59.25L24.7889 0Z" fill="white" />
       <path d="M42.23 0H66.9866V59.25L42.23 0Z" fill="white" />

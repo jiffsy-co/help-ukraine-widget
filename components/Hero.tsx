@@ -36,7 +36,7 @@ const WidgetImage = ({
 const Hero = () => {
   return (
     <section className="hero bg-yellow-ua relative">
-      <div className="w-48px h-48px absolute top-10 md:top-20 left-1/2 -translate-x-1/2">
+      <div className="w-12 h-12 absolute top-10 md:top-20 left-1/2 -translate-x-1/2">
         <Logo />
       </div>
       <Parallax>

@@ -37,24 +37,26 @@ const Header = (props: any) => {
           </Link>
           <ShopifyButton />
         </div>
-        <div className="md:hidden w-full overflow-y-scroll ">
-          <div className="flex w-fit">
-            <div className="w-32">
-              <div className="flex items-center w-32 h-10">
-                <div className="h-10 w-10 mt-1.5">
-                  <Image src={Logo} />
+        <div className="md:hidden w-full overflow-y-scroll h-16 border-b border-solid border-borderGray">
+          <div className="flex items-center h-full">
+            <div className="flex w-fit">
+              <div className="w-32">
+                <div className="flex items-center w-32">
+                  <div className="h-10 w-10 mt-1.5">
+                    <Image src={Logo} />
+                  </div>
+                  <span className="leading-6 text-blue-ua font-bold text-sm">
+                    Help Ukraine Widget
+                  </span>
                 </div>
-                <span className="leading-6 text-blue-ua font-bold text-sm">
-                  Help Ukraine Widget
-                </span>
               </div>
-            </div>
-            <ShopifyButton />
-            <div className="w-32 mr-2.5 md:mr-0 h-12">
-              <Button title="Install manually" link={installManuallyLink} />
-            </div>
-            <div className="w-32  mr-2.5 md:mr-0 h-12">
-              <Button title="Privacy Policy" link={privacyPolicyLink} />
+              <ShopifyButton />
+              <div className="w-32 mr-2.5 md:mr-0 h-12">
+                <Button title="Install manually" link={installManuallyLink} />
+              </div>
+              <div className="w-32  mr-2.5 md:mr-0 h-12">
+                <Button title="Privacy Policy" link={privacyPolicyLink} />
+              </div>
             </div>
           </div>
         </div>
