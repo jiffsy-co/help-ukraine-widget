@@ -19,7 +19,7 @@ const WhyBlock = (props: any) => {
          md:w-full justify-between my-12"
       >
         {socialMedias.map((media, index) => (
-          <div key={index} className=" w-85.75 md:w-31.25 lg:w-36.5 mb-2.5">
+          <div key={index} className=" w-85.75 md:w-31.25 lg:w-36.5 mb-2.5 h-11">
             <Button title={media.title}>{media.logo}</Button>
           </div>
         ))}

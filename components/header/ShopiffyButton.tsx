@@ -9,7 +9,9 @@ const ShopifyButton = () => {
   return (
     <button
       onClick={handleClickLink}
-      className=" flex bg-logoBlue w-42 md:w-48 h-12 rounded-full items-center justify-evenly mr-2.5 md:mr-0 px-2.5"
+      className=" flex
+      bg-logoBlue
+       w-42 md:w-48 h-12 rounded-full items-center justify-evenly mr-2.5 md:mr-0 px-2.5"
     >
       <span className="text-white text-14px font-bold leading-4 whitespace-nowrap">
         Shopify App Store
