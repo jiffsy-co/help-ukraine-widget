@@ -19,7 +19,7 @@ const helpList: HelpListItem[] = [
 
 function WidgetHelp() {
   return (
-    <section className="widget-help my-28 max-w-global">
+    <section className="widget-help my-28 max-w-global overflow-hidden">
       <h2 className="h1 text-center mb-3 md:mb-6">How widget can help?</h2>
       <p className="text-center md:text-lg max-w-2xl mx-auto">
         There are few ways of how you can help to end the war by setting up the widget.
@@ -28,8 +28,15 @@ function WidgetHelp() {
       </p>
       <div className="grid md:grid-cols-2 gap-4 mt-10 md:mt-20">
         <div className="flex flex-col items-center justify-end rounded-xl bg-blue-ua p-6 md:p-8 xl:p-10">
-          <div className="mb-6 -mx-14 -mt-14 md:-mt-20 lg:translate-x-1/4">
-            <Image src={widgetHelpImage} alt="How widget can help?" />
+          <div className="mb-6 md:-mt-20 lg:translate-x-1/4 w-full">
+            <div className="-mx-14 -mt-14">
+              <Image
+                src={widgetHelpImage}
+                alt="How widget can help?"
+                layout="responsive"
+                placeholder="blur"
+              />
+            </div>
           </div>
           <h2 className="text-yellow-ua">
             By putting a widget on your website, you give a possibility to your website visitors to
