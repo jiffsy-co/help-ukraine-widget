@@ -10,15 +10,15 @@ const Header = () => {
   useColorSwitcher()
   return (
     <header className="sticky top-0 z-10 transition bg-white">
-      <div className="hidden md:flex w-screen justify-evenly bg-inherit items-center justify-around h-20 lg:h-22 xl:h-24  border-b border-solid border-borderGray">
-        <div>
+      <div className="hidden md:flex w-screen justify-evenly bg-inherit items-center justify-around h-20 lg:h-22 xl:h-24 border-b border-solid border-borderGray">
+        <div className="text-inherit">
           <Link href={installManuallyLink}>
-            <span className="mr-2.5 text-black font-bold text-sm leading-4 opacity-70 cursor-pointer hover:opacity-100">
+            <span className="mr-2.5 font-bold text-sm leading-4 opacity-70 cursor-pointer hover:opacity-100">
               Install manually
             </span>
           </Link>
           <Link href={privacyPolicyLink}>
-            <span className="text-black font-bold text-sm leading-4 opacity-70 cursor-pointer hover:opacity-100">
+            <span className="font-bold text-sm leading-4 opacity-70 cursor-pointer hover:opacity-100">
               Privacy Policy
             </span>
           </Link>

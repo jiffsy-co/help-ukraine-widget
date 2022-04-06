@@ -20,14 +20,13 @@ const scrollColorSwitcher = () => {
       .toString()
       .split(' ')
       .filter((className) => className.startsWith('bg-'))
-
-  const setHeaderColor = (color: string): void => {
+  const setHeaderColor = (bgColor: string, color?: string): void => {
     colorClassList().forEach((className) => {
-      if (className !== color) {
+      if (className !== bgColor) {
         header.classList.remove(className)
       }
-      if (!header.classList.contains(color)) {
-        header.classList.add(color)
+      if (!header.classList.contains(bgColor)) {
+        header.classList.add(bgColor)
       }
     })
   }
@@ -48,6 +47,7 @@ const scrollColorSwitcher = () => {
     if (!intersection) {
       setHeaderColor(defaultClass)
     }
+    header.classList.toggle('text-white', !!intersection)
   })
 }
 
