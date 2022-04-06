@@ -38,8 +38,8 @@ const Sandbox: NextPage = () => {
   const router = useRouter()
   const params = router.query as any as IWidgetOptions
   useEffect(() => {
-    (window as any).__HELPUKRAINEWIDGET_DISABLE_ANALYICS = true;
-    (window as any).__HELPUKRAINEWIDGET_DISABLE_PERSISTENCE = true;
+    ;(window as any).__HELPUKRAINEWIDGET_DISABLE_ANALYICS = true
+    ;(window as any).__HELPUKRAINEWIDGET_DISABLE_PERSISTENCE = true
   }, [router.isReady])
   return (
     <>
@@ -50,7 +50,7 @@ const Sandbox: NextPage = () => {
             height: 100%;
           }
           body {
-            zoom: 1;
+            zoom: 0.7;
           }
           .huww-widget.huww-widget-top-right {
             top: 1.6rem !important;
