@@ -7,7 +7,7 @@ const Description = (options: IDescription) => {
     <div>
       <div>
         <div className="w-fit float-left mt-0.5">{options.logo}</div>
-        <span className="ml-10px">{options.description}</span>
+        <span className="ml-2.5">{options.description}</span>
       </div>
       <div className="w-25.5 my-7 h-11">
         <Button title="Learn more" location={options.link} />

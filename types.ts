@@ -35,13 +35,13 @@ export interface IButton {
   title: string
   link?: string
   children?: any
-  location?: Location
+  location?: any
 }
 
 export interface IDescription {
   logo: JSX.Element
   description: string
-  link: string
+  link: any
 }
 
 export interface IEllipse {
