@@ -35,16 +35,16 @@ const Header = () => {
         </Link>
         <ShopifyButton />
       </div>
-      <div className="md:hidden w-full overflow-y-scroll h-16 border-b border-solid border-borderGray">
+      <div className="md:hidden w-full overflow-y-scroll h-16 border-b border-solid border-borderGray py-2 px-4">
         <div className="flex items-center h-full">
           <div className="flex w-fit">
             <Link href={home}>
-              <a className="w-32 cursor-pointer">
-                <div className="flex items-center w-32 ">
+              <a className="w-32 mr-4 cursor-pointer">
+                <div className="flex items-center">
                   <div className="h-10 w-10 mt-1.5">
                     <Image src={Logo} alt="logo" />
                   </div>
-                  <span className="leading-6 text-blue-ua font-bold text-sm">
+                  <span className="leading-4 ml-2 text-blue-ua font-bold text-sm">
                     Help Ukraine Widget
                   </span>
                 </div>
