@@ -7,18 +7,18 @@ import WhoAreWe from '../components/WhoAreWe'
 
 const NewLanding: NextPage = () => {
   return (
-    <>
-      <Hero />
-      <div style={{ position: 'relative' }}>
-        <MainLayout>
-          <section id="widget">
-            <WidgetHelp />
-            <OfficialResources />
-            <WhoAreWe />
-          </section>
-        </MainLayout>
-      </div>
-    </>
+    <div>
+      <section>
+        <Hero />
+      </section>
+      <MainLayout>
+        <section id="widget">
+          <WidgetHelp />
+          <OfficialResources />
+          <WhoAreWe />
+        </section>
+      </MainLayout>
+    </div>
   )
 }
 

@@ -23,7 +23,6 @@ const Sidebar = () => {
             'update',
           ]}
           currentClassName="is-current"
-          offset={500}
         >
           {navBarLinks.map((item, index) => (
             <li
