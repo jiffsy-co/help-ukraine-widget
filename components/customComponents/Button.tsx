@@ -17,7 +17,7 @@ const Button = (options: IButton) => {
           bg-black
           w-full
           h-full
-          justify-evenly h-44px text-14px text-white
+          justify-evenly text-14px text-white
           opacity-70 font-bold
           hover:opacity-100
           rounded-full

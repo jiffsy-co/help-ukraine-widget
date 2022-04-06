@@ -18,7 +18,7 @@ const PrivacyPolicy: NextPage = () => {
       <div className="sticky bg-white top-0 right-0 z-10">
         <Header />
       </div>
-      <div className="bg-snow h-fit flex w-full mt-20 lg:mt-22 xl:mt-24 ">
+      <div className="bg-snow h-fit flex w-full lg:mt-22 xl:mt-24 ">
         <div className=" w-full md:w-10/12 md:border-r md:border-solid md:border-borderGray pl-5% py-10 md:pl-10% pr-12%">
           <span
             className="flex justify-center md:justify-start text-black
