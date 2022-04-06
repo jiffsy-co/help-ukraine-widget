@@ -10,24 +10,43 @@ const scrollColorSwitcher = () => {
   if (!header || !triggerList) {
     return
   }
-  triggerList.forEach((elem) => {
-    header.classList.add(bgColorClass(elem?.dataset.switcherColor))
-  })
-  const colorList = header.classList
-    .toString()
-    .split(' ')
-    .filter((className) => className.includes('bg-'))
-  window.addEventListener('scroll', () => {
-    triggerList.forEach((elem) => {
-      const { top } = elem.getBoundingClientRect()
-      const currentColor = bgColorClass(elem?.dataset.switcherColor)
-      colorList.forEach((className) => {
-        header.classList.replace(`!${className}`, className)
-      })
-      if (top < header.clientHeight && !header.classList.contains(`!${currentColor}`)) {
-        header.classList.replace(currentColor, `!${currentColor}`)
+  const headerIntersection = (elem: HTMLElement): boolean => {
+    const { bottom, top } = elem.getBoundingClientRect()
+    const headerHeight = header.clientHeight
+    return bottom > headerHeight && top <= headerHeight
+  }
+  const colorClassList = () =>
+    header.classList
+      .toString()
+      .split(' ')
+      .filter((className) => className.startsWith('bg-'))
+  const setHeaderColor = (color: string): void => {
+    colorClassList().forEach((className) => {
+      if (className !== color) {
+        header.classList.remove(className)
+      }
+      if (!header.classList.contains(color)) {
+        header.classList.add(color)
       }
     })
+  }
+  const defaultClass = colorClassList()?.[0]
+  if (!defaultClass) {
+    return
+  }
+
+  window.addEventListener('scroll', () => {
+    let intersection = 0
+    triggerList.forEach((elem) => {
+      if (headerIntersection(elem)) {
+        intersection++
+        const currentColor = bgColorClass(elem?.dataset.switcherColor)
+        setHeaderColor(currentColor)
+      }
+    })
+    if (!intersection) {
+      setHeaderColor(defaultClass)
+    }
   })
 }
 
