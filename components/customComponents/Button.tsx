@@ -24,6 +24,7 @@ const Button = (options: IButton) => {
           border
           border-solid
           border-white
+          transition
           "
     >
       {options.children && options.children}

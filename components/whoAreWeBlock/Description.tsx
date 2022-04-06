@@ -6,7 +6,14 @@ const Description = (options: IDescription) => {
   return (
     <div>
       <div>
-        <div className="w-fit float-left mt-0.5">{options.logo}</div>
+        <a
+          href={options.link}
+          target="_blank"
+          rel="noreferrer"
+          className="w-fit float-left mt-0.5 opacity-70 hover:opacity-100 transition"
+        >
+          {options.logo}
+        </a>
         <span className="ml-2.5">{options.description}</span>
       </div>
       <div className="w-25.5 my-7 h-11">

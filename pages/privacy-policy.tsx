@@ -9,17 +9,13 @@ import PeriodDataStorage from '../components/privacy/PeriodDataStorage'
 import PersonalDataProcess from '../components/privacy/personalDataProcess/PersonalDataProcess'
 import PrivacyRightBlock from '../components/privacy/privacyRightsBlock/PrivacyRightBlock'
 import NavBarTitle from '../components/privacy/sidebar/NavBarTitle'
-import Header from '../components/header/Header'
-import Footer from '../components/footer/Footer'
+import MainLayout from '../components/MainLayout'
 
 const PrivacyPolicy: NextPage = () => {
   return (
-    <div>
-      <div className="sticky bg-white top-0 right-0 z-10">
-        <Header />
-      </div>
-      <div className="bg-snow h-fit flex w-full lg:mt-22 xl:mt-24 ">
-        <div className=" w-full md:w-10/12 md:border-r md:border-solid md:border-borderGray pl-5% py-10 md:pl-10% pr-12%">
+    <MainLayout>
+      <div className="bg-snow h-fit flex w-full">
+        <div className=" w-full md:w-10/12 md:border-r md:border-solid md:border-borderGray pl-5% py-20 md:pl-10% pr-12%">
           <span
             className="flex justify-center md:justify-start text-black
             text-3.5xl leading-9.5
@@ -62,8 +58,7 @@ const PrivacyPolicy: NextPage = () => {
           <Sidebar />
         </div>
       </div>
-      <Footer />
-    </div>
+    </MainLayout>
   )
 }
 

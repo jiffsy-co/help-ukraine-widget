@@ -8,7 +8,7 @@ import { HeaderScrollSwitcher } from './header/HeaderScrollSwitcher'
 const WhoAreWe = () => {
   return (
     <HeaderScrollSwitcher tailwindColor="black">
-      <div className="flex flex-col items-center">
+      <section className="who-are-we flex flex-col items-center overflow-hidden">
         <div className="flex flex-col md:flex-row w-full mt-16">
           <div className="md:w-2/4 md:flex md:justify-end">
             <VideoBlock />
@@ -23,7 +23,7 @@ const WhoAreWe = () => {
           </div>
         </div>
         <TrustedWebsites />
-      </div>
+      </section>
     </HeaderScrollSwitcher>
   )
 }

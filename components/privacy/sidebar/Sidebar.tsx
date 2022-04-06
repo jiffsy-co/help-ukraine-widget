@@ -6,7 +6,7 @@ import { navBarLinks } from './constans'
 
 const Sidebar = () => {
   return (
-    <div className="flex flex-col pt-10 w-full">
+    <div className="flex flex-col pt-20 w-full">
       <NavBarTitle />
       <div
         className="hidden md:flex flex-col
