@@ -22,10 +22,10 @@ const PrivacyPolicy: NextPage = () => {
         <div className=" w-full md:w-10/12 md:border-r md:border-solid md:border-borderGray pl-5% py-10 md:pl-10% pr-12%">
           <span
             className="flex justify-center md:justify-start text-black
-            text-32px leading-38px
+            text-3.5xl leading-9.5
             font-bold
-            md:text-62px
-            md:leading-66px
+            md:text-6.5xl
+            md:leading-16.5
             "
           >
             Privacy Policy

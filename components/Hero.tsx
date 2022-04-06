@@ -81,7 +81,7 @@ const Hero = () => {
         />
       </Parallax>
 
-      <div className="flex flex-col items-center justify-center max-w-global text-center p-4 min-h-660px xl:min-h-800px relative z-10">
+      <div className="flex flex-col items-center justify-center max-w-global text-center p-4 min-h-165 xl:min-h-200 relative z-10">
         <h1>
           Put the <span className="text-blue-ua">Help Ukraine</span>
           <br className="hidden md:block" /> widget on your website!
