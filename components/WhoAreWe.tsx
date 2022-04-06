@@ -7,7 +7,7 @@ import VideoBlock from '../components/VideoBlock'
 const WhoAreWe = () => {
   return (
     <div className="bg-black flex flex-col items-center">
-      <div className="flex flex-col md:flex-row w-full">
+      <div className="flex flex-col md:flex-row w-full mt-16">
         <div className="md:w-2/4 md:flex md:justify-end">
           <VideoBlock />
         </div>

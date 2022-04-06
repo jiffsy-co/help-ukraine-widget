@@ -20,7 +20,9 @@ const WhyBlock = (props: any) => {
       >
         {socialMedias.map((media, index) => (
           <div key={index} className=" w-85.75 md:w-31.25 lg:w-36.5 mb-2.5 h-11">
-            <Button title={media.title}>{media.logo}</Button>
+            <Button title={media.title} location={media.link}>
+              {media.logo}
+            </Button>
           </div>
         ))}
       </div>
