@@ -15,18 +15,18 @@ const Header = (props: any) => {
         <div className="hidden md:flex w-screen justify-evenly bg-inherit items-center justify-around h-20 lg:h-22 xl:h-24  border-b border-solid border-borderGray">
           <div>
             <Link href={installManuallyLink}>
-              <span className="mr-2.5 text-black font-bold text-sm leading-4 opacity-70 hover:opacity-100">
+              <span className="mr-2.5 text-black font-bold text-sm leading-4 opacity-70 cursor-pointer hover:opacity-100">
                 Install manually
               </span>
             </Link>
             <Link href={privacyPolicyLink}>
-              <span className="text-black font-bold text-sm leading-4 opacity-70 hover:opacity-100">
+              <span className="text-black font-bold text-sm leading-4 opacity-70 cursor-pointer hover:opacity-100">
                 Privacy Policy
               </span>
             </Link>
           </div>
           <Link href={home}>
-            <div className="flex items-center">
+            <div className="flex items-center cursor-pointer">
               <div className="h-12 w-12 rounded-3xl">
                 <Image src={Logo} />
               </div>

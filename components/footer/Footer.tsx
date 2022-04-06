@@ -1,6 +1,8 @@
 import React from 'react'
+import Link from 'next/link'
 import SharePageLinks from './SharePageLinks'
 import PoveredBy from './PoveredBy'
+import { installManuallyLink, privacyPolicyLink } from '../constants'
 
 const Footer = () => {
   return (
@@ -13,15 +15,13 @@ const Footer = () => {
         <SharePageLinks />
       </div>
       <div className="flex flex-col text-center md:text-right text-white text-sm font-bold mb-5 md:mb-0">
-        <a href="components/footer/Footer" className="opacity-70 hover:opacity-100">
-          Get widget in Shopify App Store
-        </a>
-        <a href="components/footer/Footer" className="opacity-70 hover:opacity-100">
-          Get widget fot other websites
-        </a>
-        <a href="components/footer/Footer" className="opacity-70 hover:opacity-100">
-          Privacy Policy
-        </a>
+        <span className="opacity-70 cursor-pointer">Get widget in Shopify App Store</span>
+        <Link href={installManuallyLink}>
+          <a className="opacity-70 hover:opacity-100">Get widget fot other websites</a>
+        </Link>
+        <Link href={privacyPolicyLink}>
+          <a className="opacity-70 hover:opacity-100">Privacy Policy</a>
+        </Link>
       </div>
     </div>
   )

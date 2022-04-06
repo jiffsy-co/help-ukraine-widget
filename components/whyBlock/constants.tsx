@@ -1,19 +1,23 @@
 import LinkedInLogo from '../logo/LinkedInLogo'
 import FacebookLogo from '../logo/FacebookLogo'
 import TwitterLogo from '../logo/TwitterLogo'
+import { JiffsyFacebookLink, JiffsyTwitterLink, JiffsyLinkedInLink } from '../constants'
 
 export const socialMedias = [
   {
     title: 'Facebook',
     logo: <FacebookLogo />,
+    link: JiffsyFacebookLink,
   },
   {
     title: 'Twitter',
     logo: <TwitterLogo />,
+    link: JiffsyTwitterLink,
   },
   {
     title: 'LinkedIn',
     logo: <LinkedInLogo />,
+    link: JiffsyLinkedInLink,
   },
 ]
 

@@ -9,6 +9,7 @@ const ShopifyButton = () => {
   return (
     <button
       onClick={handleClickLink}
+      disabled
       className=" flex
       bg-blue-ua
        w-42 md:w-48 h-12 rounded-full items-center justify-evenly mr-2.5 md:mr-0 px-2.5"

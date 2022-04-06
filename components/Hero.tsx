@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import Parallax from './Parallax'
 import ShopifyLogo from './logo/ShopifyLogo'
 
@@ -8,6 +9,7 @@ import WidgetThree from '../public/widget/three.png'
 import WidgetFour from '../public/widget/four.png'
 import WidgetExpanded from '../public/widget/expanded.png'
 import WidgetCollapsed from '../public/widget/collapsed.png'
+import { installManuallyLink } from './constants'
 
 const WidgetImage = ({
   src,
@@ -98,13 +100,11 @@ const Hero = () => {
             <span>Shopify App Store</span>
             <span className="text-sm font-normal opacity-70">One-click installation</span>
           </a>
-          <a
-            href="#"
-            target="_blank"
-            className="button-outline bg-yellow-ua border-2 border-blue-ua text-blue-ua px-10 py-3 font-bold text-lg rounded-full flex items-center justify-center transition hover:scale-95"
-          >
-            Install manually
-          </a>
+          <Link href={installManuallyLink}>
+            <a className="button-outline bg-yellow-ua border-2 border-blue-ua text-blue-ua px-10 py-3 font-bold text-lg rounded-full flex items-center justify-center transition hover:scale-95">
+              Install manually
+            </a>
+          </Link>
         </div>
       </div>
     </section>
