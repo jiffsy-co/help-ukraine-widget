@@ -17,18 +17,22 @@ const WidgetImage = ({
   name,
   className,
   parallax,
+  width,
+  height,
 }: {
   src: any
   name: string
   className?: string
   parallax?: 1 | 2 | 3
+  width?: number
+  height?: number
 }) => {
   return (
     <div
       className={`parallax-item widget-${name} inline-block ${className}`}
       data-parallax={parallax}
     >
-      <Image src={src} alt={name} placeholder="blur" />
+      <Image src={src} alt={name} width={width} height={height} />
     </div>
   )
 }
@@ -44,41 +48,56 @@ const Hero = () => {
           src={WidgetCollapsed}
           name="collapsed"
           parallax={1}
+          width={38}
+          height={38}
           className="absolute top-5 left-5 lg:top-20% lg:left-20% -rotate-13 opacity-70"
         />
         <WidgetImage
           src={WidgetOne}
           name="one"
           parallax={2}
+          width={176}
+          height={95}
           className="hidden lg:block absolute top-50% left-5% -rotate-15 opacity-80"
         />
         <WidgetImage
           src={WidgetExpanded}
           name="expanded"
           parallax={3}
+          width={176}
+          height={127}
           className="absolute -bottom-5 -left-5 lg:bottom-5 lg:left-20% rotate-18 opacity-95"
         />
         <WidgetImage
           src={WidgetThree}
           name="three"
           parallax={2}
+          width={96}
+          height={96}
           className="absolute top-5 right-0 lg:top-20% lg:right-12% rotate-9 opacity-80"
         />
         <WidgetImage
           src={WidgetCollapsed}
           name="collapsed"
           parallax={1}
+          width={38}
+          height={38}
           className="hidden lg:block absolute top-45% right-25% rotate-15 opacity-30"
         />
         <WidgetImage
           src={WidgetFour}
           name="four"
           parallax={3}
+          width={176}
+          height={80}
           className="hidden lg:block absolute bottom-20% right-10% -rotate-7 opacity-90"
         />
         <WidgetImage
           src={WidgetTwo}
           name="two"
+          parallax={1}
+          width={215}
+          height={48}
           className="hero-right-4 absolute bottom-10% -right-10 lg:right-30% -rotate-16 opacity-70"
         />
       </Parallax>
