@@ -35,6 +35,7 @@ export interface IButton {
   title: string
   link?: string
   children?: any
+  location?: string
 }
 
 export interface IDescription {

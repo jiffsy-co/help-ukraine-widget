@@ -27,7 +27,7 @@ const MainLayout: NextPage = ({ children }) => {
 
       <div>
         <Header />
-        <main className="w-full mx-auto relative">{children}</main>
+        <main className="w-full mx-auto ">{children}</main>
         <Footer />
       </div>
     </>
