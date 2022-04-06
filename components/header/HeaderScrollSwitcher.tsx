@@ -20,6 +20,7 @@ const scrollColorSwitcher = () => {
       .toString()
       .split(' ')
       .filter((className) => className.startsWith('bg-'))
+
   const setHeaderColor = (color: string): void => {
     colorClassList().forEach((className) => {
       if (className !== color) {
