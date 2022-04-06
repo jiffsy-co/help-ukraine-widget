@@ -8,15 +8,11 @@ import WhoAreWe from '../components/WhoAreWe'
 const Index: NextPage = () => {
   return (
     <div>
-      <section>
-        <Hero />
-      </section>
+      <Hero />
       <MainLayout>
-        <section id="widget">
-          <WidgetHelp />
-          <OfficialResources />
-          <WhoAreWe />
-        </section>
+        <WidgetHelp />
+        <OfficialResources />
+        <WhoAreWe />
       </MainLayout>
     </div>
   )

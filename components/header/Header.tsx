@@ -9,29 +9,29 @@ import { useColorSwitcher } from './HeaderScrollSwitcher'
 const Header = () => {
   useColorSwitcher()
   return (
-    <header className="sticky top-0 z-10 transition bg-white">
+    <header className="sticky top-0 z-10 transition bg-white overflow-hidden">
       <div className="hidden md:flex w-screen justify-evenly bg-inherit items-center justify-around h-20 lg:h-22 xl:h-24 border-b border-solid border-borderGray">
         <div className="text-inherit">
           <Link href={installManuallyLink}>
-            <span className="mr-2.5 font-bold text-sm leading-4 opacity-70 cursor-pointer hover:opacity-100">
+            <a className="mr-2.5 font-bold text-sm leading-4 opacity-70 hover:opacity-100 transition">
               Install manually
-            </span>
+            </a>
           </Link>
           <Link href={privacyPolicyLink}>
-            <span className="font-bold text-sm leading-4 opacity-70 cursor-pointer hover:opacity-100">
+            <a className="font-bold text-sm leading-4 opacity-70 hover:opacity-100 transition">
               Privacy Policy
-            </span>
+            </a>
           </Link>
         </div>
         <Link href={home}>
-          <div className="flex items-center cursor-pointer">
+          <a className="flex items-center">
             <div className="h-12 w-12 rounded-3xl">
-              <Image src={Logo} />
+              <Image src={Logo} alt="logo" />
             </div>
             <span className="leading-6 text-blue-ua font-bold text-2xl ml-2.5">
               Help Ukraine Widget
             </span>
-          </div>
+          </a>
         </Link>
         <ShopifyButton />
       </div>
@@ -39,16 +39,16 @@ const Header = () => {
         <div className="flex items-center h-full">
           <div className="flex w-fit">
             <Link href={home}>
-              <div className="w-32 cursor-pointer">
+              <a className="w-32 cursor-pointer">
                 <div className="flex items-center w-32 ">
                   <div className="h-10 w-10 mt-1.5">
-                    <Image src={Logo} />
+                    <Image src={Logo} alt="logo" />
                   </div>
                   <span className="leading-6 text-blue-ua font-bold text-sm">
                     Help Ukraine Widget
                   </span>
                 </div>
-              </div>
+              </a>
             </Link>
             <ShopifyButton />
             <div className="w-32 mr-2.5 md:mr-0 h-12">
