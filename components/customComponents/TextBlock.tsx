@@ -5,10 +5,7 @@ const TextBlock = (options: ITextBlock) => {
   return (
     <div className="flex flex-col xs:ml-2.5 mx-2.5">
       <span
-        className="text-yellow-ua font-bold
-            text-2xl leading-9
-             md:text-3.5xl
-             md:my-2.5"
+        className="text-yellow-ua font-bold text-2xl leading-9 md:text-3.5xl mb-4"
       >
         {options.title}
       </span>

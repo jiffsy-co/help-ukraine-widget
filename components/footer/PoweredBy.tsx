@@ -6,12 +6,12 @@ import { JiffseWebsiteLink, GearHeartWebsiteLink } from '../constants'
 
 const PoweredBy = () => (
   <div className="flex flex-col md:flex-row items-center mb-5 md:mb-0">
-    <div className="mb-2.5 md:mb-0 md:mr-3">
+    <div className="mb-3 md:mb-0 md:mr-3">
       <DarkLogo />
     </div>
     <div className="flex flex-col items-center md:block">
       <span className="text-white opacity-70 text-xs">Powered by</span>
-      <div className="text-white flex items-center">
+      <div className="text-white flex items-center mt-1 md:mt-0">
         <a
           href={JiffseWebsiteLink}
           target="_blank"

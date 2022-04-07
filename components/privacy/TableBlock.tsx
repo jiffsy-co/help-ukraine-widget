@@ -9,7 +9,7 @@ type Table = {
 }
 
 const TableBlock = (options: Table) => (
-  <div className="py-3 w-full overflow-y-scroll	">
+  <div className="py-3 w-full overflow-y-scroll">
     <span className="font-bold text-base md:text-xl leading-5">{options.tableTitle}</span>
     <div className="w-180 md:w-full bg-white border border-solid border-borderGray table-auto rounded-3xl mt-2.5">
       <table className="w-full text-center text-sm">

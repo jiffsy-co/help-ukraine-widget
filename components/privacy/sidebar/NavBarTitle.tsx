@@ -8,6 +8,7 @@ const NavBarTitle = () => (
      leading-5  md:leading-7
      md:mb-12
      md:ml-2.5
+     pr-5% md:pr-12%
      "
   >
     <span>Help Ukraine Widget</span>

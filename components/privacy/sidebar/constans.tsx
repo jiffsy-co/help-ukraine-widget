@@ -1,7 +1,7 @@
 export const navBarLinks = [
   {
     name: 'Purpose of this Privacy Notice',
-    link: 'purpose',
+    link: '#purpose',
   },
   {
     name: 'Who we are',

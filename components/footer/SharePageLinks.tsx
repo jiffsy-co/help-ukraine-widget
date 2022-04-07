@@ -18,8 +18,8 @@ const SharePageLinks = () => {
         </Script>
         <Script async defer src="https://connect.facebook.net/en_US/sdk.js" />
       </>
-      <div className="flex flex-col w-7.5 items-center mt-2.5 mb-5 md:mt-0 md:mb-0">
-        <span className="text-white opacity-70 text-xs mb-2.5">Share this page:</span>
+      <div className="flex flex-col w-7.5 items-center">
+        <span className="text-white opacity-70 text-xs mb-3">Share this page:</span>
         <div className="flex justify-between gap-6">
           {fb && (
             <a className="opacity-70 hover:opacity-100" {...fb}>

@@ -16,8 +16,8 @@ const Description = (options: IDescription) => {
         </a>
         <span className="ml-2.5">{options.description}</span>
       </div>
-      <div className="my-7 h-11 w-auto">
-        <Button title="Learn more" href={options.link} isExternal className='w-auto inline-flex' />
+      <div className="mt-6 h-11 w-auto">
+        <Button title="Learn more" href={options.link} isExternal className="w-auto inline-flex" />
       </div>
     </div>
   )

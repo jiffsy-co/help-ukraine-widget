@@ -11,6 +11,7 @@ const TrustedWebsites = () => {
             text-3.5xl xl:text-4.5xl 2xl:text-6xl font-bold
              text-white leading-9 xl:leading-10 2xl:leading-16.5
              mb-5 2xl:mb-6
+             text-center
              "
       >
         <span className="hidden md:flex">

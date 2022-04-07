@@ -15,7 +15,7 @@ const PrivacyPolicy: NextPage = () => {
   return (
     <MainLayout>
       <div className="bg-snow h-fit flex w-full">
-        <div className=" w-full md:w-10/12 md:border-r md:border-solid md:border-borderGray pl-5% py-20 md:pl-10% pr-12%">
+        <div className="w-full md:w-10/12 md:border-r md:border-solid md:border-borderGray py-20 pl-5% md:pl-10% pr-5% md:pr-12%">
           <span
             className="flex justify-center md:justify-start text-black
             text-3.5xl leading-9.5

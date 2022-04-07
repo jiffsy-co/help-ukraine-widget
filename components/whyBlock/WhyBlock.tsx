@@ -49,7 +49,7 @@ const WhyBlock = () => {
       {/* <SharePageLinks /> */}
       <div
         className="flex flex-col sm:flex-row items-center
-         w-full justify-start my-7 gap-4"
+         w-full justify-start mt-8 gap-4"
       >
         {socialMedias.map(({ props, logo, title }, index) => (
           <div key={index} className="h-11 w-full sm:w-auto">

@@ -41,8 +41,8 @@ const WidgetImage = ({
 
 const Hero = () => {
   return (
-    <section className="hero bg-yellow-ua relative">
-      <div className="w-12 h-12 absolute top-10 md:top-20 left-1/2 -translate-x-1/2">
+    <section className="hero bg-yellow-ua relative pt-32 sm:pt-40 pb-36 sm:pb-56">
+      <div className="w-12 h-12 absolute top-10 sm:top-20 left-1/2 -translate-x-1/2">
         <Logo />
       </div>
       <Parallax>
@@ -104,19 +104,19 @@ const Hero = () => {
         />
       </Parallax>
 
-      <div className="flex flex-col items-center justify-center max-w-global text-center p-4 min-h-165 xl:min-h-200 relative z-10">
-        <h1>
+      <div className="flex flex-col items-center justify-center max-w-global text-center relative z-10">
+        <h1 className='text-3xl sm:text-6xl leading-tight'>
           Put the <span className="text-blue-ua">Help Ukraine</span>
           <br className="hidden md:block" /> widget on your website!
         </h1>
-        <p className="mt-4 lg:mt-8 xl:mt-12 text-xl max-w-lg mx-auto">
+        <p className="mt-6 sm:mt-10 xl:mt-12 text-base sm:text-xl max-w-lg mx-auto">
           Your customers and visitors of your website will be able to know how they can help Ukraine
           from every place in the world.
         </p>
         <div className="flex flex-col sm:flex-row items-stretch justify-center gap-6 w-full sm:w-auto mt-6 lg:mt-10 xl:mt-16">
           <ShopifyButton variant="big" />
           <Link href={installManuallyLink}>
-            <a className="button-outline bg-yellow-ua border-2 border-blue-ua text-blue-ua px-10 py-3 font-bold text-lg rounded-full flex items-center justify-center transition hover:scale-95">
+            <a className="h-[72px] button-outline bg-yellow-ua border-2 border-blue-ua text-blue-ua px-10 py-3 font-bold text-lg rounded-full flex items-center justify-center transition hover:scale-95">
               Install manually
             </a>
           </Link>
