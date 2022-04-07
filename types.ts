@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, MouseEventHandler } from 'react'
 
 export const widgetTypes = ['one', 'two', 'three', 'four'] as const
 export type IWidgetType = typeof widgetTypes[number]
@@ -32,16 +32,19 @@ export interface ITextBlock {
 }
 
 export interface IButton {
+  as?: 'a' | 'button'
   title: string
-  link?: string
   children?: any
-  location?: any
+  onClick?: MouseEventHandler
+  href: string
+  isExternal?: boolean
+  className?: string
 }
 
 export interface IDescription {
   logo: JSX.Element
   description: string
-  link: any
+  link: string
 }
 
 export interface IEllipse {

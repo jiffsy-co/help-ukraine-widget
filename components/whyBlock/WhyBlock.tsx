@@ -1,28 +1,59 @@
 import React from 'react'
-import Button from '../customComponents/Button'
-import { socialMedias, whyText } from './constants'
 
-const WhyBlock = (props: any) => {
+import Button from '../customComponents/Button'
+import { whyText } from './constants'
+import { useShareLinkProps } from '../../hooks/share'
+
+import LinkedInLogo from '../logo/LinkedInLogo'
+import FacebookLogo from '../logo/FacebookLogo'
+import TwitterLogo from '../logo/TwitterLogo'
+
+const WhyBlock = () => {
+  const fb = useShareLinkProps('facebook')
+  const linkedIn = useShareLinkProps('linkedin')
+  const twitter = useShareLinkProps('twitter')
+
+  const socialMedias = []
+  if (fb) {
+    socialMedias.push({
+      title: 'Facebook',
+      logo: <FacebookLogo />,
+      props: fb,
+    })
+  }
+  if (twitter) {
+    socialMedias.push({
+      title: 'Twitter',
+      logo: <TwitterLogo />,
+      props: twitter,
+    })
+  }
+  if (linkedIn) {
+    socialMedias.push({
+      title: 'LinkedIn',
+      logo: <LinkedInLogo />,
+      props: linkedIn,
+    })
+  }
+
   return (
     <div>
       <div
-        className="lg:w-107.5 lg:h-54 text-white
+        className="w-full lg:w-107.5 text-white
         text-base
         md:text-lg font-bold leading-5 md:leading-6
-        md:mx-2.5
         "
       >
         {whyText}
       </div>
+      {/* <SharePageLinks /> */}
       <div
-        className="flex flex-col md:flex-row items-center
-         md:w-full justify-between my-12"
+        className="flex flex-col sm:flex-row items-center
+         w-full justify-start my-7 gap-4"
       >
-        {socialMedias.map((media, index) => (
-          <div key={index} className=" w-85.75 md:w-31.25 lg:w-36.5 mb-2.5 h-11">
-            <Button title={media.title} location={media.link}>
-              {media.logo}
-            </Button>
+        {socialMedias.map(({ props, logo, title }, index) => (
+          <div key={index} className="h-11 w-full sm:w-auto">
+            <Button {...props} className="w-full sm:w-auto inline-flex">{logo}</Button>
           </div>
         ))}
       </div>

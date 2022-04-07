@@ -6,7 +6,7 @@ import { installManuallyLink, privacyPolicyLink } from '../constants'
 
 const Footer = () => {
   return (
-    <footer className="md:h-28 px-11 flex flex-col md:flex-row justify-between bg-black items-center border-t border-solid border-white">
+    <footer className="md:h-28 px-11 flex flex-col md:flex-row justify-between bg-black items-center border-t border-solid border-darkslategray">
       <div className="md:hidden">
         <SharePageLinks />
       </div>

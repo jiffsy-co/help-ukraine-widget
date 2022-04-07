@@ -3,10 +3,12 @@ import type { AppProps } from 'next/app'
 import CookieConsent from '../components/CookieConsent'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <>
-    <Component {...pageProps} />
-    <CookieConsent />
-  </>
+  return (
+    <>
+      <Component {...pageProps} />
+      {!pageProps.hideCookieConsent && <CookieConsent />}
+    </>
+  )
 }
 
 export default MyApp

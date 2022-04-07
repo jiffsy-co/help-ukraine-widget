@@ -30,7 +30,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
-    props: {},
+    props: {
+      hideCookieConsent: true
+    },
   }
 }
 
@@ -49,25 +51,7 @@ const Sandbox: NextPage = () => {
           body {
             height: 100%;
           }
-          body {
-            zoom: 0.7;
-          }
-          .huww-widget.huww-widget-top-right {
-            top: 1.6rem !important;
-            right: 1rem !important;
-          }
-          .huww-widget.huww-widget-top-left {
-            top: 1.6rem !important;
-            left: 1rem !important;
-          }
-          .huww-widget.huww-widget-bottom-right {
-            bottom: 1rem !important;
-            right: 1rem !important;
-          }
-          .huww-widget.huww-widget-bottom-left {
-            bottom: 1rem !important;
-            left: 1rem !important;
-          }
+          
         `}
       </style>
 

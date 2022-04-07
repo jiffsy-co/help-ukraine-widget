@@ -1,7 +1,5 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import Parallax from './Parallax'
-import ShopifyLogo from './logo/ShopifyLogo'
 import Logo from './logo/Logo'
 
 import WidgetOne from '../public/widget/one.png'
@@ -11,6 +9,7 @@ import WidgetFour from '../public/widget/four.png'
 import WidgetExpanded from '../public/widget/expanded.png'
 import WidgetCollapsed from '../public/widget/collapsed.png'
 import { installManuallyLink } from './constants'
+import ShopifyButton from './header/ShopiffyButton'
 
 const WidgetImage = ({
   src,
@@ -20,7 +19,7 @@ const WidgetImage = ({
   width,
   height,
 }: {
-  src: any
+  src: StaticImageData
   name: string
   className?: string
   parallax?: 1 | 2 | 3
@@ -32,7 +31,10 @@ const WidgetImage = ({
       className={`parallax-item widget-${name} inline-block ${className}`}
       data-parallax={parallax}
     >
-      <Image src={src} alt={name} width={width} height={height} />
+      <span className="relative inline-block">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={src.src} alt={name} width={width} height={height} className="" />
+      </span>
     </div>
   )
 }
@@ -112,16 +114,7 @@ const Hero = () => {
           from every place in the world.
         </p>
         <div className="flex flex-col sm:flex-row items-stretch justify-center gap-6 w-full sm:w-auto mt-6 lg:mt-10 xl:mt-16">
-          <a
-            href="#"
-            className="pointer-events-none flex flex-col items-start bg-blue-ua text-white px-10 py-3 font-bold text-lg rounded-full relative pr-24 transition hover:scale-95"
-          >
-            <div className="w-12 h-12 rounded-full bg-white absolute top-1/2 right-9 -translate-y-1/2 translate-x-1/2 overflow-hidden flex items-center justify-center">
-              <ShopifyLogo />
-            </div>
-            <span>Shopify App Store</span>
-            <span className="text-sm font-normal opacity-70">One-click installation</span>
-          </a>
+          <ShopifyButton variant="big" />
           <Link href={installManuallyLink}>
             <a className="button-outline bg-yellow-ua border-2 border-blue-ua text-blue-ua px-10 py-3 font-bold text-lg rounded-full flex items-center justify-center transition hover:scale-95">
               Install manually

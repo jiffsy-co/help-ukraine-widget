@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import widgetHelpImage from '../public/widget-help.png'
 
 type HelpListItem = { label: string; text: string }
@@ -30,7 +29,8 @@ function WidgetHelp() {
         <div className="flex flex-col items-center justify-end rounded-xl bg-blue-ua p-6 md:p-8 xl:p-10">
           <div className="mb-6 md:-mt-20 lg:translate-x-1/4 w-full">
             <div className="-mx-14 -mt-14">
-              <Image src={widgetHelpImage} alt="How widget can help?" layout="responsive" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={widgetHelpImage.src} alt="How widget can help?" />
             </div>
           </div>
           <h2 className="text-yellow-ua">

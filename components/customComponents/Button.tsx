@@ -1,35 +1,41 @@
 import React from 'react'
+import Link from 'next/link'
+
 import { IButton } from '../../types'
 
-const Button = (options: IButton) => {
-  const handleClickLink = () => {
-    if (options.link) {
-      window.location.href = options.link
-    }
-    if (options.location) {
-      window.location = options.location
-    }
-  }
+const Button = ({ isExternal, className, ...options }: IButton) => {
+  const Component = options.as || 'a'
+  const props = isExternal
+    ? {
+        rel: 'noreferrer',
+        target: '_blank',
+      }
+    : {}
+
   return (
-    <button
-      onClick={handleClickLink}
-      className="flex items-center
-          bg-black
-          w-full
-          h-full
-          justify-evenly text-sm leading-4 text-white
-          opacity-70 font-bold
-          hover:opacity-100
-          rounded-full
-          border
-          border-solid
-          border-white
-          transition
-          "
-    >
-      {options.children && options.children}
-      {options.title}
-    </button>
+    <Link href={options.href} passHref>
+      <Component
+        {...options}
+        {...props}
+        className={`flex items-center
+  bg-black
+  w-full
+  h-full
+  justify-center text-sm leading-4 text-white
+  opacity-70 font-bold
+  hover:opacity-100
+  rounded-full
+  border
+  border-solid
+  border-white
+  transition
+  gap-3
+  px-5 ${className}`}
+      >
+        {options.children && options.children}
+        {options.title}
+      </Component>
+    </Link>
   )
 }
 

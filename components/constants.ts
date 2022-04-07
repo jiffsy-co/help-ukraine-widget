@@ -1,7 +1,7 @@
 export const installManuallyLink = '/install-manually'
 export const privacyPolicyLink = '/privacy-policy'
 export const home = '/'
-export const shopifyAppStoreLink = './'
+export const shopifyAppStoreLink = process.env.NEXT_PUBLIC_SHOPIFY_APPSTORE_LINK
 export const JiffsyTwitterLink = 'https://twitter.com/Jiffsy_shopify'
 export const JiffsyLinkedInLink = 'https://www.linkedin.com/company/jiffsy/'
 export const JiffsyFacebookLink = 'https://www.facebook.com/jiffsyshop'

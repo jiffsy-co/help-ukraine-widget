@@ -8,7 +8,8 @@
     "build-widget": "cd widget-script && yarn build && cd ../",
     "copy-widget": "node scripts/copy-widget.js",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "autoprefixer": "^10.4.2",
