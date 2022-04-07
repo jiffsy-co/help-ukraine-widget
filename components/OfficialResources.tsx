@@ -1,9 +1,16 @@
+import { donateUrl, supportUrl } from './constants'
+
 const OfficialResources = () => {
   return (
     <section className="official-resources my-32 max-w-global">
       <h2 className="h1 text-center max-w-xl mx-auto">We use only official trusted resources</h2>
       <div className="flex flex-col sm:grid sm:grid-cols-2 justify-center items-center mt-6">
-        <div className="bg-gray-200 w-full flex items-center justify-center rounded-full relative max-w-sm sm:max-w-full before:block before:pt-100%">
+        <a
+          href={donateUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="bg-gray-200 w-full flex items-center justify-center rounded-full relative max-w-sm sm:max-w-full before:block before:pt-100% transition-transform scale-100 hover:scale-95"
+        >
           <div className="text-center absolute w-75 p-2.5 max-w-full">
             <h3 className="text-blue-ua">Donations 💸</h3>
             <p className="mt-2">
@@ -11,8 +18,13 @@ const OfficialResources = () => {
               Ukrainian neo-bank with 5.5M customers.
             </p>
           </div>
-        </div>
-        <div className="bg-yellow-ua w-full flex items-center justify-center rounded-full relative max-w-sm sm:max-w-full before:block before:pt-100%">
+        </a>
+        <a
+          href={supportUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="bg-yellow-ua w-full flex items-center justify-center rounded-full relative max-w-sm sm:max-w-full before:block before:pt-100% transition-transform scale-100 hover:scale-95"
+        >
           <div className="text-center absolute w-75 p-2.5 max-w-full">
             <h3 className="text-blue-ua">Support Ukraine ❤</h3>
             <p className="mt-2">
@@ -20,7 +32,7 @@ const OfficialResources = () => {
               Foreign Affairs of Ukraine
             </p>
           </div>
-        </div>
+        </a>
       </div>
     </section>
   )

@@ -9,3 +9,6 @@ export const JiffseWebsiteLink = 'https://jiffsy.co/'
 export const GearHeartWebsiteLink = 'https://gearheart.io/'
 export const GearHertFaceboolLink = 'https://www.facebook.com/gearheart.io/'
 export const GearHeartLinkedIn = 'https://www.linkedin.com/company/gearheart.io/'
+export const donateUrl = 'https://uahelp.monobank.ua'
+export const supportUrl = 'https://war.ukraine.ua'
+
