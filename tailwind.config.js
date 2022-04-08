@@ -1,17 +1,101 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      ...defaultTheme.screens,
+      '2xl': '1440px',
+    },
     extend: {
+      colors: {
+        white: '#FFFFFF',
+        black: '#1F1F1F',
+        logoBlue: '#2559B5',
+        'blue-ua': '#2559B5',
+        'yellow-ua': '#F7D648',
+        titleBlack: '#272727',
+        beige: '#faf5de',
+        snow: '#fbfbfb',
+        borderGray: '#E5E5E5',
+        darkslategray: '#414141',
+      },
+      minHeight: {
+        165: '41.25rem',
+        200: '50rem',
+      },
+      minWidth: {
+        180: '45rem',
+      },
+      maxWidth: {
+        '80%': '80%',
+      },
+      height: {
+        22: '5.5rem',
+        42: '10.5rem',
+        43: '10.625rem',
+        54: '13.5rem',
+        55: '13.75rem',
+        62: '15.625rem',
+        75: '18.75rem',
+        106.4: '26.625rem',
+      },
+      width: {
+        4: '4.5rem',
+        7.5: '7.5rem',
+        25.5: '6.375rem',
+        31.25: '7.8125rem',
+        36.5: '9.125rem',
+        42: '10.5rem',
+        43: '10.625rem',
+        55: '13.75rem',
+        58: '14.5rem',
+        62: '15.625rem',
+        75: '18.75rem',
+        85.75: '21.4375rem',
+        106.4: '26.625rem',
+        107.5: '26.875rem',
+        180: '45rem',
+      },
       fontFamily: {
-        sans: ["Roboto", ...defaultTheme.fontFamily.sans],
-        mono: ["Roboto Mono", ...defaultTheme.fontFamily.mono],
+        sans: ['Roboto', ...defaultTheme.fontFamily.sans],
+        mono: ['Roboto Mono', ...defaultTheme.fontFamily.mono],
+      },
+      fontSize: {
+        '3.5xl': '2rem',
+        '4.5xl': '2.5rem',
+        '6.5xl': '3.875rem',
+      },
+      spacing: {
+        '4%': '4%',
+        '5%': '5%',
+        '10%': '10%',
+        '12%': '12%',
+        '20%': '20%',
+        '30%': '30%',
+        '25%': '25%',
+        '45%': '45%',
+        '50%': '50%',
+        '20px': '20px',
+        '30px': '30px',
+        '100%': '100%',
+      },
+      lineHeight: {
+        5.5: '1.375rem',
+        6.5: '1.625rem',
+        9.5: '2.375rem',
+        16.5: '4.125rem',
+      },
+      rotate: {
+        7: '7deg',
+        9: '9deg',
+        13: '13deg',
+        15: '15deg',
+        16: '16deg',
+        18: '18deg',
+        '100%': '100%',
       },
     },
   },
   plugins: [],
-};
+}
