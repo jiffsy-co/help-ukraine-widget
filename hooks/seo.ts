@@ -17,7 +17,7 @@ export const useSeo = (page: string = '/'): ISeo => {
     image: {
       height: 900,
       width: 1600,
-      url: process.env.URL + '/widget-post.jpeg',
+      url: process.env.URL + '/widget-post.png',
     },
   }
 }
