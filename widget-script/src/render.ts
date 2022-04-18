@@ -40,7 +40,7 @@ export function createWidget1(position: WidgetPosition, initialSlide: SlideLayou
       crel('p', { class: 'huww-title' }, 'Stop Russian Aggression!'),
       crel(
         'a',
-        { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2] },
+        { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2], href: '#' },
         'See what you can do'
       ),
       createCollapseButton()
@@ -63,7 +63,7 @@ export function createWidget2(position: WidgetPosition, initialSlide: SlideLayou
       crel('div', { class: 'huww-divider' }),
       crel(
         'a',
-        { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2] },
+        { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2], href: '#' },
         'See what you can do'
       ),
       createCollapseButton()
@@ -83,7 +83,11 @@ export function createWidget3(position: WidgetPosition, initialSlide: SlideLayou
       { class: 'huww-slide-container huww-widget-three' },
       crel('p', { class: 'huww-title' }, 'Stop War!'),
       crel('p', { class: 'huww-subtitle' }, 'Help Ukraine!'),
-      crel('a', { class: 'huww-button huww-trigger', 'data-trigger': slideLayout[2] }, 'See how'),
+      crel(
+        'a',
+        { class: 'huww-button huww-trigger', 'data-trigger': slideLayout[2], href: '#' },
+        'See how'
+      ),
       createCollapseButton()
     ),
     createFlagBlock(),
@@ -103,7 +107,7 @@ export function createWidget4(position: WidgetPosition, initialSlide: SlideLayou
       crel('p', { class: 'huww-hashtag' }, '#StandWithUkraine'),
       crel(
         'a',
-        { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2] },
+        { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2], href: '#' },
         'See how to help'
       ),
       createCollapseButton(),
@@ -221,32 +225,26 @@ function createExpandedWidget3() {
 }
 
 function createActionList() {
-	return crel('div', { class: 'huww-action-list' },
-		createActionItem(
-			donateUrl,
-			'Donate',
-			'💸',
-			'Donate'
-		),
-		createActionItem(
-			supportUrl,
-			'Support Ukraine',
-			'❤',
-			'Info',
-			'huww-heart'
-		),
-		createActionItem(
-			landingUrl,
-			'Share this widget',
-			'📌',
-			'GetWidget'
-		)
-	);
+  return crel(
+    'div',
+    { class: 'huww-action-list' },
+    createActionItem(donateUrl, 'Donate', '💸', 'Donate'),
+    createActionItem(supportUrl, 'Support Ukraine', '❤', 'Info', 'huww-heart'),
+    createActionItem(landingUrl, 'Share this widget', '📌', 'GetWidget')
+  )
 }
 
-function createActionItem(href: string, text: string, emoji: string, action: 'Donate'|'Info'|'GetWidget', emojiClass?: string) {
-	return crel('a', { class: 'huww-action', target: '_blank', 'data-action': action, href },
-		crel('span', {}, text),
-		crel('span', { class: emojiClass }, emoji)
-	);
+function createActionItem(
+  href: string,
+  text: string,
+  emoji: string,
+  action: 'Donate' | 'Info' | 'GetWidget',
+  emojiClass?: string
+) {
+  return crel(
+    'a',
+    { class: 'huww-action', target: '_blank', 'data-action': action, href },
+    crel('span', {}, text),
+    crel('span', { class: emojiClass }, emoji)
+  )
 }
