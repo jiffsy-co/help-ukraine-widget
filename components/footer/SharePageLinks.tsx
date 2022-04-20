@@ -10,6 +10,51 @@ const SharePageLinks = () => {
   const fb = useShareLinkProps('facebook')
   const linkedIn = useShareLinkProps('linkedin')
   const twitter = useShareLinkProps('twitter')
+
+  const socialMedias = []
+  if (fb) {
+    const { isExternal, ...props } = fb
+    socialMedias.push({
+      title: 'Facebook',
+      logo: <FacebookLogo />,
+      props: {
+        ...props,
+        ...(isExternal && {
+          rel: 'noreferrer',
+          target: '_blank',
+        }),
+      },
+    })
+  }
+  if (twitter) {
+    const { isExternal, ...props } = twitter
+    socialMedias.push({
+      title: 'Twitter',
+      logo: <TwitterLogo />,
+      props: {
+        ...props,
+        ...(isExternal && {
+          rel: 'noreferrer',
+          target: '_blank',
+        }),
+      },
+    })
+  }
+  if (linkedIn) {
+    const { isExternal, ...props } = linkedIn
+    socialMedias.push({
+      title: 'LinkedIn',
+      logo: <LinkedInLogo />,
+      props: {
+        ...props,
+        ...(isExternal && {
+          rel: 'noreferrer',
+          target: '_blank',
+        }),
+      },
+    })
+  }
+
   return (
     <>
       <>
@@ -21,17 +66,16 @@ const SharePageLinks = () => {
       <div className="flex flex-col w-7.5 items-center">
         <span className="text-white opacity-70 text-xs mb-3">Share this page:</span>
         <div className="flex justify-between gap-6">
-          {fb && (
-            <a className="opacity-70 hover:opacity-100" {...fb}>
-              <FacebookLogo />
+          {socialMedias.map((sm) => (
+            <a
+              key={sm.title}
+              aria-label={sm.title}
+              className="opacity-70 hover:opacity-100"
+              {...sm.props}
+            >
+              {sm.logo}
             </a>
-          )}
-          <a className="opacity-70 hover:opacity-100" {...twitter}>
-            <TwitterLogo />
-          </a>
-          <a className="opacity-70 hover:opacity-100" {...linkedIn}>
-            <LinkedInLogo />
-          </a>
+          ))}
         </div>
       </div>
     </>
