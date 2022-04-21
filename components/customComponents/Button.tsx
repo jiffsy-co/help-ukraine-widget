@@ -7,7 +7,7 @@ const Button = ({ isExternal, className, ...options }: IButton) => {
   const Component = options.as || 'a'
   const props = isExternal
     ? {
-        rel: 'noreferrer',
+        rel: 'noreferrer noopener',
         target: '_blank',
       }
     : {}

@@ -20,7 +20,7 @@ const SharePageLinks = () => {
       props: {
         ...props,
         ...(isExternal && {
-          rel: 'noreferrer',
+          rel: 'noreferrer noopener',
           target: '_blank',
         }),
       },
@@ -34,7 +34,7 @@ const SharePageLinks = () => {
       props: {
         ...props,
         ...(isExternal && {
-          rel: 'noreferrer',
+          rel: 'noreferrer noopener',
           target: '_blank',
         }),
       },
@@ -48,7 +48,7 @@ const SharePageLinks = () => {
       props: {
         ...props,
         ...(isExternal && {
-          rel: 'noreferrer',
+          rel: 'noreferrer noopener',
           target: '_blank',
         }),
       },

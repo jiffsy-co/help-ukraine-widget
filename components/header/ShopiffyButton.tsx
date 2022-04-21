@@ -11,7 +11,7 @@ const ShopifyButton = ({ variant }: { variant: 'big' | 'small' }) => {
   const element =
     variant === 'small' ? (
       <a
-        rel="noreferrer"
+        rel="noreferrer noopener"
         target="_blank"
         className={`flex min-w-42 md:w-48 h-12 rounded-full items-center justify-evenly mr-2.5 md:mr-0 px-2.5 ${
           !shopifyAppStoreLink ? disabledClasses : enabledClasses
@@ -29,7 +29,7 @@ const ShopifyButton = ({ variant }: { variant: 'big' | 'small' }) => {
       </a>
     ) : (
       <a
-        rel="noreferrer"
+        rel="noreferrer noopener"
         target="_blank"
         className={`flex flex-col text-left items-start px-10 py-3 font-bold text-lg rounded-full relative pr-24 transition hover:scale-95 ${
           disabled ? disabledClasses : enabledClasses

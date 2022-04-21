@@ -9,7 +9,7 @@ const Description = (options: IDescription) => {
         <a
           href={options.link}
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer noopener"
           className="w-fit float-left mt-0.5 opacity-70 hover:opacity-100 transition"
         >
           {options.logo}

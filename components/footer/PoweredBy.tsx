@@ -15,7 +15,7 @@ const PoweredBy = () => (
         <a
           href={JiffseWebsiteLink}
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer noopener"
           className="mr-1.5 opacity-70 hover:opacity-100 transition"
         >
           <JiffsyLogo />
@@ -24,7 +24,7 @@ const PoweredBy = () => (
         <a
           href={GearHeartWebsiteLink}
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer noopener"
           className="opacity-70 hover:opacity-100 transition"
         >
           <GearHeartLogo />

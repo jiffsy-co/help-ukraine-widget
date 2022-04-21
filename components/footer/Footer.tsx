@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import SharePageLinks from './SharePageLinks'
 import PoweredBy from './PoweredBy'
-import { installManuallyLink, privacyPolicyLink } from '../constants'
+import { installManuallyLink, privacyPolicyLink, shopifyAppStoreLink } from '../constants'
 
 const Footer = () => {
   return (
@@ -16,13 +16,18 @@ const Footer = () => {
           <SharePageLinks />
         </div>
         <div className="flex flex-col text-center md:text-right text-white text-sm font-bold mb-5 md:mb-0 gap-2">
-          <a href="#" className="pointer-events-none opacity-70 cursor-pointer">
+          <a
+            href={shopifyAppStoreLink}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="opacity-70 hover:opacity-100 transition"
+          >
             Get widget in Shopify App Store
           </a>
-          <Link href={installManuallyLink}>
+          <Link href={installManuallyLink} passHref>
             <a className="opacity-70 hover:opacity-100 transition">Get widget fot other websites</a>
           </Link>
-          <Link href={privacyPolicyLink}>
+          <Link href={privacyPolicyLink} passHref>
             <a className="opacity-70 hover:opacity-100 transition">Privacy Policy</a>
           </Link>
         </div>

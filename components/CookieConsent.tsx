@@ -34,7 +34,7 @@ export default function CookieConsent() {
         <a
           className="text-black text-md font-medium"
           href="https://en.wikipedia.org/wiki/HTTP_cookie"
-          rel="noreferrer"
+          rel="noreferrer noopener"
           target="_blank"
         >
           Learn more

@@ -9,7 +9,7 @@ const helpList: HelpListItem[] = [
     text: (
       <>
         All donations that are made{' '}
-        <a href={donateUrl} target="_blank" rel="noreferrer" className="underline">
+        <a href={donateUrl} target="_blank" rel="noreferrer noopener" className="underline">
           under this link
         </a>
         , are collected at a unified official account in the National Bank of Ukraine, which has
@@ -23,7 +23,7 @@ const helpList: HelpListItem[] = [
       <>
         Share the truth about Russian invasion, donate to the Humanitarian aids, host Ukrainian
         refugees, become a medical volunteer, and do{' '}
-        <a href={supportUrl} target="_blank" rel="noreferrer" className="underline">
+        <a href={supportUrl} target="_blank" rel="noreferrer noopener" className="underline">
           so much more
         </a>
         .
