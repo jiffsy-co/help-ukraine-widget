@@ -50,6 +50,7 @@ export interface IDescription {
 export interface IEllipse {
   children: any
   large?: boolean
+  link: string
 }
 
 export interface IPrivacyText {

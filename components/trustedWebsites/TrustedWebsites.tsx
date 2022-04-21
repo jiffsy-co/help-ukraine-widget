@@ -5,7 +5,7 @@ import SmallElipse from './SmallElipse'
 
 const TrustedWebsites = () => {
   return (
-    <div className="flex w-screen justify-center flex-col">
+    <div className="flex w-screen justify-center flex-col bg-black">
       <div
         className="flex justify-center
             text-3.5xl xl:text-4.5xl 2xl:text-6xl font-bold
@@ -14,14 +14,9 @@ const TrustedWebsites = () => {
              text-center
              "
       >
-        <span className="hidden md:flex">
+        <span className="flex">
           Trusted by websites
           <br /> all around the world
-        </span>
-        <span className="flex md:hidden">
-          We use only official
-          <br />
-          trusted resources
         </span>
       </div>
       <div className="flex w-screen justify-center md:flex-col mb-8">
@@ -34,7 +29,7 @@ const TrustedWebsites = () => {
         "
         >
           {ellipsesContent.map((item) => (
-            <LargeEllipse key={item.name} large={item.large}>
+            <LargeEllipse key={item.name} large={item.large} link={item.url}>
               {item.logo}
             </LargeEllipse>
           ))}
@@ -43,7 +38,9 @@ const TrustedWebsites = () => {
           {ellipsesContent
             .filter((item) => !item.large)
             .map((item) => (
-              <SmallElipse key={item.name}>{item.logo}</SmallElipse>
+              <SmallElipse key={item.name} link={item.url}>
+                {item.logo}
+              </SmallElipse>
             ))}
         </div>
       </div>

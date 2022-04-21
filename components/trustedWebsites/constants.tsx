@@ -1,70 +1,70 @@
-import AdobeLogo from '../logo/AdobeLogo'
-import MicrosoftLogo from '../logo/MicrosoftLogo'
-import InstagramLogo from '../logo/InstagramLogo'
-import AirbnbLogo from '../logo/AirbnbLogo'
-import PatagoniaLogo from '../logo/PatagoniaLogo'
-import SpotifyLogo from '../logo/SpotifyLogo'
-import UberLogo from '../logo/UberLogo'
-import FacebookLargeLogo from '../logo/FacebookLargeLogo'
-import trustedWebsites from './TrustedWebsites'
+import Image from 'next/image'
 
 export const ellipsesContent = [
   {
-    logo: <AdobeLogo />,
-    name: 'Adobe',
+    logo: <Image src="/logos/dev.svg" alt="dev.ua" width={200} height={77} layout="intrinsic" />,
+    name: 'dev.ua',
     large: true,
+    url: 'https://dev.ua/',
   },
   {
-    logo: <MicrosoftLogo />,
-    name: 'Microsoft',
+    logo: (
+      <Image src="/logos/reface.png" alt="talkie.ai" width={235} height={70} layout="intrinsic" />
+    ),
+    name: 'Reface',
     large: true,
+    url: 'https://hey.reface.ai/',
   },
   {
-    logo: <InstagramLogo />,
-    name: 'Instagram',
+    logo: (
+      <Image
+        src="/logos/changeengine.svg"
+        alt="changeengine.com"
+        width={150}
+        height={22}
+        layout="intrinsic"
+      />
+    ),
     large: true,
+    name: 'Change Engine',
+    url: 'https://www.changeengine.com/',
   },
   {
-    logo: <AirbnbLogo />,
-    name: 'airbnb',
+    logo: <Image src="/logos/elai.svg" alt="elai.io" width={100} height={24} layout="intrinsic" />,
+    name: 'Elai',
+    url: 'https://elai.io/',
   },
   {
-    logo: <PatagoniaLogo />,
-    name: 'Patagonia',
+    logo: (
+      <Image
+        src="/logos/peopleforce.png"
+        alt="peopleforce.io"
+        width={420}
+        height={79}
+        layout="intrinsic"
+      />
+    ),
+    name: 'Peopleforce',
+    url: 'https://peopleforce.io/',
   },
   {
-    logo: <SpotifyLogo />,
-    name: 'Spotify',
+    logo: (
+      <Image
+        src="/logos/smartsuite.svg"
+        alt="talkie.ai"
+        width={145}
+        height={23}
+        layout="intrinsic"
+      />
+    ),
+    name: 'Smartsuite',
+    url: 'https://www.smartsuite.com/',
   },
   {
-    logo: <UberLogo />,
-    name: 'Uber',
-  },
-  {
-    logo: <FacebookLargeLogo />,
-    name: 'Facebook',
-  },
-]
-
-export const smallEllipsesContent = [
-  {
-    logo: <AirbnbLogo />,
-    name: 'airbnb',
-  },
-  {
-    logo: <PatagoniaLogo />,
-    name: 'Patagonia',
-  },
-  {
-    logo: <SpotifyLogo />,
-    name: 'Spotify',
-  },
-  {
-    logo: <UberLogo />,
-    name: 'Uber',
-  },
-  {
-    logo: <FacebookLargeLogo />,
-    name: 'Facebook',
+    logo: (
+      <Image src="/logos/upfeed.png" alt="upfeed.io" width={375} height={78} layout="intrinsic" />
+    ),
+    name: 'Upfeed',
+    url: 'https://upfeed.io/',
   },
 ]

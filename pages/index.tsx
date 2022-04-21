@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import WidgetHelp from '../components/WidgetHelp'
 import OfficialResources from '../components/OfficialResources'
 import WhoAreWe from '../components/WhoAreWe'
+import TrustedWebsites from '../components/trustedWebsites/TrustedWebsites'
 
 const Index: NextPage = () => {
   return (
@@ -13,6 +14,7 @@ const Index: NextPage = () => {
         <WidgetHelp />
         <OfficialResources />
         <WhoAreWe />
+        <TrustedWebsites />
       </MainLayout>
     </div>
   )
