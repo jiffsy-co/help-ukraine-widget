@@ -44,27 +44,27 @@ $transition: 350;
   &,
   &.huww-slider-direction-vertical {
     flex-direction: column !important;
-    [data-slide='collapsed'] & {
+    [data-huww-slide='collapsed'] & {
       transform: translateY(0);
     }
     &,
-    [data-slide='main'] & {
+    [data-huww-slide='main'] & {
       transform: translateY(-100%);
     }
-    [data-slide='expanded'] & {
+    [data-huww-slide='expanded'] & {
       transform: translateY(-200%);
     }
   }
   &.huww-slider-direction-horizontal {
     flex-direction: row !important;
-    [data-slide='collapsed'] & {
+    [data-huww-slide='collapsed'] & {
       transform: translateX(0);
     }
     &,
-    [data-slide='main'] & {
+    [data-huww-slide='main'] & {
       transform: translateX(-100%);
     }
-    [data-slide='expanded'] & {
+    [data-huww-slide='expanded'] & {
       transform: translateX(-200%);
     }
   }
@@ -80,8 +80,8 @@ $transition: 350;
   transition: #{$transition}ms ease;
   opacity: 0;
   @each $slide in $sliderSchema {
-    .huww-widget:not([data-slide]) &[data-slide='main'],
-    [data-slide='#{$slide}'] &[data-slide='#{$slide}'] {
+    .huww-widget:not([data-huww-slide]) &[data-huww-slide='main'],
+    [data-huww-slide='#{$slide}'] &[data-huww-slide='#{$slide}'] {
       opacity: 1;
       .huww-slide-container {
         pointer-events: all;

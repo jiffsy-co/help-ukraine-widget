@@ -40,7 +40,7 @@ export function createWidget1(position: WidgetPosition, initialSlide: SlideLayou
       crel('p', { class: 'huww-title' }, 'Stop Russian Aggression!'),
       crel(
         'a',
-        { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2], href: '#' },
+        { class: 'huww-link huww-trigger', 'data-huww-trigger': slideLayout[2], href: '#' },
         'See what you can do'
       ),
       createCollapseButton()
@@ -63,7 +63,7 @@ export function createWidget2(position: WidgetPosition, initialSlide: SlideLayou
       crel('div', { class: 'huww-divider' }),
       crel(
         'a',
-        { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2], href: '#' },
+        { class: 'huww-link huww-trigger', 'data-huww-trigger': slideLayout[2], href: '#' },
         'See what you can do'
       ),
       createCollapseButton()
@@ -85,7 +85,7 @@ export function createWidget3(position: WidgetPosition, initialSlide: SlideLayou
       crel('p', { class: 'huww-subtitle' }, 'Help Ukraine!'),
       crel(
         'a',
-        { class: 'huww-button huww-trigger', 'data-trigger': slideLayout[2], href: '#' },
+        { class: 'huww-button huww-trigger', 'data-huww-trigger': slideLayout[2], href: '#' },
         'See how'
       ),
       createCollapseButton()
@@ -107,7 +107,7 @@ export function createWidget4(position: WidgetPosition, initialSlide: SlideLayou
       crel('p', { class: 'huww-hashtag' }, '#StandWithUkraine'),
       crel(
         'a',
-        { class: 'huww-link huww-trigger', 'data-trigger': slideLayout[2], href: '#' },
+        { class: 'huww-link huww-trigger', 'data-huww-trigger': slideLayout[2], href: '#' },
         'See how to help'
       ),
       createCollapseButton(),
@@ -128,7 +128,7 @@ function createSlider(
 ) {
   return crel(
     'div',
-    { class: `huww-widget huww-widget-${position}`, 'data-slide': initialSlide },
+    { class: `huww-widget huww-widget-${position}`, 'data-huww-slide': initialSlide },
     crel(
       'div',
       {
@@ -143,11 +143,11 @@ function createSlider(
 }
 
 function createSlide(slideLayout: SlideLayout, slideElem: HTMLElement) {
-  return crel('div', { class: 'huww-slide', 'data-slide': slideLayout }, slideElem)
+  return crel('div', { class: 'huww-slide', 'data-huww-slide': slideLayout }, slideElem)
 }
 
 function createCollapseButton() {
-  return crel('div', { class: 'huww-button-collapse huww-trigger', 'data-trigger': slideLayout[0] })
+  return crel('div', { class: 'huww-button-collapse huww-trigger', 'data-huww-trigger': slideLayout[0] })
 }
 
 function createFlag() {
@@ -173,7 +173,7 @@ function createFlagBlock() {
     'div',
     {
       class: 'huww-flag-wrapper huww-trigger huww-slide-container',
-      'data-trigger': slideLayout[1],
+      'data-huww-trigger': slideLayout[1],
     },
     crel('div', { class: 'huww-separeted-flag-top' }),
     crel('div', { class: 'huww-separeted-flag-bottom' })
@@ -188,7 +188,7 @@ function createExpandedWidget1() {
     crel('div', { class: 'huww-divider' }),
     crel(
       'div',
-      { class: 'huww-expended-widget-hide huww-trigger', 'data-trigger': slideLayout[1] },
+      { class: 'huww-expended-widget-hide huww-trigger', 'data-huww-trigger': slideLayout[1] },
       'Hide'
     )
   )
@@ -204,7 +204,7 @@ function createExpandedWidget2() {
     crel('div', { class: 'huww-divider' }),
     crel(
       'div',
-      { class: 'huww-expended-widget-hide huww-trigger', 'data-trigger': slideLayout[1] },
+      { class: 'huww-expended-widget-hide huww-trigger', 'data-huww-trigger': slideLayout[1] },
       'Hide'
     )
   )
@@ -219,7 +219,7 @@ function createExpandedWidget3() {
     createActionList(),
     crel('button', {
       class: 'huww-expended-widget-hide-button huww-trigger',
-      'data-trigger': slideLayout[1],
+      'data-huww-trigger': slideLayout[1],
     })
   )
 }
@@ -243,7 +243,7 @@ function createActionItem(
 ) {
   return crel(
     'a',
-    { class: 'huww-action', target: '_blank', 'data-action': action, href },
+    { class: 'huww-action', target: '_blank', 'data-huww-action': action, href },
     crel('span', {}, text),
     crel('span', { class: emojiClass }, emoji)
   )

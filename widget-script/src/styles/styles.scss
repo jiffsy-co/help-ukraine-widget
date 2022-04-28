@@ -58,7 +58,7 @@ $f_radius: units(1);
 
   @media screen and (max-width: 1023px) {
     transition: #{$transition}ms ease;
-    .huww-slider[data-slide='collapsed'] & {
+    .huww-slider[data-huww-slide='collapsed'] & {
       .huww-widget-top-left & {
         border-radius: 0 0 $f_radius 0;
         transform: translate(-$f_offset, -$f_offset);
