@@ -147,7 +147,10 @@ function createSlide(slideLayout: SlideLayout, slideElem: HTMLElement) {
 }
 
 function createCollapseButton() {
-  return crel('div', { class: 'huww-button-collapse huww-trigger', 'data-huww-trigger': slideLayout[0] })
+  return crel('div', {
+    class: 'huww-button-collapse huww-trigger',
+    'data-huww-trigger': slideLayout[0],
+  })
 }
 
 function createFlag() {
@@ -243,7 +246,13 @@ function createActionItem(
 ) {
   return crel(
     'a',
-    { class: 'huww-action', target: '_blank', 'data-huww-action': action, href },
+    {
+      class: 'huww-action',
+      target: '_blank',
+      'data-huww-action': action,
+      href,
+      rel: 'nofollow noopener',
+    },
     crel('span', {}, text),
     crel('span', { class: emojiClass }, emoji)
   )
