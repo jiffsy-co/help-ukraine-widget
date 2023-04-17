@@ -5,6 +5,7 @@
   @return $value * 12.8px;
 }
 
+$color_black: #000000;
 $color_blue: #2559b5;
 $color_yellow: #f7d648;
 $shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -226,6 +227,7 @@ $f_radius: units(1);
   line-height: units(2);
   margin: 0;
   opacity: 0.8;
+  color: $color_black;
 }
 
 .huww-subtitle {
