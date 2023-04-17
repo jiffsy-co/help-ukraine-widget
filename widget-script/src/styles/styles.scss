@@ -45,6 +45,7 @@ $f_radius: units(1);
 .huww-widget {
   z-index: 99999999;
   padding: $f_offset;
+  background: transparent !important;
   @media screen and (min-width: 1024px) {
     padding: units(1.8);
   }
@@ -90,6 +91,9 @@ $f_radius: units(1);
 
 .huww-button-collapse {
   @include size(1.5, 1.5);
+  @media screen and (max-width: 873px) {
+    @include size(2, 2);
+  }
   background: #505050;
   border-radius: 100%;
   position: absolute;
@@ -109,6 +113,9 @@ $f_radius: units(1);
     width: 2px;
     height: units(0.8);
     background: #fff;
+    @media screen and (max-width: 873px) {
+      height: units(1.1);
+    }
   }
   &:before {
     transform: translate(-50%, -50%) rotate(-45deg);
