@@ -1,4 +1,4 @@
-export const donateUrl = 'https://uahelp.monobank.ua'
+export const donateUrl = 'https://savelife.in.ua/en/donate-en/'
 export const supportUrl = 'https://war.ukraine.ua'
 export const landingUrl = 'https://helpukrainewinwidget.org'
 
