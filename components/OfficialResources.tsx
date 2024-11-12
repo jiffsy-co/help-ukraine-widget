@@ -16,8 +16,8 @@ const OfficialResources = () => {
               Donations <span className="emoji">💸</span>
             </h3>
             <p className="mt-2 text-base leading-5 md:text-lg md:leading-6">
-              are made to help Ukraine in the war with Russia, via Monobank, which is the largest
-              Ukrainian neo-bank with 5.5M customers.
+              are made to help Ukraine in the war with Russia, via The Come Back Alive Foundation, which is a
+              charitable non-governmental foundation that helps strengthen Ukraine’s security and defence sector.
             </p>
           </div>
         </a>
